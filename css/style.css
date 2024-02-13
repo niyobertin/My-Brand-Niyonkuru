@@ -11,6 +11,7 @@ body{
 .head{
     color: white;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     margin-left: 10%;
     margin-right: 10%;
@@ -27,6 +28,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 .nav a{
 text-decoration: none;
@@ -34,6 +36,9 @@ margin: 1.5em;
 color: white;
 font-size:small;
 font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+.nav a:hover{
+    color: yellow;
 }
 .login{
     display: flex;
@@ -85,7 +90,7 @@ font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 .bacgraoundImage{
     height: 10em;
-    width: 10em;
+    width: 20%;
     margin-left: 10%;
     border-radius: 50%;
     filter: blur(8em);
@@ -127,12 +132,14 @@ a{
 .footernav{
     height: 3em;
     display: flex;
+    flex-wrap: wrap;
     text-align: center;
     justify-content: space-between;
     align-items: center;
     color: white;
     margin-left: 10%;
     margin-right: 10%;
+    font-size: small;
 }
 #fb{
     display: flex;
@@ -167,6 +174,7 @@ a{
 .offerdService{
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     margin-left: 10%;
     margin-right: 10%;
@@ -194,4 +202,191 @@ a{
     margin: 0px;
     margin-top: 70%;
     transform: rotate(-90deg);
+}
+#navigation{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #1e1e1e;
+    padding: 1%;
+    margin-left: 30%;
+    margin-right: 35%;
+    border-radius: 10px;
+    font-size:small;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+#navigation a:hover{
+    background-color: yellow;
+    color: black;
+    border-radius: 5px;
+    font-size: larger;
+}
+.content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: 10%;
+    margin-right: 10%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.esnya,.student,.messaging{
+    width: 25%;
+    height: fit-content;
+    background-color: #1e1e1e;
+    border-radius: 5px;
+}
+.content img{
+   width: 100%;
+   height: 100%;
+   border-top-left-radius:5px;
+   border-top-right-radius: 5px;
+}
+.all-portfolio{
+    margin-left: 10%;
+    margin-right: 10%;
+    display: none;
+}
+.all-content img{
+    width: 100%;
+   height: 100%;
+   border-top-left-radius:5px;
+   border-top-right-radius: 5px;
+}
+.esnyange,.students,.messaging-app{ 
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 5px;
+    padding-top: 2%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+#image{
+    width: 20%;
+    padding-right: 2%;
+}
+#web-image{
+    width: 24.5%;
+    padding-right: 2%;
+}
+#urwacu{
+    width: 20%;
+    padding-right: 2%;
+}
+.content p,h3{
+   margin-left: 2%;
+}
+.all-projects{
+    font-size: small;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.all-projects a{
+    display: flex;
+    justify-content: center;
+    padding: 2%;
+}
+.project{
+    transform: rotate(-90deg);
+    height: fit-content;
+    margin-top:10%;
+    color: rgb(57, 57, 55); 
+}
+.skills-image{
+    border: #1e1e1e solid 1px;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-betweenS;
+    flex-wrap: wrap;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.skills img{
+    width: 20%;
+    border-radius: 50%;
+}
+.blogs{
+    margin-left: 10%;
+    margin-right: 10%;
+
+}
+.blogs-list{
+    flex-wrap: wrap;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+    width: 100%SS;
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+}
+.blog1{
+    width: 20%;
+    background-color: #1e1e1e;
+}
+.blog1 img{
+    width: 100%;
+    height: 2%;
+    border-top-left-radius:5px;
+    border-top-right-radius: 5px;
+}
+.blog1 p{
+text-align: center;
+margin-left: 2%;
+margin-right: 2%;
+}
+#more{
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    background-color: black;
+    margin-left: 30%;
+    margin-right: 30%;
+    height: 2em;
+}
+#more:hover{
+    background-color: yellow;
+    cursor: pointer;
+}
+#more a:hover{
+    color: black;
+}
+.next,.previous{
+    background-color: yellow;
+    color: black;
+    width: 2%;
+    text-align: center;
+    border-radius: 50%;
+    font-weight: bolder;
+}
+.next a,.previous a{
+    color: black;
+}
+.next:hover,.previous:hover{
+background-color: #1e1e1e;
+cursor: pointer;
+}
+/* likes and comment  */
+/* .likes-comments{
+    background-color:blue ;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.likes-comments img{
+    width: 30%;
+} */
+.contacts{
+    display: flex;
+    align-items: center;
+}
+.contacts img{
+    width: 1.5%;
+}
+.lastslide{
+background-color: #1e1e1e;
+margin-top: 1%;
+}
+.footerpage{
+    margin-left: 10%;
+    margin-right: 10%;
 }
