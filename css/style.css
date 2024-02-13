@@ -412,6 +412,9 @@ margin-top: 1%;
 .last{
     width: 25%;
 }
+.last1 a:hover{
+    color: yellow;
+}
 .copylight{
     text-align: center;
     border-top: rgb(91, 91, 82) solid 1px;
