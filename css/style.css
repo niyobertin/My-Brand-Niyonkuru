@@ -1,3 +1,4 @@
+
 body{
     margin: 0px;
     padding: 0px;
@@ -5,21 +6,26 @@ body{
     color: white;
 }
 
+header{
+    background:#1f1f1f;
+    width:100%;
+}
 .headers{
-    background:hsl(0, 0%, 12%);
+    display: flex;
+    justify-content: space-between;
 }
 .head{
-    color: white;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     margin-left: 10%;
     margin-right: 10%;
     justify-content: space-between;
-    display: flex;
 }
 .logo{
     display: flex;
+    justify-content: space-between;
+    margin-left: 10%;
     align-items: center;
     font-size: large;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 
@@ -37,6 +43,10 @@ margin: 1.5em;
 color: white;
 font-size:small;
 font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+.menu img{
+    width: 30%;
+    display: none;
 }
 .nav a:hover{
     color: yellow;
@@ -60,6 +70,7 @@ font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
 }
 .mainpage{
+    font-size: 100%;
     height: 100%;
     margin-left: 10%;
     margin-right: 10%;
@@ -130,6 +141,7 @@ a{
     margin-right: 10%;
 }
 .footerSection{
+    width: 100%;
     background-color: #1e1e1e;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 
     'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -176,6 +188,10 @@ a{
     width: 1.5em;
     border-radius: 50%;
 }
+.service{
+    width: 100%;
+    flex-wrap: wrap;
+}
 .offerdService{
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 
     'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -184,6 +200,7 @@ a{
     justify-content: space-between;
     margin-left: 10%;
     margin-right: 10%;
+    text-align: center;
 }
 #services{
     font-weight: bolder;
@@ -202,8 +219,10 @@ a{
 .uiux,.socialMedia,.graphic-design{
     background-color: #1e1e1e;
     width: 25%;
+    font-size: 90%;
     padding: 1%;
     border-radius: 10px;
+    text-align: center;
 }
 .services{
     padding: 0px;
@@ -301,6 +320,7 @@ a{
     margin-top:10%;
     color: rgb(57, 57, 55); 
 }
+
 .skills-image{
     border: #1e1e1e solid 1px;
     border-radius: 20px;
@@ -323,18 +343,20 @@ a{
 
 }
 .blogs-list{
+    display: flex;
     flex-wrap: wrap;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 
     'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    display: flex;
-    width: 100%SS;
+    width: 100%;
     text-align: center;
     justify-content: space-between;
     align-items: center;
 }
 .blog1{
+    border-radius: 10px;
     width: 20%;
     background-color: #1e1e1e;
+    /* display: none; */
 }
 .blog1 img{
     width: 100%;
@@ -346,6 +368,24 @@ a{
 text-align: center;
 margin-left: 2%;
 margin-right: 2%;
+}
+#coment-like{
+    display: flex;
+    justify-content: space-between;
+    justify-content: center;
+    gap: 30%;
+    width: 100%;
+    align-items: center;
+    border-top: 0.1px solid yellow;
+}
+#coment-like img{
+    width: 60%;
+}
+.like,.com{
+    border-radius: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 #more{
     display: flex;
@@ -423,3 +463,148 @@ margin-top: 1%;
     BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 
     'Open Sans', 'Helvetica Neue', sans-serif;
 }
+/* Resposnive ness */
+
+@media screen and (max-width: 800px){
+    body{
+        margin: 0px;
+        padding: 0px;
+    }
+    .headers{
+        width: 100%;
+        display: block;
+        padding: 0%;
+    }
+    .head{
+        margin-left: 3% 
+    }
+    .menu{
+        display: flex;
+        justify-content: end;
+        margin-right: 3% 
+    }
+    .menu img{
+        height: 1.5em;
+        width: 100%;
+        display: block;
+    }
+    .logo{
+        font-size: medium;
+        margin-left: 3% 
+    }
+    .nav{
+        display: block;
+        width: 100%;
+        background-image: linear-gradient(to right, rgb(225, 137, 30) , rgb(206, 232, 39));
+    }
+    #col{
+        display: none;
+    }
+   
+    .nav a{
+        margin: 2%;
+        display: block;
+        color: black;
+        font-weight: bold;
+    } 
+    
+    .bacgraoundImage{
+        display: none;
+    }
+    .text{
+        display: none;
+    }
+    .landing{
+        display: block;
+        width: 100%;
+        text-align: center;
+        font-size: medium;
+    }
+    #profile{
+            display: none;
+    }
+    .mainpage{
+        font-size: 100%;
+        margin-left: 3%;
+        margin-right: 3%;
+    }
+    .about h2{
+        font-size: 100%;
+    }
+    .offerdService{
+        text-align: center;
+        display: block;
+        margin: 0px;
+    }
+    .uiux,.socialMedia,.graphic-design{
+        width: fit-content;
+        margin-top: 4%;
+        border-radius: 0px;
+    }
+    .uiux img{
+        width: 20%;
+    }
+    .content{
+        display: block;
+        width: fit-content;
+        margin: 0%;
+        text-align: center;
+        font-size: 100%;
+    }
+    .project{
+        display: none;
+    }
+    .esnya,.student,.messaging{
+        width: fit-content;
+        margin-top: 4%;
+        border-radius: 0px;
+    } 
+    .skills-image{
+        width: 100%;
+        margin: 0%;
+    }
+    .blogs{
+        width: 100%;
+        margin: 0%;
+        padding: 0%;
+    }
+    .blogs-list{
+        display: block;
+        width: 100%;
+        text-align: center;
+        font-size: 100%;
+    }
+    .next,.previous{
+        display: none;
+    }
+    .blog1{
+        width: fit-content;
+        margin: 0%;
+    }
+    .lastslide{
+        margin: 0%; 
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+    .footerpage{
+        display: block;
+        width: 100%;
+        font-size: 100%;
+        margin: 0%;
+    }
+    .footerpage h4{
+        color: yellow;
+    }
+    .last3{
+        display: none;
+    }
+    .last{
+        display: none;
+    }
+    #more{
+        display: flex;
+        justify-content: center;
+    }
+
+} 

@@ -8,12 +8,14 @@
 </head>
 <body>
     <header class="headers">
-     <div class="head">
         <div class="logo">
             <h3>Niyonkuru</h3>
             <h1 id="dot">.</h1>
-        </div>
-        <div class="nav">
+            <div class="menu">
+                <img src="../images/menu2.JPG" alt="menu" onclick=" loadMenu()">
+          </div>
+        </div id='navigation-list'>
+         <div class="nav" id="nav">
             <a href="home.html">Home</a>
             <a href="#service">Service</a>
             <a href="#portfolio">Portfolio</a>
@@ -24,7 +26,6 @@
                   <a href=""><div id="col"></div>LogIn></a>
             </div>
         </div>
-     </div>
     </header>
     <main class="mainpage">
         <div class="landing">
@@ -207,42 +208,64 @@
     </div>
     <div class="blogs" id="blogs">
         <h2 id="services">BLOGS</h2>
-        <div class="blogs-list">
+        <div class="blogs-list" id="blog-list">
             <a href="" class="previous">
-            <div>
-            &laquo;
-        </div>
-        </a>
-            <div class="blog1">
-                <img src="../images/Screenshot-2024-01-24-at-10.33.27-AM-490x261-pg.webp" alt="postgres image" srcset="">
-                <p><h3> PostgreSQL to developers</h3></p>
-                <p>pgEdge, a provider of a distributed Postgres database system, announced the release of pgEdge 
-                    Cloud Developer Edition in open preview. 
-                </p>
-                <p id="more"><a href="">Read More</a></p>
-                <!-- <div class="likes-comments">
-                    <div class="like"><p><img src="../images/like.JPG" alt="">Like</p></div>
-                    <div class="comment"><img src="../images/comment.JPG" alt="">comment</div>
-                </div> -->
-            </div>
-            <div class="blog1">
-                <img src="../images/pexels-the-happiest-face-1136815-490x302-Al.webp" alt="Al tool">
-                <p><h3>What AI can and can’t do for your observability practice</h3></p>
-                <p>
-                    Artificial intelligence (AI) and large language models (LLMs) have dominated the tech scene over the past year. 
-                    <p id="more"><a href="">Read More</a></p>
-                </p>
-            </div>
-            <div class="blog1">
-                <img src="../images/ed20240130i.jpeg.webp" alt="student image">
-                <p>
-                    <h3>Transforming Education for Sustainable Development</h3>
-                </p>
-                <p>
-                    The 2023/24 AJESR theme is "Transforming Education for Sustainable Development. 
-                </p>
-                <p id="more"><a href="">Read More</a></p>
-            </div>
+                <div>
+                    &laquo;
+                 </div>
+            </a>
+            <!-- <div class="blog-list"> -->
+                <div class="blog1">
+                    <img src="../images/Screenshot-2024-01-24-at-10.33.27-AM-490x261-pg.webp" alt="postgres image" srcset="">
+                    <p><h3> PostgreSQL to developers</h3></p>
+                    <p>pgEdge, a provider of a distributed Postgres database system.</p>
+                    <div id="coment-like">
+                        <div class="like">
+                            <img src="../images/like.JPG" alt="">
+                            <p>20</p></div>
+                            <!-- <p id="more"><a href="">Read More</a></p> -->
+                        <div class="com">
+                            <img src="../images/comment.JPG" alt="">
+                            <p>29</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="blog1">
+                    <img src="../images/pexels-the-happiest-face-1136815-490x302-Al.webp" alt="Al tool">
+                    <p><h3 id="blog12">What AI can and can’t do for your observability practice</h3></p>
+                    <p>
+                        Artificial intelligence (AI) 
+                        <div id="coment-like">
+                            <div class="like">
+                                <img src="../images/like.JPG" alt="">
+                                <p>20</p></div>
+                                <!-- <p id="more"><a href="">Read More</a></p> -->
+                            <div class="com">
+                                <img src="../images/comment.JPG" alt="">
+                                <p>29</p>
+                            </div>
+                        </div>
+                        
+                    </p>
+                </div>
+                <div class="blog1">
+                    <img src="../images/ed20240130i.jpeg.webp" alt="student image">
+                    <p>
+                        <h3>Transforming Education for Sustainable Development</h3>
+                    </p>
+                    <p>The 2023/24 AJESR </p>
+                    <div id="coment-like">
+                        <div class="like">
+                            <img src="../images/like.JPG" alt="">
+                            <p>20</p></div>
+                            <!-- <p id="more"><a href="">Read More</a></p> -->
+                        <div class="com">
+                            <img src="../images/comment.JPG" alt="">
+                            <p>29</p>
+                        </div>
+                    </div>
+                </div>
+            <!-- </div> -->
             <a href="" class="next">
                  <div>&raquo; </div>
                 </a>
@@ -281,5 +304,6 @@
         </div>
         <div class="copylight">Copyright © 2024 Niyonkuru. All Rights Reserved. </div>
     </footer>
+    <script src="../javaScript/index.js"></script>
 </body>
 </html>
