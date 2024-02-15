@@ -7,25 +7,21 @@ body{
 }
 
 header{
-    background:#1f1f1f;
     width:100%;
+    background:#1f1f1f;
 }
-.headers{
-    display: flex;
-    justify-content: space-between;
-}
-.head{
+.heasec{
+    margin-left: 10%;
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    margin-left: 10%;
+    /* align-items: center; */
     margin-right: 10%;
     justify-content: space-between;
 }
 .logo{
     display: flex;
     justify-content: space-between;
-    margin-left: 10%;
+    /* margin-left: 10%; */
     align-items: center;
     font-size: large;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 
@@ -338,6 +334,7 @@ a{
     border-radius: 50%;
 }
 .blogs{
+    /* width: 100%; */
     margin-left: 10%;
     margin-right: 10%;
 
@@ -418,16 +415,7 @@ margin-right: 2%;
 background-color: #1e1e1e;
 cursor: pointer;
 }
-/* likes and comment  */
-/* .likes-comments{
-    background-color:blue ;
-display: flex;
-justify-content: space-between;
-align-items: center;
-}
-.likes-comments img{
-    width: 30%;
-} */
+
 .contacts{
     display: flex;
     align-items: center;
@@ -436,7 +424,9 @@ align-items: center;
     width: 5%;
     border-radius: 50%;
 }
+footer{width: 10%;}
 .lastslide{
+width: 100%;
 background-color: #1e1e1e;
 margin-top: 1%;
 }
@@ -457,6 +447,7 @@ margin-top: 1%;
 }
 .copylight{
     text-align: center;
+    font-size: small;
     border-top: rgb(91, 91, 82) solid 1px;
     padding: 0.5%;
     font-family: system-ui, -apple-system, 
@@ -525,8 +516,7 @@ margin-top: 1%;
     }
     .mainpage{
         font-size: 100%;
-        margin-left: 3%;
-        margin-right: 3%;
+        padding: 2%;
     }
     .about h2{
         font-size: 100%;
@@ -535,6 +525,7 @@ margin-top: 1%;
         text-align: center;
         display: block;
         margin: 0px;
+        padding: 2%;
     }
     .uiux,.socialMedia,.graphic-design{
         width: fit-content;
@@ -550,48 +541,48 @@ margin-top: 1%;
         margin: 0%;
         text-align: center;
         font-size: 100%;
+        padding: 2%;
     }
     .project{
         display: none;
     }
     .esnya,.student,.messaging{
-        width: fit-content;
+        width: 100%;
         margin-top: 4%;
         border-radius: 0px;
     } 
     .skills-image{
         width: 100%;
         margin: 0%;
+        padding: 2%;
     }
     .blogs{
-        width: 100%;
         margin: 0%;
-        padding: 0%;
+        width: 100%;
     }
     .blogs-list{
+        width: fit-content;
+        padding: 2%;
         display: block;
-        width: 100%;
-        text-align: center;
-        font-size: 100%;
+        text-align: center; 
+        
     }
     .next,.previous{
         display: none;
     }
     .blog1{
-        width: fit-content;
-        margin: 0%;
+        margin-top: 2%;
+        width: 100%;
+        font-size: 100%; 
     }
     .lastslide{
-        margin: 0%; 
-        display: block;
         width: 100%;
-        text-align: center;
+        margin-top: 20%;
     }
     .footerpage{
         display: block;
-        width: 100%;
         font-size: 100%;
-        margin: 0%;
+        padding: 4%;
     }
     .footerpage h4{
         color: yellow;

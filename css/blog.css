@@ -1,0 +1,16 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+.Blog-content{
+    background-color: #1e1e1e;
+    border-radius: 5px;
+    flex-wrap: wrap;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+img{
+    width: 30%;
+    padding: 3%;
+    float: left;
+}

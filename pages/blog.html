@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/blog.css">
+    <title>Blog</title>
+</head>
+<body>
+    <header class="headers">
+        <div class="heasec">
+            <!-- <div class="logo">
+                <h3>Niyonkuru</h3>
+                <h1 id="dot">.</h1>
+                <div class="menu">
+                    <img src="../images/menu2.JPG" alt="menu" onclick=" loadMenu()">
+              </div> -->
+            </div id='navigation-list'>
+             <div class="nav" id="nav">
+                <a href="home.html">Home</a>
+                <div class="login">
+                      <a href=""><div id="col"></div>LogIn></a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="Blog-content">
+            <p><img src="../images/Screenshot-2024-01-24-at-10.33.27-AM-490x261-pg.webp" alt="postgres image" srcset="">
+                <h2 id="blog-head">PostgreSQL to developers</h2>
+pgEdge, a provider of a distributed Postgres database system, announced the release of pgEdge Cloud Developer
+ Edition in open preview. This edition for developers offers rapid setup and a generous free tier for evaluations and small projects. 
+
+pgEdge Cloud Developer Edition offers a fully managed, serverless distributed Postgres database that’s user-friendly for developers. 
+It allows for quick setup, enabling users to deploy a distributed database across multiple regions like North America, Europe, 
+and Singapore in about 90 seconds, according to Philip Merrick, CEO and co-founder of pgEdge.
+
+This ease of use, combined with the choice of configurations, aims to make distributed Postgres accessible and convenient, 
+particularly for those with applications requiring low latency and high availability.
+
+Unlike most providers, pgEdge offers a fully distributed Postgres database that is both open and fully Postgres-based, 
+according to Merrick. pgEdge Cloud Developer Edition is also fully based on standard Postgres, supporting both current and recent versions of Postgres, and allows the use of Postgres extensions. 
+
+“pgEdge is fully distributed Postgres: it’s 100% based on Postgres, not just Postgres-compatible, and it’s 100% open with the 
+source code available,” Merrick said. 
+
+Postgres is often referred to as one of the most popular open-source relational database management systems. PostgreSQL
+ was awarded DBMS of the Year 2023 by DB-Engines after winning three titles between 2017 and 2020. Despite its popularity,
+  PostgreSQL has been lacking a strong and open, distributed capability, according to Merrick. 
+
+“The reason why you might want to invest in a distributed relational database, particularly a distributed Postgres database is, 
+number one, you can solve the latency problem. So when you’ve got a globally distributed application or an application that has
+ global users, if your database is sitting in one place, for instance, Amazon’sUS  East One region, then anyone who is actually 
+ at some reasonable distance from there is going to see much slower performance,” Merrick told SD Times. 
+
+pgEdge aims to solve that problem by putting copies of the database closer to where users are coming into the network, he explained. 
+
+The second thing pgEdge aims to help with is to make the system and the application on top of it with ultra-high availability
+ with potentially up to five nines of uptime. pgEdge Cloud Developer Edition can handle node failures within a network of multiple
+  database nodes because if one node goes down, traffic is automatically redirected to the remaining operational nodes. Once the 
+  downed node is ready and operational again, it syncs up with the others and rejoins the network, ensuring continuous and reliable
+   service.
+
+pgEdge incorporates latency-based DNS routing, which ensures that users are connected to the nearest operational node, 
+optimizing performance and reducing response times. The free tier allows up to 12GB of storage across three nodes.
+
+In addition to its instant deployment feature and a predefined multi-region cluster offering, pgEdge employs a Multi-Master
+ (Active-Active) setup, where each database node is capable of handling both read and write operations. This design ensures
+  low latency and high availability, using an eventually consistent model with efficient conflict resolution and reporting mechanisms.
+
+This is complemented by robust management and monitoring tools, eliminating the need for manual infrastructure configuration. 
+The platform provides automated backups, security measures to prevent misconfiguration and continuous monitoring, all through a user-friendly dashboard. 
+
+All in all, distributed PostgreSQL is not suitable for every use case, and the key factors to consider include whether there is a 
+specific need for the low latency offered by distributed Postgres, particularly to improve page load times for global users, and
+ the importance of achieving very high uptime, according to Merrick. 
+
+“pgEdge Cloud Developer Edition marks a significant leap in our mission to make it easy for developers to build and deploy highly
+ distributed database applications across the global network,” said Phillip Merrick, Co-founder and CEO at pgEdge. “The innovative 
+ features of the pgEdge Cloud fully managed service, from multi-region, multi-master support to its intuitive user interface, empower 
+ developers to easily create and manage distributed PostgreSQL databases.”  
+            </p>
+        </div>
+    </main>
+    <script src="../javaScript/index.js"></script>
+</body>
+</html>
