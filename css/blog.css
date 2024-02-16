@@ -2,12 +2,31 @@ body{
     margin: 0px;
     padding: 0px;
 }
+.links{
+    display: flex;
+    justify-content: center;
+    margin-right: 1%;
+}
+.links a{
+padding-inline: 10%;
+}
+.links a:hover{
+    color: yellow;
+}
+.blog-menu{
+    display: none;
+}
 .Blog-content{
     background-color: #1e1e1e;
     border-radius: 5px;
+    padding-left: 2%;
+    padding-right: 2%;
     flex-wrap: wrap;
     margin-left: 10%;
     margin-right: 10%;
+}
+p{
+    padding: 2%;
 }
 img{
     width: 30%;
