@@ -1,0 +1,45 @@
+body{
+    width: 100%;
+}
+#form1{
+    background-color: #1e1e1e;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding: 3%;
+    border-radius: 10px;
+}
+.input-area{
+    margin-left: 20%;
+    margin-right: 20%;
+}
+.contact h2{
+    text-align: center;
+    color: yellow;
+}
+.user-message input{
+    padding: 1%;
+    width: 50%;
+    background-color: #1e1e1e;
+    border: 1px yellow solid;
+    border-radius: 10px;
+    color: white;
+}
+.name, .email, .message{
+margin-top: 2%;
+}
+input ,textarea{
+    background-color: #1e1e1e;
+    width: 100%;
+    padding: 1%;
+    border-radius: 10px;
+    border: 1px solid yellow;
+}
+#send-message{
+    background-color: rgb(155, 155, 27);
+    width: 50%;
+    height: 2rem;
+    border-radius: 10px;
+    color: rgb(255, 255, 255);
+    font-size: larger;
+    font-weight: bolder;
+}

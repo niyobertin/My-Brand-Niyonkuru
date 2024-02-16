@@ -26,10 +26,65 @@ padding-inline: 10%;
     margin-right: 10%;
 }
 p{
+    font-size: 100%;
     padding: 2%;
 }
 img{
     width: 30%;
     padding: 3%;
     float: left;
+}
+.user-comment{
+    background-color: #0b0a0a;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-radius: 10px;
+}
+.textAreaComment{
+    width: fit-content;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+#comment{
+    background-color: #1e1e1e;
+    width: 100%;
+    color: white;
+    border-radius: 10px;
+    font-size: larger;
+}
+#send-coment{
+    background-color: rgb(155, 155, 27);
+    width: 50%;
+    height: 2rem;
+    border-radius: 10px;
+    color: rgb(255, 255, 255);
+    font-size: larger;
+    font-weight: bolder;
+}
+
+@media screen and (max-width: 800px){
+    body{
+        margin: 0px;
+        padding: 0px;
+    }
+    .firstslide{
+        width: 100%;
+        display: block;
+        padding: 0%;
+    }
+    .head{
+        margin-left: 3% 
+    }
+    .blog-menu{
+        display: none;
+        justify-content: end;
+        margin-right: 3% 
+    }
+    .links{
+        margin:5%;
+    }
+    .links a{
+        display: block;
+        padding-top:2%;
+    }
 }

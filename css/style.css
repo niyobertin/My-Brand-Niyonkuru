@@ -25,6 +25,13 @@ header{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    transition: 1s ease;
+}
+.link :hover{
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+    transition: 1s ease;
 }
 .link a{
     margin-inline: 2%;
@@ -297,7 +304,6 @@ header{
         /* width: 100%; */
         margin-left: 10%;
         margin-right: 10%;
-    
     }
     .blogs-list{
         display: flex;
@@ -308,13 +314,20 @@ header{
         text-align: center;
         justify-content: space-between;
         align-items: center;
+        transition:1s ease;
+    }
+    .blogs-list :hover{
+        -webkit-transform: scale(1.2);
+         -ms-transform: scale(1.2);
+        transform: scale(1.2);
+        transition: 1s ease;
     }
     .blog1{
         border-radius: 10px;
         width: 20%;
         background-color: #1e1e1e;
-        /* display: none; */
     }
+   
     .blog1 img{
         width: 100%;
         height: 2%;
@@ -435,14 +448,25 @@ header{
     .link{
         display: none;
         width: 100%;
-        /* background-image: linear-gradient(to right, rgb(225, 137, 30) , rgb(206, 232, 39)); */
+        background-image: linear-gradient(to right, rgb(225, 137, 30) , rgb(206, 232, 39));
+    }
+    .nav{
+        margin-left: 0%;
+        margin-right: 0;
+    }
+    .link{
+        animation: fadeIn 6s;
+    }
+    @keyframes fadeIn{
+        0%{ opacity: 0;background-color: antiquewhite;}
+        100%{opacity: 1;}
     }
     #col{
         display: none;
     }
     .link a{
         height: fit-content;
-        margin: 2%;
+        margin: 4%;
         display: block;
         font-weight: bold;
     } 
@@ -527,7 +551,7 @@ header{
     }
     .lastslide{
         width: 100%;
-        margin-top: 20%;
+        margin-top: 10%;
     }
     .footerpage{
         display: block;

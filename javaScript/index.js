@@ -10,8 +10,3 @@
         menuList.style.display = "block";
     }
 }
-// function animate(){
-//   let menuList = document.getElementById("link"); 
-//   menuList.style.transition = "1s"; 
-//   showhide()
-// }
