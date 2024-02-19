@@ -15,7 +15,7 @@
             <li><a href="">Add Article</a></li>
             <li><a href="">View Article</a></li>
         </ul>
-        <li id="settings"><a href="" onclick="openNav()">Settings <span id="allowDawn">˅</span></a></li>
+        <li id="settings"><p  onclick="openNav()">Settings <span id="allowDawn">˅</span></p></li>
     </header>
     <main>
         <div class="contents">
@@ -41,6 +41,14 @@
                 <button id="delete">Delete</button>
             </div>
         </div>
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="#">Profile</a>
+            <a href="#">Edit profile</a>
+            <a href="#">Users</a>
+            <a href="#">Log Out</a>
+          </div>
+          <!-- <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; -->
     </main>
     <script src="../javaScript/index.js"></script>
 </body>

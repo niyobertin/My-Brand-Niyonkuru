@@ -69,7 +69,8 @@ header ul li a{
     list-style: none; 
     margin-right: 10%; 
 }
-#settings a{
+#settings p{
+    cursor: pointer;
     background-color: #1e1e1e;
     position: relative;
     text-decoration: none;
@@ -143,4 +144,98 @@ img{
     cursor: pointer;
 }
 /* side nav */
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index:  1;
+    top: 0;
+    right: 0;
+    background-image: linear-gradient(to right, rgb(225, 137, 30) , rgb(206, 232, 39));
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 6%;
+  }
+  
+  .sidenav a {
+    padding:  6%;
+    text-decoration: none;
+    font-size: 100%;
+    color: white;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 2%;
+    font-size: xx-large;
+    margin-left: 50px;
+    }
+   @media screen and (max-height: 800px) {
+        .sidenav {padding-top: 20%;}
+        .sidenav a {font-size: 100%;}
+        /* #link{
+            margin: 0;
+            width: 100%;
+            font-size: 100%;
+        }
+        header ul{
+            /* display: block; */
+            /* width: 100%;  
+            margin-left: 3%;
+            font-size: 100%;
+        }
+        header ul li{
+            margin-top: 3%;
+            font-size: 100%;
+        }
+        #link{
+            display: none;
+        }
+        #settings{
+            margin-left: 3%;
+            font-size: 100%;
+        }
+        .logo{
+            font-size: 100%;
+        }
+        #menuIcon{
+            width: 8%;
+            margin: 3%;
+            display: block;
+        }
+        .contents{
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            display: block;
+            justify-content: center;
+            align-items: center;
+        }
+        .comment-number, .querry-number, .artical-number{
+            width: 90%;
+            text-align: center;
+            margin-top:3% ;
+            margin-left: 5%;
+            font-size: small;
+            padding: 0;
+        }
+        img{
+            width: 15%;
+        }
+        .newest-query{
+            padding: 0;
+            width: 90%;
+            margin: 0;
+            margin-top: 3%;
+            margin-left: 5%;
+        font-size: small;
+        } */ */
+  }
 
