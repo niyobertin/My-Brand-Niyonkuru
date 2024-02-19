@@ -19,6 +19,14 @@ const  stickyNav =()=> {
     navbar.classList.remove("sticky");
   }
 }
+//side bar navigation
+// function openNav() {
+//   document.getElementById("mySidenav").style.width = "250px";
+// }
+
+// function closeNav() {
+//   document.getElementById("mySidenav").style.width = "0";
+// }
 
 // function hideIt(){
 //   let nav=document.getElementById('link')

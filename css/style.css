@@ -9,6 +9,7 @@ body{
 }
 /* This the css for the head section */
 header{
+    margin: 0px;
     overflow: hidden;
     background-color: #1e1e1e;
     color:white;

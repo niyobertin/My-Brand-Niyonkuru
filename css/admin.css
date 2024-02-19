@@ -1,0 +1,146 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+body{
+    background-color: black;
+    color: white;
+}
+header{
+    margin: 0px;
+    overflow: hidden;
+    background-color: #1e1e1e;
+    color:white;
+    transition: 1s;
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 9999;
+}
+header ul{
+    position: relative;
+    background-color: #1e1e1e;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 40%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-right: 10%;
+    transition: 1s;
+}
+header h1{
+    margin-left: 10%;
+    background-color: #1e1e1e;
+}
+/* This the css for the head section */
+.sticky + .landing {
+    padding-top: 2%;
+  }
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  /* The sticky class is added to the navbar with JS when it reaches its scroll position */
+#menuIcon{
+    width: 2%;
+    display: none;
+}
+header ul li{
+    position: relative;
+    list-style: none;
+    transition: 1s;
+}
+header ul li a{
+    background-color: #1e1e1e;
+    text-decoration: none;
+    position: relative;
+    text-decoration: none;
+    color: white;
+    transition: 1s;
+}
+#settings{
+    list-style: none; 
+    margin-right: 10%; 
+}
+#settings a{
+    background-color: #1e1e1e;
+    position: relative;
+    text-decoration: none;
+    color: white;
+    transition: 1s;  
+}
+#settings a:hover{
+    color: yellow;
+}
+a:hover{
+    color: yellow;
+}
+#bullet, #allowDawn{
+    background-color: #1e1e1e;
+    color: yellow;
+    font-size: large;
+}
+.contents{
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    flex: 2;
+    gap: 40%;
+    padding: 10%;
+    flex-wrap: wrap;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+.comment-number, .querry-number, .artical-number{
+    background-color: #1e1e1e;
+    height: fit-content;
+    text-align: center;
+    width: 15%;
+    padding: 5%;
+    border-radius: 10px;
+    margin: 1%;
+    font-size: 90%;
+    cursor: pointer;
+}
+img{
+    width: 50%;
+}
+.newest-query{
+    background-color: #1e1e1e;
+    height: fit-content;
+    width: 70%;
+    letter-spacing: 2%;
+    padding: 1%;
+    border-radius: 10px;
+    margin: 1%;
+    font-size: 90%;
+}
+#replay{
+    background-color: black;
+    color: white;
+    width: 20%;
+    padding: 1%;
+    margin-right: 2%;
+    border-radius: 8px;
+    cursor: pointer;
+}
+#delete{
+    background-color: rgb(148, 148, 8);
+    color: white;
+    width: 20%;
+    padding: 1%;
+    margin-top: 2%;
+    margin-right: 2%;
+    border-radius: 8px;
+    cursor: pointer;
+}
+/* side nav */
+

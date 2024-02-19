@@ -1,8 +1,8 @@
 #login-form1{
     background-color: #1e1e1e;
     padding: 1%;
-    margin-left: 20%;
-    margin-right: 20%;
+    margin-left: 30%;
+    margin-right: 30%;
     border-radius: 20px;
 }
 .login-contact h2{
@@ -21,7 +21,7 @@ input{
     border: 1px solid yellow;
 }
 .email, .Password{
-    margin-top: 10%;
+    margin-top: 5%;
     }
     #login-botton,#sign{
         background-color: black;
@@ -30,7 +30,6 @@ input{
         border-radius: 10px;
         color: rgb(255, 255, 255);
         font-size: larger;
-        font-weight: bolder;
     }
     #signUp a{
         color: yellow;

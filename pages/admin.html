@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/admin.css">
+    <title>Dashbard</title>
+</head>
+<body>
+    <header id="head">
+        <h1 class="logo">Niyonkuru<span id="bullet">.</span></h1>
+        <img src="../images/menu.jpeg" alt="menu image" id="menuIcon" onclick="showhide()">
+        <ul id="link">
+            <li><a href="">Dashboard</a></li>
+            <li><a href="">Add Article</a></li>
+            <li><a href="">View Article</a></li>
+        </ul>
+        <li id="settings"><a href="" onclick="openNav()">Settings <span id="allowDawn">˅</span></a></li>
+    </header>
+    <main>
+        <div class="contents">
+            <div class="comment-number">
+                <p><img src="../images/Message.jpg" alt="message"><br/>40Messages</p>
+            </div>
+            <div class="artical-number">
+                <p><img src="../images/artical.jpg" alt=""><br/>40articals</p>
+            </div>
+
+            <div class="querry-number">
+                <p><img src="../images/Message.jpg" alt="message"><br/>40queries</p>
+            </div>
+            <div class="querry-number">
+                <p><img src="../images/like.JPG" alt="message"><br/>40likes</p>
+            </div>
+            <div class="newest-query">
+                <p>
+                    <span id="userName">John Doe</span><br/>
+                    this is the new comment
+                </p>
+                <button id="replay">Replay</button>
+                <button id="delete">Delete</button>
+            </div>
+        </div>
+    </main>
+    <script src="../javaScript/index.js"></script>
+</body>
+</html>
