@@ -1,7 +1,6 @@
 body{
     margin: 0px;
     padding: 0px;
-    margin-top: 6%;
 }
 .links{
     display: flex;
@@ -14,7 +13,7 @@ padding-inline: 10%;
 .links a:hover{
     color: yellow;
 }
-.blog-menu{
+#menuIcon{
     display: none;
 }
 .Blog-content{

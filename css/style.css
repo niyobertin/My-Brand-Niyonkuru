@@ -1,6 +1,6 @@
 
 body{
-    margin-top: 7%;
+    /* margin-top: 7%; */
     padding: 0px;
     background-color: black;
     color: white;
@@ -8,19 +8,10 @@ body{
         'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 /* This the css for the head section */
-
-*{
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-    
-}
-
 header{
+    overflow: hidden;
     background-color: #1e1e1e;
     color:white;
-    position: fixed;
-    top: 0;
     transition: 1s;
     height: fit-content;
     width: 100%;
@@ -28,8 +19,7 @@ header{
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    z-index: 10000;
-    font-weight: bolder;
+    z-index: 9999;
 }
 header ul{
     position: relative;
@@ -52,7 +42,8 @@ header ul li a{
     position: relative;
     text-decoration: none;
     color: white;
-    transition: 1s;}
+    transition: 1s;
+}
 a:hover{
     color: yellow;
 }
@@ -67,9 +58,17 @@ header h1{
     color: yellow;
     font-size: xx-large;
 }
-
 /* This the css for the head section */
-
+.sticky + .landing {
+    padding-top: 2%;
+  }
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  /* The sticky class is added to the navbar with JS when it reaches its scroll position */
 #menuIcon{
     width: 20%;
     display: none;
@@ -79,6 +78,7 @@ header h1{
         height: 100%;
         margin-left: 10%;
         margin-right: 10%;
+        padding: 2%;
     }
     .landing{
         font-family:system-ui, -apple-system, BlinkMacSystemFont, 
@@ -441,33 +441,28 @@ header h1{
 
 @media screen and (max-width: 800px){
     body{
-        margin: 0px;
+        margin-top: 0%;
         padding: 0px;
     }
-    .firstslide{
-        width: 100%;
+    header ul{
         display: block;
-        padding: 0%;
+        padding: 3%; 
     }
-    .head{
-        margin-left: 3% 
+    header ul li{
+        margin-top: 4%;
     }
-    .menuIcon{
+    #menuIcon{
         display: flex;
         justify-content: end;
-        margin-right: 3% 
-    }
-    .menuIcon img{
-        height: 1.5em;
-        width: 100%;
-        display: block;
+        margin-right: 10%;
+        width: 7%;
     }
     .logos{
         font-size: medium;
         margin-left: 3% 
     }
-    .link{
-        display: none;
+    #link{
+        margin-right: 0%;
         width: 100%;
         background-image: linear-gradient(to right, rgb(225, 137, 30) , rgb(206, 232, 39));
     }
@@ -475,7 +470,7 @@ header h1{
         margin-left: 0%;
         margin-right: 0;
     }
-    .link{
+    #link{
         animation: fadeIn 6s;
     }
     @keyframes fadeIn{

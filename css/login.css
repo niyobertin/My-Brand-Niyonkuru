@@ -1,0 +1,50 @@
+#login-form1{
+    background-color: #1e1e1e;
+    padding: 1%;
+    margin-left: 20%;
+    margin-right: 20%;
+    border-radius: 20px;
+}
+.login-contact h2{
+    color: yellow;
+    text-align: center;
+}
+.input-area{
+    margin-left: 20%;
+    margin-right: 20%;
+}
+input{
+    background-color: #1e1e1e;
+    width: 100%;
+    padding: 2%;
+    border-radius: 10px;
+    border: 1px solid yellow;
+}
+.email, .Password{
+    margin-top: 10%;
+    }
+    #login-botton,#sign{
+        background-color: black;
+        width: 50%;
+        height: 2rem;
+        border-radius: 10px;
+        color: rgb(255, 255, 255);
+        font-size: larger;
+        font-weight: bolder;
+    }
+    #signUp a{
+        color: yellow;
+    }
+    @media screen and (max-width: 800px){
+        #login-form1{
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            font-size: 100%;
+            padding-top: 2%;
+            padding-bottom: 2%;
+        }
+        #login-botton{
+            font-size: small;
+        }
+    }

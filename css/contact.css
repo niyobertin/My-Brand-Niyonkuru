@@ -43,3 +43,16 @@ input ,textarea{
     font-size: larger;
     font-weight: bolder;
 }
+@media screen and (max-width: 800px){
+    #form1{
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        font-size: 100%;
+        padding-top: 2%;
+        padding-bottom: 2%;
+    }
+    #send-message{
+        font-size: small;
+    }
+}
