@@ -52,6 +52,9 @@ header h1{
     width: 2%;
     display: none;
 }
+.logo{
+    cursor: pointer;
+}
 header ul li{
     position: relative;
     list-style: none;
@@ -64,10 +67,6 @@ header ul li a{
     text-decoration: none;
     color: white;
     transition: 1s;
-}
-#settings{
-    list-style: none; 
-    margin-right: 10%; 
 }
 #settings p{
     cursor: pointer;
@@ -149,9 +148,9 @@ img{
     width: 0;
     position: fixed;
     z-index:  1;
-    top: 0;
+    top:0;
     right: 0;
-    background-image: linear-gradient(to right, rgb(225, 137, 30) , rgb(206, 232, 39));
+    background-image: linear-gradient(to right, rgb(144, 103, 54) , rgb(213, 232, 39));
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 6%;
@@ -172,26 +171,36 @@ img{
   
   .sidenav .closebtn {
     position: absolute;
-    top: 0;
+    top: 0%;
     right: 2%;
     font-size: xx-large;
-    margin-left: 50px;
+    margin-left: 2%;
+    }
+
+    .bacgraoundImage{
+        height: 5em;
+        width: 30%;
+        margin-left: 10%;
+        border-radius: 50%;
+        filter: blur(5em);
     }
    @media screen and (max-height: 800px) {
         .sidenav {padding-top: 20%;}
         .sidenav a {font-size: 100%;}
-        /* #link{
+  }
+  @media screen and (max-width: 800px){
+#link{
             margin: 0;
             width: 100%;
             font-size: 100%;
         }
         header ul{
-            /* display: block; */
-            /* width: 100%;  
-            margin-left: 3%;
+             display: block; 
+            width: 100%;  
             font-size: 100%;
         }
         header ul li{
+            margin-left: 9%;
             margin-top: 3%;
             font-size: 100%;
         }
@@ -199,15 +208,17 @@ img{
             display: none;
         }
         #settings{
-            margin-left: 3%;
+            margin-top: 3%;
+            margin-left: 9%;
             font-size: 100%;
         }
         .logo{
+            padding: 3%;
             font-size: 100%;
         }
         #menuIcon{
             width: 8%;
-            margin: 3%;
+            margin-right: 7%;
             display: block;
         }
         .contents{
@@ -221,10 +232,17 @@ img{
         .comment-number, .querry-number, .artical-number{
             width: 90%;
             text-align: center;
-            margin-top:3% ;
+            margin-top:9% ;
             margin-left: 5%;
             font-size: small;
             padding: 0;
+        }
+        .bacgraoundImage{
+            display: none;
+        }
+        .sidenav {
+            height: 100%;
+            top: 0;
         }
         img{
             width: 15%;
@@ -233,9 +251,9 @@ img{
             padding: 0;
             width: 90%;
             margin: 0;
-            margin-top: 3%;
+            margin-top: 9%;
             margin-left: 5%;
-        font-size: small;
-        } */ */
+            font-size: small;
+        } 
   }
 

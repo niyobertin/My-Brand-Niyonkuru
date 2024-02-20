@@ -8,14 +8,13 @@
 </head>
 <body>
     <header id="head">
-        <h1 class="logo">Niyonkuru<span id="bullet">.</span></h1>
-        <img src="../images/menu.jpeg" alt="menu image" id="menuIcon" onclick="showhide()">
+        <h1 class="logo" onclick="openNav()">Niyonkuru<span id="bullet">.</span></h1>
         <ul id="link">
             <li><a href="">Dashboard</a></li>
             <li><a href="">Add Article</a></li>
             <li><a href="">View Article</a></li>
         </ul>
-        <li id="settings"><p  onclick="openNav()">Settings <span id="allowDawn">˅</span></p></li>
+         <span style="font-size:30px;cursor:pointer" onclick="openNav()" id="menuIcon">&#9776;
     </header>
     <main>
         <div class="contents">
@@ -25,7 +24,7 @@
             <div class="artical-number">
                 <p><img src="../images/artical.jpg" alt=""><br/>40articals</p>
             </div>
-
+            <img class="bacgraoundImage "src="../images/yellow-cardboard-background-flat-lay-top-view_164357-2985.avif" alt="bacgraound Image">
             <div class="querry-number">
                 <p><img src="../images/Message.jpg" alt="message"><br/>40queries</p>
             </div>
@@ -43,12 +42,14 @@
         </div>
         <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="">Dashboard</a>
+            <a href="">Add Article</a>
+            <a href="">View Article</a>
             <a href="#">Profile</a>
             <a href="#">Edit profile</a>
             <a href="#">Users</a>
             <a href="#">Log Out</a>
           </div>
-          <!-- <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; -->
     </main>
     <script src="../javaScript/index.js"></script>
 </body>
