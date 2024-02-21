@@ -8,48 +8,58 @@
 </head>
 <body>
     <header id="head">
-        <h1 class="logo" onclick="openNav()">Niyonkuru<span id="bullet">.</span></h1>
+        <h1 class="logo">Niyonkuru<span id="bullet">.</span></h1>
         <ul id="link">
-            <li><a href="">Dashboard</a></li>
-            <li><a href="">Add Article</a></li>
-            <li><a href="">View Article</a></li>
+            <ul id="link">
+                <marquee behavior="" direction="">The World Needs Who You Were Made to Be
+                    by "<span id="quote">Joanna Gaines</span>"
+                    </marquee>
+            </ul>
         </ul>
          <span style="font-size:30px;cursor:pointer" onclick="openNav()" id="menuIcon">&#9776;
     </header>
     <main>
-        <div class="contents">
-            <div class="comment-number">
-                <p><img src="../images/Message.jpg" alt="message"><br/>40Messages</p>
+       <div class="adminPanel">
+            <div id="sidenav" class="sidenav">
+                <a href="">Dashboard</a>
+                <a href="add.blogs.html">Add Article</a>
+                <a href="artical.html">View Article</a>
+                <a href="#">Profile</a>
+                <a href="#">Edit profile</a>
+                <a href="#">Users</a>
+                <a href="#">Log Out</a>
             </div>
-            <div class="artical-number">
-                <p><img src="../images/artical.jpg" alt=""><br/>40articals</p>
-            </div>
-            <img class="bacgraoundImage "src="../images/yellow-cardboard-background-flat-lay-top-view_164357-2985.avif" alt="bacgraound Image">
-            <div class="querry-number">
-                <p><img src="../images/Message.jpg" alt="message"><br/>40queries</p>
-            </div>
-            <div class="querry-number">
-                <p><img src="../images/like.JPG" alt="message"><br/>40likes</p>
-            </div>
-            <div class="newest-query">
-                <p>
-                    <span id="userName">John Doe</span><br/>
-                    this is the new comment
-                </p>
-                <button id="replay">Replay</button>
-                <button id="delete">Delete</button>
+            <div class="contents">
+                <div class="comment-number">
+                    <p><img src="../images/Message.jpg" alt="message"><br/>40Messages</p>
+                </div>
+                <div class="artical-number">
+                    <p><img src="../images/artical.jpg" alt=""><br/>40articals</p>
+                </div>
+                <div class="querry-number">
+                    <p><img src="../images/Message.jpg" alt="message"><br/>40queries</p>
+                </div>
+                <div class="querry-number">
+                    <p><img src="../images/like.JPG" alt="message"><br/>40likes</p>
+                </div>
+                <div class="newest-query">
+                    <p>
+                        <span id="userName">John Doe</span><br/>
+                        this is the new comment
+                    </p>
+                    <button id="replay">Replay</button>
+                    <button id="delete">Delete</button>
+                </div>
+                <div class="newest-query">
+                    <p>
+                        <span id="userName">John Doe</span><br/>
+                        this is the new comment
+                    </p>
+                    <button id="replay">Replay</button>
+                    <button id="delete">Delete</button>
+                </div>
             </div>
         </div>
-        <div id="mySidenav" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href="">Dashboard</a>
-            <a href="">Add Article</a>
-            <a href="">View Article</a>
-            <a href="#">Profile</a>
-            <a href="#">Edit profile</a>
-            <a href="#">Users</a>
-            <a href="#">Log Out</a>
-          </div>
     </main>
     <script src="../javaScript/index.js"></script>
 </body>

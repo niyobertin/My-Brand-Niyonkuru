@@ -28,6 +28,7 @@ body{
 margin-top: 2%;
 }
 input ,textarea{
+    color: white;
     background-color: #1e1e1e;
     width: 100%;
     padding: 1%;

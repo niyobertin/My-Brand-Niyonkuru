@@ -4,10 +4,13 @@
     font-family: sans-serif;
 }
 body{
+    margin-top: 5%;
     background-color: black;
     color: white;
 }
 header{
+    top: 0;
+    position: fixed;
     margin: 0px;
     overflow: hidden;
     background-color: #1e1e1e;
@@ -54,6 +57,8 @@ header h1{
 }
 .logo{
     cursor: pointer;
+    margin-left: 4%;
+    font-size: larger;
 }
 header ul li{
     position: relative;
@@ -87,40 +92,63 @@ a:hover{
     color: yellow;
     font-size: large;
 }
-.contents{
-    display: flex;
-    position: relative;
-    justify-content: space-between;
-    align-items: center;
-    flex: 2;
-    gap: 40%;
-    padding: 10%;
-    flex-wrap: wrap;
+/* admin panel */
+.adminPanel{
+display: flex;
+justify-content: space-between;
+}
+.sidenav{
+    position: fixed;
+    background-color:#1e1e1e;
+    width: fit-content;
+    font-size: 100%;
+    display: block;
+    width: 15%;
+    height: 100%;
+}
+.sidenav a{
+    font-size: 100%;
+    display: block;
     margin-left: 20%;
-    margin-right: 20%;
+    padding: 15%;
+    text-decoration: none;
+    color: white;
+}
+/* admin panel */
+
+.contents{
+   display: flex;
+   justify-content:center;
+   align-items: center;
+   flex-wrap: wrap;
+   flex: 1;
+   padding: 2%;
+   width: 100%;
 }
 .comment-number, .querry-number, .artical-number{
+    position: relative;
     background-color: #1e1e1e;
     height: fit-content;
     text-align: center;
-    width: 15%;
-    padding: 5%;
+    width: 10%;
+    padding: 2%;
     border-radius: 10px;
     margin: 1%;
     font-size: 90%;
     cursor: pointer;
 }
 img{
-    width: 50%;
+    width: 20%;
 }
 .newest-query{
     background-color: #1e1e1e;
     height: fit-content;
-    width: 70%;
+    width: 61%;
     letter-spacing: 2%;
     padding: 1%;
     border-radius: 10px;
     margin: 1%;
+    margin-left: 1%;
     font-size: 90%;
 }
 #replay{
@@ -142,57 +170,47 @@ img{
     border-radius: 8px;
     cursor: pointer;
 }
-/* side nav */
-.sidenav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index:  1;
-    top:0;
-    right: 0;
-    background-image: linear-gradient(to right, rgb(144, 103, 54) , rgb(213, 232, 39));
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 6%;
-  }
-  
-  .sidenav a {
-    padding:  6%;
-    text-decoration: none;
-    font-size: 100%;
-    color: white;
-    display: block;
-    transition: 0.3s;
-  }
-  
-  .sidenav a:hover {
-    color: #f1f1f1;
-  }
-  
-  .sidenav .closebtn {
-    position: absolute;
-    top: 0%;
-    right: 2%;
-    font-size: xx-large;
-    margin-left: 2%;
-    }
-
     .bacgraoundImage{
+        display: flex;
+        justify-content: center;
+        align-items: center;
         height: 5em;
         width: 30%;
-        margin-left: 10%;
+         margin-left: 30%;
         border-radius: 50%;
-        filter: blur(5em);
+        filter: blur(9em);
     }
-   @media screen and (max-height: 800px) {
-        .sidenav {padding-top: 20%;}
-        .sidenav a {font-size: 100%;}
-  }
+
+    /* View Articals */
+    .blog1{
+        display: flex;
+        justify-content: space-between;
+        background-color: #1e1e1e;
+        width: 100%;
+        margin-bottom: 2%;
+        margin-left: 20%;
+        margin-right: 10%;
+        padding: 2%;
+        border-radius: 5px;
+    }
+    .blog1 img{
+        width: 60%;
+    }
+    .controllers{
+        display: flex;
+    }
+    #quote{
+        color: yellow;
+    }
   @media screen and (max-width: 800px){
-#link{
+        #link{
             margin: 0;
             width: 100%;
             font-size: 100%;
+        }
+        header{
+            top: 0%;
+            position: fixed;
         }
         header ul{
              display: block; 
@@ -223,7 +241,7 @@ img{
         }
         .contents{
             padding: 0;
-            margin: 0;
+            margin-top: 9%;
             width: 100%;
             display: block;
             justify-content: center;
@@ -232,28 +250,40 @@ img{
         .comment-number, .querry-number, .artical-number{
             width: 90%;
             text-align: center;
-            margin-top:9% ;
+            margin-top:2% ;
             margin-left: 5%;
             font-size: small;
             padding: 0;
         }
-        .bacgraoundImage{
-            display: none;
-        }
         .sidenav {
+            background-image: linear-gradient(to right, rgb(225, 137, 30) , rgb(206, 232, 39));
+            position: relative;
+            display: none;
             height: 100%;
-            top: 0;
+            margin-top: 7.6%;
+            width:25%;	
+        }
+        .sidenav a{
+            margin-left: 3%;
+            font-size: 80%;
         }
         img{
-            width: 15%;
+            width: 10%;
         }
         .newest-query{
             padding: 0;
             width: 90%;
             margin: 0;
-            margin-top: 9%;
+            margin-top: 3%;
             margin-left: 5%;
             font-size: small;
         } 
+    
+        /* view blogs */
+        .blog1{
+            width: 90%;
+            margin-left: 3%;
+            margin-right: 5%;
+        }
   }
 

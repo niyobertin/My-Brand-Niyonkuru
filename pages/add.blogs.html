@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add blogs</title>
+    <link rel="stylesheet" href="../css/add.blogs.css">
+    <link rel="stylesheet" href="../css/admin.css">
+    <!-- font awesome icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap">
+</head>
+<body>
+    <header id="head">
+        <h1 class="logo">Niyonkuru<span id="bullet">.</span></h1>
+        <ul id="link">
+            <marquee behavior="" direction="">The World Needs Who You Were Made to Be
+                by "<span id="quote">Joanna Gaines</span>"
+                </marquee>
+        </ul>
+         <span style="font-size:30px;cursor:pointer" onclick="openNav()" id="menuIcon">&#9776;
+    </header>
+    <div class="addBlogs">
+        <div id="sidenav" class="sidenav">
+            <a href="admin.html">Dashboard</a>
+            <a href="add.blogs.html">Add Article</a>
+            <a href="artical.html">View Article</a>
+            <a href="#">Profile</a>
+            <a href="#">Edit profile</a>
+            <a href="#">Users</a>
+            <a href="#">Log Out</a>
+        </div>
+        <div class="add-blogs">
+            <h2>Add blogs</h2>
+            <div id="form1">
+                <form action="" class="input-area">
+                    <div class="title">
+                        Tilte<br/>
+                        <input type="text">
+                    </div> 
+                        <div class="file">
+                        Upload an image<br/>
+                        <input type="file">
+                    </div> 
+                </form>
+                <span id="description">Description</span><br/>
+                <div class="conteiner">
+                    <div class="options">
+                        <!-- text format -->
+                        <button id="bold" class="option-button format">
+                            <i class="fa-solid fa-bold"></i>
+                        </button>
+                        <button id="italic" class="option-button format">
+                            <i class="fa-solid fa-italic"></i>
+                        </button>
+                        <button id="undeline" class="option-button format">
+                            <i class="fa-solid fa-underline"></i>
+                        </button>
+                        <button id="stikethrough" class="option-button format">
+                            <i class="fa-solid fa-strikethrough"></i>
+                        </button>
+                        <button id="superscript" class="option-button script">
+                            <i class="fa-solid fa-superscript"></i>
+                        </button>
+                        <button id="subscript" class="option-button script">
+                            <i class="fa-solid fa-subscript"></i>
+                        </button>
+            
+                        <!-- List -->
+                        
+                        <button id="insertOrderList" class="option-button">
+                            <i class="fa-solid fa-list-ol"></i>
+                        </button>
+                        <button id="insertUnorderedList" class="option-button">
+                            <i class="fa-solid fa-list"></i>
+                        </button>
+            
+                        <!-- undo/Redo -->
+            
+                        <button id="undo" class="option-button">
+                            <i class="fa-solid fa-rotate-left"></i>
+                        </button>
+                        <button id="redo" class="option-button">
+                            <i class="fa-solid fa-rotate-right"></i>
+                        </button>
+            
+                        <!-- Link -->
+            
+                        <button id="creatLink" class="adv-option-button">
+                            <i class="fa-solid fa-link"></i>
+                        </button>
+                        <button id="unlink" class="option-button">
+                            <i class="fa-solid fa-link-slash"></i> 
+                        </button>
+            
+                        <!-- Alignment -->
+                        <button id="justfyLeft" class="option-button align">
+                            <i class="fa-solid fa-align-left"></i>
+                        </button>
+                        <button id="justfyCenter" class="option-button align">
+                            <i class="fa-solid fa-align-center"></i>
+                        </button>
+                        <button id="justfayRight" class="option-button align">
+                            <i class="fa-solid fa-align-right"></i>
+                        </button>
+                        <button id="justfayFull" class="option-button align">
+                            <i class="fa-solid fa-align-justify"></i>
+                        </button>
+                        <button id="indent" class="option-button spacing">
+                            <i class="fa-solid fa-indent"></i>
+                        </button>
+                        <button id="outdent" class="option-button spacing">
+                            <i class="fa-solid fa-outdent"></i>
+                        </button>
+                        <!--Headings-->
+                        <select id="formatBlock" class="adv-option-button">
+                            <option value="H1">H1</option>
+                            <option value="H2">H2</option>
+                            <option value="H3">H3</option>
+                            <option value="H4">H4</option>
+                            <option value="H5">H5</option>
+                            <option value="H6">H6</option>
+                        </select>
+                        <!-- font -->
+                        <select name="" id="fontName" class="adv-option-button"></select>
+                        <select name="" id="fontSize" class="adv-option-button"></select>
+                        <!--Color-->
+                        <div class="input-wrapper">
+                            <input type="color"  id="foreColor" class="adv-option-button">
+                            <label for="foreColor">Font Color</label>
+                        </div>
+                        <div class="input-wrapper">
+                            <input type="color" id="backColor" class="adv-option-button">
+                            <label for="backColor">Highlight Color</label>
+                        </div>
+                    </div>
+                    <div id="text-input" contenteditable="true"></div>
+                    <button id="login-botton">Add</button>
+                </div>    
+            </div>
+        </div>
+    </div>
+    <script src="../javaScript/add.blogs.js"></script>
+</body>
+</html>

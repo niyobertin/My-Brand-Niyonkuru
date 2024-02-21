@@ -31,9 +31,11 @@ const  stickyNav =()=> {
 }
 
 function openNav() {
-  document.getElementById("mySidenav").style.width = "250px";
+  const sidNav =  document.getElementById("sidenav");
+  if(sidNav.style.display === "none"){
+    sidNav.style.display = "block"
+  }else{
+    sidNav.style.display = 'none';
+  }
 }
 
-function closeNav() {
-  document.getElementById("mySidenav").style.width = "0";
-}
