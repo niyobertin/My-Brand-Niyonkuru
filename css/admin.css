@@ -182,7 +182,7 @@ img{
     }
 
     /* View Articals */
-    .blog1{
+    .blog2{
         display: flex;
         justify-content: space-between;
         background-color: #1e1e1e;
@@ -193,7 +193,7 @@ img{
         padding: 2%;
         border-radius: 5px;
     }
-    .blog1 img{
+    .blog2 img{
         width: 60%;
     }
     .controllers{
@@ -201,6 +201,25 @@ img{
     }
     #quote{
         color: yellow;
+    }
+    /* user */
+
+    #userContent{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-left: 20%;
+        margin-right: 20%;
+        margin-top: 1%;
+        font-size: 100%;
+    }
+    #name, #email, #username{
+        margin-top: 10%;
+    }
+    #titles{
+        color: yellow;
+        text-transform: uppercase;
     }
   @media screen and (max-width: 800px){
         #link{

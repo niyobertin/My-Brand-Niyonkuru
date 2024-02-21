@@ -39,3 +39,31 @@ function openNav() {
   }
 }
 
+// Sliders
+
+const initSlider = () =>{
+  const blogList = document.querySelector(".blogs-list")
+  const sliderButtons = document.querySelectorAll(".slide-buton");
+  const maxLeftScroll = blogList.scrollWidth - blogList.clientWidth;
+sliderButtons.forEach((button) => {
+  button.addEventListener('click',() => {
+    const direction = button.id ==="next-slide" ? -1 : 1;
+    const scrollAmount = blogList.clientWidth * direction;
+    blogList.scrollBy({left:scrollAmount,behavior:"smooth"});
+  });
+});
+const controllSlideButtons = () => {
+  sliderButtons[0].style.display = blogList.scrollLeft <= 0 ? "none" : "block";
+  sliderButtons[1].style.display = blogList.scrollLeft >= maxLeftScroll ? "none" : "block";
+
+}
+blogList.addEventListener("scroll",() => {
+  controllSlideButtons();
+})
+
+
+};
+
+
+window.addEventListener('load',initSlider);
+
