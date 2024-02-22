@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap">
 </head>
-<body>
+<body onkeydown="hideError ()">
     <header id="head">
         <h1 class="logo">Niyonkuru<span id="bullet">.</span></h1>
         <ul id="link">
@@ -31,14 +31,14 @@
             <div id="form1">
                 <div class="conteiner">
                     <div class="title">
-                    Blog Title<br/>
-                        <input type="text">
+                    <span id="blogTitle-label">Blog Title</span><br/>
+                        <input type="text" id="blogTitle">
                     </div> 
                     <div class="file">
-                        Upload an image<br/>
-                        <input type="file">
+                        <span id="aplodImage-label">Upload an image</span><br/>
+                        <input type="file" id="aplodImage">
                     </div> <br/><br/>
-                    <h4 id="description">Description</h4>
+                    <p id="desc">Description</p>
                     <div class="options">
                         <!-- text format -->
                         <button id="bold" class="option-button format">
@@ -106,11 +106,12 @@
                         </div>
                     </div>
                     <div id="text-input" contenteditable="true"></div>
-                    <button id="login-botton">Add</button>
+                    <button id="login-botton" type="button" style="cursor: pointer;" onclick="addBlogs()">Add</button>
                 </div>    
             </div>
         </div>
     </div>
     <script src="../javaScript/add.blogs.js"></script>
+    <script src="../javaScript/formValidation.js"></script>
 </body>
 </html>

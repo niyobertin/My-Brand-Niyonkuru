@@ -85,14 +85,6 @@ color: yellow;
    width: 6%;
    border-radius: 50%;
 }
-#settings p{
-    cursor: pointer;
-    background-color: #1e1e1e;
-    position: relative;
-    text-decoration: none;
-    color: white;
-    transition: 1s;  
-}
 #settings a:hover{
     color: yellow;
 }
@@ -106,6 +98,7 @@ a:hover{
 }
 /* admin panel */
 .adminPanel{
+ padding-top: 2%;
 display: flex;
 justify-content: space-between;
 }
@@ -235,13 +228,11 @@ img{
             margin-top: 3%;
             font-size: 100%;
         }
+        .adminPanel{
+            padding-top: 0;
+        }
         #link{
             display: none;
-        }
-        #settings{
-            margin-top: 3%;
-            margin-left: 9%;
-            font-size: 100%;
         }
         .logo{
             padding: 3%;

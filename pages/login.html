@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../css/login.css">
     <title>log in</title>
 </head>
-<body>
+<body onkeydown="loginFunc()">
     <header style="background-color: black;">
         <ul>
             <li><a href="home.html">Home</a></li>
@@ -20,20 +20,20 @@
             <div id="login-form1">
                 <form action="" class="input-area">
                     <div class="email">
-                        <label for="email">Email</label><br/>
-                        <input type="text">
+                        <label for="email" id="login-email">Email</label><br/>
+                        <input type="email" id="loginEmail">
                     </div>  
                      <div class="Password">
-                        <label for="Password">Password</label><br/>
-                        <input type="Password">
+                        <label for="Password" id="password-label">Password</label><br/>
+                        <input type="Password"  id="password">
                     </div> <br/>
-                    <button id="login-botton">Log in</button> or
+                    <button id="login-botton" type="button" onclick="loginValidation()">Log in</button> or
                     <a href="signup.html" id="signUp" style="color: yellow;">Sign Up</a>
                  </form>  
              </div>
         </div>
     </main>
     <footer></footer>
-    <script src="../javaScript/index.js"></script>
+    <script src="../javaScript/formValidation.js"></script>
 </body>
 </html>

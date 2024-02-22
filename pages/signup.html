@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../css/login.css">
     <title>sign up</title>
 </head>
-<body>
+<body onkeydown="signUpFunc()">
     <header style="background-color: black;">
         <ul>
             <li><a href="home.html">Home</a></li>
@@ -20,28 +20,28 @@
             <div id="login-form1">
                 <form action="" class="input-area">
                     <div class="username">
-                        <label for="username">Username</label><br/>
-                        <input type="text">
+                        <label for="username" id="username-label">Username</label><br/>
+                        <input type="text" id="username">
                     </div>
                     <div class="email">
-                        <label for="email">Email</label><br/>
-                        <input type="text">
+                        <label for="email" id="emailLabel">Email</label><br/>
+                        <input type="email" id="signupEmail">
                     </div>  
                      <div class="Password">
-                        <label for="Password">Password</label><br/>
-                        <input type="Password">
+                        <label for="Password" id="password-config1">Password</label><br/>
+                        <input type="Password" id="sign-up-password1">
                     </div>
                     <div class="Password">
-                        <label for="Password">Comfirm password</label><br/>
-                        <input type="Password">
+                        <label for="Password" id="password-config2">Comfirm password</label><br/>
+                        <input type="Password" id="sign-up-password2">
                     </div> <br/>
-                    <button id="login-botton">Sign Up</button> or
+                    <button id="login-botton" type="button" style="cursor: pointer;" onclick="signUpValidate()">Sign Up</button> or
                     <a href="login.html" id="signUp" style="color: yellow;">Log in</a>
                  </form>  
              </div>
         </div>
     </main>
     <footer></footer>
-    <script src="../javaScript/index.js"></script>
+    <script src="../javaScript/formValidation.js"></script>
 </body>
 </html>
