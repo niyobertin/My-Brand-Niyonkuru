@@ -1,6 +1,6 @@
 let optionButton = document.querySelectorAll(".option-button");
 let advancedOptionButton = document.querySelectorAll(".adv-option-button");
-let fontName = document.getElementById('fontName');
+let fontName = document.getElementById("fontName");
 let fontSizeRef = document.getElementById("fontSize");
 let writingArea = document.getElementById("text-input");
 let linkButton = document.getElementById("creatLink");
@@ -8,14 +8,6 @@ let alignButtons = document.querySelectorAll(".align");
 let spacingButton = document.querySelectorAll(".spacing");
 let formatButton = document.querySelectorAll(".format");
 let scriptButton = document.querySelectorAll(".script");
-
-
-//List fo fontlist
-
-let fontList = ['Arial','Verdana','Times New Roman','Garamond',
-'Georogia','Courier New','Cursive','Fantasy','Sans serif','Consolas'
-,'TaHoma','Helvetica ']
-
 //Intial settings
 
 const intializer = () => {
@@ -26,30 +18,11 @@ const intializer = () => {
     highlighter(spacingButton,true);
     highlighter(formatButton,false);
     highlighter(scriptButton,true);
-
-    //creating options for font names
-    fontList.map((value) => {
-        let option = document.createElement("option");
-        option.value = value;
-        option.innerHTML = value;
-        fontName.appendChild(option);
-    });
-
-    //Font sise allow to 100
-
-        for(let i = 1; i<= 100;i++){
-            let option  = document .createElement("option");
-            option.value = i;
-            option.innerHTML = i;
-            fontSizeRef.appendChild(option);
-        }
-        //default size
-        fontSizeRef.value = 3;
 }
 //Main logic
-const textModification = (command,defaultUi,value) =>{
+const textModification = (command,defaultValue,value) =>{
     //execCommand exectes command on selected text
-    document.execCommand(command,defaultUi,value);
+    document.execCommand(command,defaultValue,value);
 };
 
 //adding event listeners on buttons of basic operations
@@ -106,7 +79,7 @@ const highlighter = (className,needsRemoval) => {
 //function to temove the highlight
 const highlighterRemover = (className) =>{
 className.forEach((button) =>{
-    button.classList.remove
+    button.classList.remove('active');
 })
 }
 window.onload = intializer('active');

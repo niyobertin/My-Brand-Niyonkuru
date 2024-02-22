@@ -215,25 +215,6 @@ img{
     #quote{
         color: yellow;
     }
-    /* user */
-
-    #userContent{
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        margin-left: 20%;
-        margin-right: 20%;
-        margin-top: 1%;
-        font-size: 100%;
-    }
-    #name, #email, #username{
-        margin-top: 10%;
-    }
-    #titles{
-        color: yellow;
-        text-transform: uppercase;
-    }
   @media screen and (max-width: 800px){
         #link{
             margin: 0;

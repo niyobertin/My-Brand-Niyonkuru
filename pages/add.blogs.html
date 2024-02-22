@@ -47,12 +47,6 @@
                         <button id="italic" class="option-button format">
                             <i class="fa-solid fa-italic"></i>
                         </button>
-                        <button id="undeline" class="option-button format">
-                            <i class="fa-solid fa-underline"></i>
-                        </button>
-                        <button id="stikethrough" class="option-button format">
-                            <i class="fa-solid fa-strikethrough"></i>
-                        </button>
                         <button id="superscript" class="option-button script">
                             <i class="fa-solid fa-superscript"></i>
                         </button>
@@ -61,8 +55,7 @@
                         </button>
             
                         <!-- List -->
-                        
-                        <button id="insertOrderList" class="option-button">
+                        <button id="insertOrderedList" class="option-button">
                             <i class="fa-solid fa-list-ol"></i>
                         </button>
                         <button id="insertUnorderedList" class="option-button">
@@ -80,7 +73,7 @@
             
                         <!-- Link -->
             
-                        <button id="creatLink" class="adv-option-button">
+                        <button id="creatLink" class="option-button">
                             <i class="fa-solid fa-link"></i>
                         </button>
                         <button id="unlink" class="option-button">
@@ -88,16 +81,16 @@
                         </button>
             
                         <!-- Alignment -->
-                        <button id="justfyLeft" class="option-button align">
+                        <button id="justifyLeft" class="option-button align">
                             <i class="fa-solid fa-align-left"></i>
                         </button>
-                        <button id="justfyCenter" class="option-button align">
+                        <button id="justifyCenter" class="option-button align">
                             <i class="fa-solid fa-align-center"></i>
                         </button>
-                        <button id="justfayRight" class="option-button align">
+                        <button id="justifyRight" class="option-button align">
                             <i class="fa-solid fa-align-right"></i>
                         </button>
-                        <button id="justfayFull" class="option-button align">
+                        <button id="justifyFull" class="option-button align">
                             <i class="fa-solid fa-align-justify"></i>
                         </button>
                         <button id="indent" class="option-button spacing">
@@ -106,26 +99,10 @@
                         <button id="outdent" class="option-button spacing">
                             <i class="fa-solid fa-outdent"></i>
                         </button>
-                        <!--Headings-->
-                        <select id="formatBlock" class="adv-option-button">
-                            <option value="H1">H1</option>
-                            <option value="H2">H2</option>
-                            <option value="H3">H3</option>
-                            <option value="H4">H4</option>
-                            <option value="H5">H5</option>
-                            <option value="H6">H6</option>
-                        </select>
-                        <!-- font -->
-                        <select name="" id="fontName" class="adv-option-button"></select>
-                        <select name="" id="fontSize" class="adv-option-button"></select>
                         <!--Color-->
                         <div class="input-wrapper">
                             <input type="color"  id="foreColor" class="adv-option-button">
-                            <label for="foreColor">Font Color</label>
-                        </div>
-                        <div class="input-wrapper">
-                            <input type="color" id="backColor" class="adv-option-button">
-                            <label for="backColor">Highlight Color</label>
+                            <label for="foreColor" id="textColor">Font Color</label>
                         </div>
                     </div>
                     <div id="text-input" contenteditable="true"></div>
