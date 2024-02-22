@@ -73,6 +73,18 @@ header ul li a{
     color: white;
     transition: 1s;
 }
+#link{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+#link h2{
+color: yellow;
+}
+#link img{
+   width: 6%;
+   border-radius: 50%;
+}
 #settings p{
     cursor: pointer;
     background-color: #1e1e1e;
@@ -110,7 +122,8 @@ justify-content: space-between;
     font-size: 100%;
     display: block;
     margin-left: 20%;
-    padding: 15%;
+    padding-top: 15%;
+    padding-bottom: 15%;
     text-decoration: none;
     color: white;
 }
@@ -187,10 +200,10 @@ img{
         justify-content: space-between;
         background-color: #1e1e1e;
         width: 100%;
-        margin-bottom: 2%;
+        margin-top: 2%;
         margin-left: 20%;
         margin-right: 10%;
-        padding: 2%;
+        padding: 1%;
         border-radius: 5px;
     }
     .blog2 img{
@@ -284,7 +297,7 @@ img{
         }
         .sidenav a{
             margin-left: 3%;
-            font-size: 80%;
+            font-size: 100%;
         }
         img{
             width: 10%;
@@ -299,9 +312,9 @@ img{
         } 
     
         /* view blogs */
-        .blog1{
+        .blog2{
             width: 90%;
-            margin-left: 3%;
+            margin-left: 4%;
             margin-right: 5%;
         }
   }

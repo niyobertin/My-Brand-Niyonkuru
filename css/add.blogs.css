@@ -15,6 +15,49 @@ header{
 .sidenav{
    position: fixed;
 }
+#link{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+#link h2{
+color: yellow;
+}
+#link img{
+   width: 6%;
+   border-radius: 50%;
+}
+.addBlogs{
+   display: flex;
+   flex-wrap: wrap;
+   flex: 1;
+   gap: 7.5%;
+ }
+.sidenavigation{
+   background-color: #1e1e1e;
+   position: sticky;
+   height: 100%;
+   width: 15%;
+   font-size: 100%;
+   display: grid;
+   margin-top: 2.4%;
+}
+.conteiner{
+   background-color: #1e1e1e;
+   width: 60%;
+   position: absolute;
+   display: block;
+   padding: 2% 2%;
+   margin-top: 2%;
+   border-radius: 10px;
+}
+.sidenavigation a{
+   margin-top: 30%;
+   margin-bottom: 12%;
+   text-align: center;
+   color: white;
+   text-decoration: none;
+}
 .add-blogs{
     margin-top: 2%;
  }
@@ -37,20 +80,16 @@ header{
  .file input{
     width: 50%;
     padding: 0.9%;
-    background-color: black;
+    background-color: #1e1e1e;
     border-radius: 10px;
  }
-.conteiner{
-    background-color: #1e1e1e;
-    width: 70%;
-    position: absolute;
-    padding: 2% 2%;
-    margin-top: 13%;
-    border-radius: 10px;
-    left: 20%;
-}
 #description{
-   margin-left: 20%;
+   margin-left: 40%;
+   top:14%;
+}
+.options{
+   border-top: rgb(65, 65, 2) 0.2px solid;
+   margin-top: 1%;
 }
 .options{
     display: flex;
@@ -125,12 +164,6 @@ select{
   position: absolute;
   left: 50%;
  }
- .addBlogs{
-   display: flex;
-   flex-wrap: wrap;
-   flex: 1;
-   justify-content: space-between;
- }
  .input-area{
     width: 70%;
     position: absolute;
@@ -180,22 +213,42 @@ select{
    .add-blogs{
       display: flex;
    }
+   .addBlogs{
+      display: flex;
+    }
+    .sidenavigation {
+      background-image: #1e1e1e;
+      position: absolute;
+      display: none;
+      justify-content: space-between;
+      height: fit-content;
+      margin-top: 7.5%;
+      width:100%;	
+      transition: 0.6s;
+  }
+  .sidenavigation a{
+       display:block;
+       text-align: start;
+       margin: 0;
+      margin-left: 5%;
+      font-size: 90%;
+  } 
    .conteiner{
+      margin-top: 32%;
       width: 100%;
-      margin-top: 60%;
-      left: 0;
       right: 0;
-   }
-   .add-blogs h2{
-      margin-top: 8%;
-     width: 100%;
-      left: 0;
    }
    .input-area{
       width: 100%;
       margin-left: 0%;
       margin-top: 20%;
       left: 0;
+   }
+   .file input{
+      width: 90%;
+   }
+   .title input{
+      width: 90%;
    }
    .input-area input{
       width: 100%;
@@ -206,20 +259,8 @@ select{
       display: block;
   }
    #description{
-      margin-top: 53%;
-      margin-left: 2%;
+      margin-top: 20%;
+      text-align: center;
    }
-   .sidenav {
-       background-image: linear-gradient(to right, rgb(225, 137, 30) , rgb(206, 232, 39));
-       position: relative;
-       display: block;
-       height: 100%;
-       margin-top: 7.6%;
-       width:25%;	
-   }
-   .sidenav a{
-       margin-left: 3%;
-       font-size: 80%;
-   } 
 }
 
