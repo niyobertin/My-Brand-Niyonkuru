@@ -8,6 +8,7 @@ let menuList = document.getElementById("link");
         link.addEventListener("click",() =>{
         const navbar = document.getElementById("link");
         navbar.style.display = "none";
+        location.reload();
       })
     })
     }
