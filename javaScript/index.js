@@ -3,22 +3,18 @@ let menuList = document.getElementById("link");
 {
     if (menuList.style.display === "none") {
         menuList.style.display = "block";
+        const navLinks = document.querySelectorAll('#link li');
+        navLinks.forEach((link) => {
+        link.addEventListener("click",() =>{
+        const navbar = document.getElementById("link");
+        navbar.style.display = "none";
+      })
+    })
     }
     else {
         menuList.style.display = "none";
     }
 }
-const navLinks = document.querySelectorAll('#link li');
-navLinks.forEach((link) => {
-  link.addEventListener("click",() =>{
-    const navbar = document.getElementById("link");
-    navbar.style.display = "none";
-  })
-})
-
-
-
-
 window.onscroll =() => stickyNav();//excute the stickyNav on scroll
 const navbar = document.getElementById("head");
 const sticky = navbar.offsetTop;
