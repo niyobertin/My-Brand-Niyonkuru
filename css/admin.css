@@ -204,6 +204,12 @@ img{
         padding: 1%;
         border-radius: 5px;
     }
+    #blogContent{
+        margin-left: 5%; 
+    }
+    #blogsImage{
+        width: 20%;
+    }
     .blog2 img{
         width: 60%;
     }
