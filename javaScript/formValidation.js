@@ -53,10 +53,22 @@ const form_validation = () =>{
         }
 
         const loginValidation = () => {
-            emailVal(loginEmail,login_email,'Provide a correct email');
-            passwordVal(password,password_label,"Your Password must be atleast 6-8 Chracters including numbers")
+            const user = {
+                usernames:"Niynkuru Bertin",
+                emails:'niyonkurubbertin@gmail.com',
+                passworda:'Bertin12',
+                passwordb:"Bertin12"
+            }
+        
+            if(loginEmail.value === user.emails && password.value === user.passworda){
+                window.location ='../pages/admin.html';  
+              
+            }else{
+                emailVal(loginEmail,login_email,'Provide a correct email');
+                passwordVal(password,password_label,"Your Password must be atleast 6-8 Chracters including numbers");
+            }
         }
-
+        
         // Sign up page
         const username = document.getElementById('username');
         const signUpEmail = document.getElementById('signupEmail');
@@ -124,3 +136,9 @@ const form_validation = () =>{
         keyPress(blogImg,'Uplod image');
         keyPress(blogDescription,'Description');
     }
+
+
+
+    
+   
+    

@@ -327,11 +327,6 @@ header h1{
         width: 20%;
         border-radius: 50%;
     }
-    /* .blogs{
-        /* width: 100%; */
-        /* margin-left: 10%;
-        margin-right: 10%; */
-    /* } */ 
     .blogs-list{
         display: grid;
         gap: 9%;
@@ -386,7 +381,6 @@ header h1{
         height:fit-content;
         font-size: small;
     }
-   
     .slide-buton{
         position: absolute;
         cursor: pointer;
@@ -417,6 +411,7 @@ header h1{
     #prev-slide{
         margin-top: -18%;
         right: 0.4%;
+        display: none;
     }
     .next a,.previous a{
         color: black;
@@ -589,9 +584,22 @@ header h1{
         grid-template-columns: repeat(8, 90%); 
         
     }
-    .slide-buton{
-        display: none! important;
+    #next-slide{
+        margin-top: 45.1%;
+        left: 0;
     }
+    #prev-slide{
+        margin-left: 0;
+        margin-top: -72%;
+    }
+    .slide-buton{
+        left: 85%;
+        background-color:transparent;
+    }
+    .slide-buton:hover{
+        background-color: transparent;
+    }
+   
     .blog1{
         margin-top: 5%;
         width: 100%;
