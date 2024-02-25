@@ -1,11 +1,15 @@
 body{
     width: 100%;
 }
+header{
+    position: fixed;
+}
 #form1{
     background-color: #1e1e1e;
     margin-left: 20%;
     margin-right: 20%;
     padding: 3%;
+    margin-top: 1%;
     border-radius: 10px;
 }
 .input-area{
@@ -13,6 +17,7 @@ body{
     margin-right: 20%;
 }
 .contact h2{
+    margin-top: 8%;
     text-align: center;
     color: yellow;
 }
@@ -45,6 +50,23 @@ input ,textarea{
     font-weight: bolder;
 }
 @media screen and (max-width: 800px){
+    header{
+        display: flex;
+        height: 15%;
+        padding: 0;
+        margin: 0;  
+    }
+    header h1{
+        font-size: medium;
+    }
+    #contactLink{
+        display: flex;
+    }
+    .contact h2{
+        margin-top: 30%;
+        text-align: center;
+        color: yellow;
+    }
     #form1{
         width: 100%;
         margin: 0;

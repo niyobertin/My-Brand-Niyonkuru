@@ -3,6 +3,10 @@ const emailValidation = (emailAdress) => {
     const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     return emailAdress.match(emailRegex);
 }
+//Validate input.
+const generalInput  = (input) => {
+    return (input.value === "" || input.value === null)
+}
 //Contact form Validation
 const name = document.getElementById('name');
 const email = document.getElementById('email');
@@ -12,7 +16,7 @@ const emailLabel = document.getElementById("email-label");
 const messageLabel = document.getElementById("message-label");
 //General input validation
 const Validation = (variable,labelValue,content) => {
-    if(variable.value === "" || variable.value === null){
+    if(generalInput(variable)){
         labelValue.style.color = 'red';
         labelValue.style.fontSize = 'small';
         labelValue.innerHTML = content;
@@ -114,27 +118,48 @@ const form_validation = () =>{
     }
     //contact  key press func
     const loardKeyPressFunc = () => {
-        keyPress(nameLabel,"Name");
-        keyPress(emailLabel,"Email");
-        keyPress(messageLabel,"Message");
+        if(emailValidation(email.value)){
+            keyPress(emailLabel,"Email");  
+        }
+        if(!generalInput(name)){
+            keyPress(nameLabel,"Name");
+        }
+        if(!generalInput(message)){
+            keyPress(messageLabel,"Message");
+        }
     }
     //Login key press
     const loginFunc = () =>{
-        keyPress(login_email,'Email');
+        if(emailValidation(loginEmail.value)){
+            keyPress(login_email,'Email'); 
+        }
+       if(passwordValidation(password.value))
         keyPress(password_label,"Password");
      }
      //sign up key press funtion
     const signUpFunc = () =>{
-        keyPress(username_label,'Username');
-        keyPress(emaillabel,'Email');
+        if(!generalInput(username)){
+            keyPress(username_label,'Username');
+        }
+        if(emailValidation(signUpEmail.value)){
+            keyPress(emaillabel,'Email'); 
+        }
+        if(passwordValidation(signupPassword.value)){
         keyPress(passwordConfig1,'Password');
+        }
+        if(passwordValidation(confirmPas.value)){
         keyPress(passwordConfig2,'Confirm password');
+        }
     }
     //Key press on adding blogs func
     const hideError = () =>{
-        keyPress(blog,'Blog title');
-        keyPress(blogImg,'Uplod image');
-        keyPress(blogDescription,'Description');
+        if(!generalInput(blogTitle)){
+            keyPress(blog,'Blog title');
+        }
+            keyPress(blogImg,'Uplod image');
+        if(!generalInput(description)){
+            keyPress(blogDescription,'Description');
+        }
     }
 
 

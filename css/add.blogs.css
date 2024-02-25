@@ -35,7 +35,7 @@ color: yellow;
  }
 .sidenavigation{
    background-color: #1e1e1e;
-   position: sticky;
+   position: fixed;
    height: 100%;
    width: 15%;
    font-size: 100%;
@@ -50,11 +50,10 @@ color: yellow;
    display: block;
    padding: 2% 2%;
    margin-top: 2%;
+   left: 25%;
    border-radius: 10px;
 }
 .sidenavigation a{
-   margin-top: 30%;
-   margin-bottom: 12%;
    text-align: center;
    color: white;
    text-decoration: none;
@@ -242,6 +241,7 @@ select{
       margin-top: 32%;
       width: 100%;
       right: 0;
+      left: 0;
    }
    .input-area{
       width: 100%;
