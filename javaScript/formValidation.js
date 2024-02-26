@@ -162,6 +162,29 @@ const form_validation = () =>{
         }
     }
 
+    //Buttons click
+    const contact_button = document.getElementById('send-message');
+    const body = document.getElementById("body");
+    //Function for calling func inside html
+    const buttonClick = (button,func) => {
+        button.addEventListener("click",() => {
+            return func();
+        })
+        button.addEventListener("keypress",() =>{
+            return func();
+        })
+    }
+    const buttonKeyPress = (button,func) => {
+        button.addEventListener("keypress",() =>{
+            return func();
+        })
+    }
+    buttonClick(contact_button,form_validation);
+    buttonKeyPress(body,loardKeyPressFunc);
+    
+    
+
+
 
 
     

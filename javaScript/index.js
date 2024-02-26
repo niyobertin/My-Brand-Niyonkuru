@@ -59,7 +59,14 @@ const initSlider = () =>{
       })
 
 };
-
+//Function for calling func inside html
+const buttonClick = (button,func) => {
+  button.addEventListener("click",() => {
+      return func();
+  })
+}
+const menu_button = document.getElementById('menuIcon');
+buttonClick(menu_button,showhide)
 
 window.addEventListener('load',initSlider);
 
