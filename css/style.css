@@ -346,7 +346,7 @@ header h1{
     }
     .blog1{
         margin-top: 50%;
-        height: 60%;
+        height: fit-content;
         border-radius: 10px;
         object-fit: cover;
         background-color: #1e1e1e;
@@ -363,22 +363,16 @@ header h1{
     margin-left: 2%;
     margin-right: 2%;
     }
-    #coment-like{
+    .linke-coment{
         display: flex;
-        justify-content: space-between;
         justify-content: center;
-        gap: 10%;
         width: 100%;
         align-items: center;
         border-top: 0.1px solid yellow;
     }
-    #coment-like img{
-        width: 60%;
-    }
-    .like,.com{
-        border-radius: 20%;
-        display: flex;
-        align-items: center;
+    .linke-coment img{
+        width: 8%;
+        margin-inline: 5%;  
     }
     .more{
         border-radius: 10px;

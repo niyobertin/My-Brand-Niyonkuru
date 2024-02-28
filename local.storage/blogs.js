@@ -20,11 +20,6 @@ image.addEventListener('change',() =>{
  fr.readAsDataURL(file);
  })
 
-
-
-
-
-
 button.addEventListener('click',(event) => {
        // local storage
        event.preventDefault();
@@ -51,19 +46,41 @@ for(let i = 0;i < dataFromLocalStorage.length;i++){
    images.src = dataFromLocalStorage[i].image;
    const des = document.createElement('p');
    const h3 = document.createElement('h3');
+
+   const like_coment = document.createElement("div");
+   like_coment.classList.add('linke-coment');
+   const like = document.createElement('img');
+   like.src = "../images/like.JPG";
+   const comment = document.createElement('img');
+   comment.src = "../images/comment.JPG";
+   const likeNumber = document.createElement('p');
+   const commentNumber = document.createElement('p');
+   let likeNo = document.createTextNode('12');
+   let comentNo = document.createTextNode('20');
+   like_coment.appendChild(likeNumber);
+   like_coment.appendChild(like);
+   likeNumber.appendChild(likeNo);
+   like_coment.appendChild(comment);
+   commentNumber.appendChild(comentNo);
+   like_coment.appendChild(commentNumber);
+
+   const summary = document.createElement('p');
+   let  sumaryNote = document.createTextNode(dataFromLocalStorage[i].descriptionb);
+   const summary_content = document.createTextNode(sumaryNote.textContent.slice(0,60) +"...");
    const readMore = document.createTextNode("Read More");
    des.classList.add("more");
    const pcontent = document.createTextNode(dataFromLocalStorage[i].title);
    blogDiv.appendChild(images);
    h3.appendChild(pcontent);
    blogDiv.appendChild(h3);
+   summary.appendChild( summary_content);
+   blogDiv.appendChild(summary)
    des.appendChild(readMore);
    blogDiv.appendChild(des);
+   blogDiv.appendChild(like_coment)
    blogList.appendChild(blogDiv);
-// adding in blogs section
 }
-const blogContents = document.querySelector(".blog2");
-console.log(blogContents)
+
 
 
 

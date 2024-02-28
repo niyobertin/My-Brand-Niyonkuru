@@ -57,8 +57,7 @@ const initSlider = () =>{
       }
       blogList.addEventListener("scroll",() => {
         controllSlideButtons();
-      })
-
+      });
 };
 //Function for calling func inside html
 const buttonClick = (button,func) => {
