@@ -123,13 +123,20 @@ justify-content: space-between;
 /* admin panel */
 
 .contents{
-   display: flex;
-   justify-content:center;
+    display: grid;
+    margin-left: 20%;
    align-items: center;
    flex-wrap: wrap;
    flex: 1;
    padding: 2%;
    width: 100%;
+   margin-top: 9%;
+}
+.cards{
+    display: flex;
+    position:fixed; 
+    top: 16%;
+    width: 76%; 
 }
 .comment-number, .querry-number, .artical-number{
     position: relative;
@@ -137,7 +144,7 @@ justify-content: space-between;
     box-shadow: 1px 1px 10px 0.01px rgb(92, 92, 38);
     height: fit-content;
     text-align: center;
-    width: 10%;
+    width: 15%;
     padding: 2%;
     border-radius: 10px;
     margin: 1%;
@@ -154,11 +161,11 @@ img{
     background-color: #1e1e1e;
     box-shadow: 1px 1px 10px 0.01px rgb(92, 92, 38);
     height: fit-content;
-    width: 61%;
+    width: 80%;
     letter-spacing: 2%;
     padding: 1%;
     border-radius: 10px;
-    margin: 1%;
+    margin-top: 3%;
     margin-left: 1%;
     font-size: 90%;
 }
@@ -204,6 +211,15 @@ img{
         padding: 1%;
         border-radius: 5px;
     }  
+    #conts-blog{
+        display: flex;
+        margin-left: 5%;
+       align-items: center;
+       flex-wrap: wrap;
+       padding: 2%;
+       width: 100%;
+       margin-top: 0%;
+    }
     #blogContent{
         margin-left: 5%; 
     }
@@ -302,6 +318,10 @@ img{
         } 
     
         /* view blogs */
+        #conts-blog{
+            width: 100%;
+            margin-left: 2%;
+        }
         .blog2{
             width: 90%;
             margin-left: 4%;
