@@ -23,12 +23,13 @@
         <div id="sidenav" class="sidenavigation">
             <a href="admin.html">Dashboard</a>
             <a href="add.blogs.html">Add Article</a>
-            <a href="artical.html">View Article</a>
+            <a href="artical.html">View Articles</a>
             <a href="profile.html">Profile</a>
             <a href="login.html">Log Out</a>
         </div>
         <div class="add-blogs">
             <div id="form1">
+             <form id="myForm">
                 <div class="conteiner">
                     <div class="title">
                     <span id="blogTitle-label">Blog Title</span><br/>
@@ -109,9 +110,11 @@
                     <button id="login-botton" type="button" style="cursor: pointer;" onclick="addBlogs()">Add</button>
                 </div>    
             </div>
+         </form>
         </div>
     </div>
     <script src="../javaScript/add.blogs.js"></script>
     <script src="../javaScript/formValidation.js"></script>
+    <script src="../local.storage/blogs.js"></script>
 </body>
 </html>

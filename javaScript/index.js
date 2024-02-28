@@ -1,3 +1,4 @@
+
 let menuList = document.getElementById("link");
  function showhide()
 {
@@ -44,7 +45,7 @@ const initSlider = () =>{
         const maxLeftScroll = blogList.scrollWidth - blogList.clientWidth;
       sliderButtons.forEach((button) => {
         button.addEventListener('click',() => {
-          const direction = button.id ==="next-slide" ? -1 : 1;
+          const direction = button.id ==="next-slide" ? -1 : 1;//ternary operations
           const scrollAmount = blogList.clientWidth * direction;
           blogList.scrollBy({left:scrollAmount,behavior:"smooth"});
         });
@@ -67,6 +68,5 @@ const buttonClick = (button,func) => {
 }
 const menu_button = document.getElementById('menuIcon');
 buttonClick(menu_button,showhide)
-
 window.addEventListener('load',initSlider);
 

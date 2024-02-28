@@ -94,4 +94,5 @@ function openNav() {
       sidNav.style.display = 'none';
     }
   }
+
   
