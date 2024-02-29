@@ -41,11 +41,16 @@ div.appendChild(textContent)
 div.appendChild(contollerDiv);
 blogContents.appendChild(div);
  }
- for(let i = 0;i<deletes.length;i++){
+ for(let i = 0;i<=deletes.length;i++){
     for(let j = 0;j < dataFromLocalStorage.length;j++){
         deletes[i].addEventListener("click",() =>{
         if(i === j){
-            console.log(dataFromLocalStorage[i]);
+            const index = dataFromLocalStorage.indexOf(dataFromLocalStorage[i]);
+            if(index > -1){
+                dataFromLocalStorage.splice(index,1);
+               let  newData = JSON.stringify(dataFromLocalStorage);
+                localStorage.setItem('blogs',newData);
+            }
         }
         })
     }
