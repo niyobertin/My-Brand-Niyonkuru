@@ -8,7 +8,6 @@ const blogImages = document.getElementById('blogImage');
 let blogTitles = document.getElementById("blogTitle");
 const blogContent = document.getElementById("blogContent")
 const blogs =[];
-let imageUrl;
 
 image.addEventListener('change',() =>{
    const file = image.files[0];
@@ -35,7 +34,7 @@ button.addEventListener('click',(event) => {
 });
 
 const blogList = document.getElementById('blog-list');
-const dataFromLocalStorage = JSON.parse(window.localStorage.getItem("blogs"));
+ const dataFromLocalStorage = JSON.parse(window.localStorage.getItem("blogs"));
  
 console.log(dataFromLocalStorage);
 
@@ -80,17 +79,61 @@ for(let i = 0;i < dataFromLocalStorage.length;i++){
    blogDiv.appendChild(like_coment)
    blogList.appendChild(blogDiv);
 }
-//reading single blog
+
 const more = document.querySelectorAll(".more");
+const blogimage = document.getElementById("blog-image");
+const blogHeading = document.getElementById("blogHeading")
+const mainpage = document.getElementById("blogDesc");
+const single = document.querySelector(".single");
+const all = document.querySelector('.all');
+
 for(let i = 0;i<more.length;i++){
-   more[i].addEventListener('click',() =>{
-      window.location.href = "../pages/blog.html"; 
-   })
+   for(let j = 0;j < dataFromLocalStorage.length;j++){
+       more[i].addEventListener("click",() =>{
+       if(i === j){
+         blogimage.src= dataFromLocalStorage[i].image;
+         blogHeading.innerHTML = dataFromLocalStorage[i].title;
+         mainpage.innerHTML = dataFromLocalStorage[i].descriptionb;
+       }
+       single.style.display = 'block';
+       single.animate({transform:['scale(0)','scale(0)','scale(1)']},500);
+       all.style.display = "none"
+       })
+   } 
 }
+console.log(single)
 
+const closing = () =>{
+if(single.style.display = "block" &&(all.style.display = "none")){
+   single.style.display = "none"
+   all.style.display = "block"
+   all.animate({transform:['scale(0)','scale(0)','scale(1)']},500);
+}else{
+   single.style.display = "none"
+   all.style.display = "none" 
+}
+}
+const contollerDiv = document.createElement('div');
+contollerDiv.classList.add("controllers")
+const image1 = document.createElement("img");
+image1.src = "../images/like.JPG";
+image1.classList.add('view');
+const image2 = document.createElement("img");
+image2.classList.add('edit');
+image2.src = "../images/comment.JPG";
+let nolike = document.createElement('span');
+let nocomment = document.createElement('span')
+nocomment.id = 'nocomment';
+nolike.id = 'nolike';
+nolike.innerHTML = 23;
+nocomment.innerHTML = 2;
 
-
-
+       
+contollerDiv.appendChild(image1);
+contollerDiv.appendChild(nolike);
+contollerDiv.appendChild(image2);
+contollerDiv.appendChild(nocomment);
+// single.appendChild(contollerDiv);
 
 
 

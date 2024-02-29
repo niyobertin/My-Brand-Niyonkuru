@@ -69,3 +69,4 @@ const menu_button = document.getElementById('menuIcon');
 buttonClick(menu_button,showhide)
 window.addEventListener('load',initSlider);
 
+

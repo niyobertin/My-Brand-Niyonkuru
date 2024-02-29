@@ -459,6 +459,86 @@ header h1{
         BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 
         'Open Sans', 'Helvetica Neue', sans-serif;
     }
+/*SINGLE VIWE*/
+
+.single{
+    position:absolute;
+    background-color: #1e1e1e;
+    height: fit-content;
+    top: 20%;
+    padding: 0;
+    width: 100%;
+    display: none;
+}
+.single img{
+float: left;
+width: 40%;
+margin: 2%;
+}
+.single p{
+    padding: 2%;
+}
+.single h3{
+    color: yellow;
+}
+.single header{
+    position: fixed;
+}
+#close{
+    text-align: end;
+    font-size: large;
+    font-weight: 900;
+   margin-left: 98%;
+   margin-right: 1%;
+   cursor: pointer;
+   background-color: #1e1e1e;
+   color: aliceblue;
+   width: 5%;
+   text-align: center;
+   border: none;
+}
+#close:hover{
+    color: yellow;
+}
+.controllers{
+    display: flex;
+    align-items: center;
+}
+.controllers img{
+    width: 4%;
+}
+
+.comment-area{
+    padding: 3%;
+}
+.comment-area input{
+    background-color: #1e1e1e;
+    width: 50%;
+    padding: 0.6%;
+    border: 0.5px solid yellow;
+    border-radius: 7px;
+    color: aliceblue;
+    font-size: large;
+}
+.comment-area textarea{
+    background-color: #1e1e1e;
+    width: 50%;
+    padding: 0.6%;
+    border: 0.5px solid yellow;
+    border-radius: 7px;
+    color: aliceblue;
+    font-size: large;
+}
+.comment-area button{
+    background-color: rgb(93, 93, 13);
+    width: 10%;
+    padding: 0.6%;
+    border: none;
+    border-radius: 7px; 
+    font-size: large;
+    font-weight: bold;
+    color: aliceblue;
+}
 /* Resposnive ness */
 
 @media screen and (max-width: 800px){
@@ -633,5 +713,13 @@ header h1{
         display: flex;
         justify-content: center;
     }
-
+    .single{
+        position:absolute;
+        background-color: #1e1e1e;
+        height: fit-content;
+        top: 0;
+        padding: 0;
+        width: 100%;
+        display: none;
+    }
 } 

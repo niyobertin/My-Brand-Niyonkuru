@@ -23,9 +23,9 @@ image3.src = "../images/Delete.jpg";
 contollerDiv.appendChild(image1);
 contollerDiv.appendChild(image2);
 contollerDiv.appendChild(image3);
-view = document.querySelector('.view');
-edit = document.querySelector('.edit');
-deletes = document.querySelector('.delete');
+view = document.querySelectorAll('.view');
+edit = document.querySelectorAll('.edit');
+deletes = document.querySelectorAll('.delete');
 
  const div = document.createElement('div');
  div.classList.add("blog2");
@@ -41,7 +41,16 @@ div.appendChild(textContent)
 div.appendChild(contollerDiv);
 blogContents.appendChild(div);
  }
- 
+ for(let i = 0;i<deletes.length;i++){
+    for(let j = 0;j < dataFromLocalStorage.length;j++){
+        deletes[i].addEventListener("click",() =>{
+        if(i === j){
+            console.log(dataFromLocalStorage[i]);
+        }
+        })
+    }
+    
+ }
  
 
  
