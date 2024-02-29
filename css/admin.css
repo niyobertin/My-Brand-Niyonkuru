@@ -85,6 +85,11 @@ color: yellow;
    width: 6%;
    border-radius: 50%;
 }
+header img{
+    width: 5%;
+    border-radius: 50%;
+    margin-right: 6%;
+}
 #settings a:hover{
     color: yellow;
 }
@@ -110,6 +115,8 @@ justify-content: space-between;
     display: block;
     width: 15%;
     height: 100%;
+    left: 0;
+    top: 15%;
 }
 .sidenav a{
     font-size: 100%;
@@ -130,7 +137,7 @@ justify-content: space-between;
    flex: 1;
    padding: 2%;
    width: 100%;
-   margin-top: 9%;
+   margin-top: 7%;
 }
 .cards{
     display: flex;
@@ -200,6 +207,9 @@ img{
     }
 
     /* View Articals */
+    ul img{
+        display: block;
+    }
     .blog2{
         display: block;
         justify-content: space-between;
@@ -279,14 +289,21 @@ img{
         }
         .contents{
             padding: 0;
-            margin-top: 9%;
+            margin-top: 25%;
             width: 100%;
             display: block;
             justify-content: center;
             align-items: center;
+            margin-left: 2%;
+        }
+        .cards{
+            position: absolute;
+            top: 9%;
+            width: 90%;
+
         }
         .comment-number, .querry-number, .artical-number{
-            width: 90%;
+            width: 100%;
             text-align: center;
             margin-top:2% ;
             margin-left: 5%;
@@ -295,18 +312,22 @@ img{
         }
         .sidenav {
             background-image: linear-gradient(to right, rgb(225, 137, 30) , rgb(206, 232, 39));
-            position: relative;
+            position: fixed;
             display: none;
             height: 100%;
-            margin-top: 7.6%;
+            top: 7.5%;
             width:25%;	
+            left: 0;
+            transition: 0.6s;
+            transition-behavior:inherit;
+            transition-property: inherit;
         }
         .sidenav a{
             margin-left: 3%;
             font-size: 100%;
         }
         img{
-            width: 10%;
+            width: 20%;
         }
         .newest-query{
             padding: 0;
@@ -318,14 +339,25 @@ img{
         } 
     
         /* view blogs */
+    
+        header img{
+            display: none;
+        }
+    
+        header h2{
+            font-size: medium;
+            color: yellow;
+        }
         #conts-blog{
             width: 100%;
             margin-left: 2%;
+            margin-top: 5%;
         }
         .blog2{
             width: 90%;
             margin-left: 4%;
             margin-right: 5%;
+            margin-top: 3%;
         }
   }
 

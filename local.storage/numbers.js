@@ -8,3 +8,7 @@ querries.innerHTML = querriesFromLocalStorage.length + ' ';
 let articals = document.getElementById('total-artical');
 articals.innerHTML = dataFromLocalStorage.length + ' ';
 
+//reading single querry
+
+
+

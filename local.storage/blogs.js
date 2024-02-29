@@ -35,7 +35,7 @@ button.addEventListener('click',(event) => {
 });
 
 const blogList = document.getElementById('blog-list');
- const dataFromLocalStorage = JSON.parse(window.localStorage.getItem("blogs"));
+const dataFromLocalStorage = JSON.parse(window.localStorage.getItem("blogs"));
  
 console.log(dataFromLocalStorage);
 
@@ -80,6 +80,15 @@ for(let i = 0;i < dataFromLocalStorage.length;i++){
    blogDiv.appendChild(like_coment)
    blogList.appendChild(blogDiv);
 }
+//reading single blog
+const more = document.querySelectorAll(".more");
+for(let i = 0;i<more.length;i++){
+   more[i].addEventListener('click',() =>{
+      window.location.href = "../pages/blog.html"; 
+   })
+}
+
+
 
 
 
