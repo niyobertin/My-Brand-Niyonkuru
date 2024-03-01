@@ -31,7 +31,7 @@ const  stickyNav =()=> {
 function openNav() {
   const sidNav =  document.getElementById("sidenav");
   if(sidNav.style.display === "none"){
-    sidNav.style.display = "block"
+    sidNav.style.display = "block";
   }else{
     sidNav.style.display = 'none';
   }

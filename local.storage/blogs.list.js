@@ -1,8 +1,8 @@
 
 const blogList = document.getElementById('blog-list');
- const dataFromLocalStorage = JSON.parse(window.localStorage.getItem("blogs"));
+ const dataFromLocalStorage = JSON.parse(localStorage.getItem("blogs"));
  
-console.log(dataFromLocalStorage);
+// console.log(dataFromLocalStorage);
 let view,edit,deletes;
 const blogContents = document.querySelector(".contents");
 for(let i = 0;i < dataFromLocalStorage.length;i++){
@@ -20,7 +20,7 @@ for(let i = 0;i < dataFromLocalStorage.length;i++){
  const blogImages = document.createElement('img');
  blogImages.src = dataFromLocalStorage[i].image;
 image3.src = "../images/Delete.jpg";        
-contollerDiv.appendChild(image1);
+// contollerDiv.appendChild(image1);
 contollerDiv.appendChild(image2);
 contollerDiv.appendChild(image3);
 view = document.querySelectorAll('.view');
@@ -41,12 +41,80 @@ div.appendChild(textContent)
 div.appendChild(contollerDiv);
 blogContents.appendChild(div);
  }
+ 
+ // updating blogs
+    const title = document.getElementById('blogTitle');
+    const image = document.getElementById('aplodImage');
+    const desc = document.getElementById('text-input');
+    const button = document.getElementById('login-botton');
+    const conteiner = document.querySelector('.conteiner');
+    const form = document.querySelector('form');
+    let imageUrl;// hold the Image url from fileReader
+    const newData = JSON.parse(localStorage.getItem('blogs'));
+    //FileReader
+    image.addEventListener('change',() =>{
+        const file = image.files[0];
+      const fr = new FileReader();
+      fr.addEventListener("load",() =>{
+        imageUrl = fr.result;
+        // console.log(imageUrl);
+      })
+      fr.readAsDataURL(file);
+      })
+console.log(deletes);
+ for(let i = 0;i < edit.length;i++){
+    for(let j = 0; j < dataFromLocalStorage.length;j++){
+        edit[i].addEventListener('click',() => {
+            if(i === j){
+                conteiner.style.display = 'block';
+                 blogContents.style.display = 'none';
+                 conteiner.animate({transform:['scale(0)','scale(0)','scale(1)']},500);
+                if(dataFromLocalStorage[i]){
+                   title.value = dataFromLocalStorage[i].title;
+                   imageUrl = dataFromLocalStorage[i].image;
+                   desc.innerText = dataFromLocalStorage[i].descriptionb; 
+                   button.addEventListener("click",(event) => {
+                    event.preventDefault();
+                    newData[i].title = title.value;
+                    newData[i].image = imageUrl || newData[i].dataFromLocalStorage[i].image;
+                    newData[i].descriptionb=desc.innerText;
+                
+                    localStorage.setItem('blogs',JSON.stringify(newData));
+                     form.reset();
+                    alert('Blogs updated successfully!');
+                })
+                }else{
+                    alert("the local storage is empty")
+                } 
+            }  
+        })
+    }
+ }
+
+
+//clasing window function
+const close_button = document.getElementById('close');
+    close_button.addEventListener("click",() => {
+        if((conteiner.style.display = "block") && (blogContents.style.display = 'none')){
+            conteiner.style.display = "none";
+            blogContents.style.display = 'block'
+            blogContents.animate({transform:['scale(0)','scale(0)','scale(1)']},500);
+            }else{
+            conteiner.style.display = "block" 
+            conteiner.animate({transform:['scale(1)','scale(0)','scale(0)']},500);
+            blogContents.style.display = 'none';
+            }
+    })
+  
+
+ //deleting blog
  for(let i = 0;i<=deletes.length;i++){
     for(let j = 0;j < dataFromLocalStorage.length;j++){
         deletes[i].addEventListener("click",() =>{
         if(i === j){
             const index = dataFromLocalStorage.indexOf(dataFromLocalStorage[i]);
             if(index > -1){
+                prompt('Are you sure do delet this blog ?')
                 dataFromLocalStorage.splice(index,1);
                let  newData = JSON.stringify(dataFromLocalStorage);
                 localStorage.setItem('blogs',newData);
@@ -56,6 +124,10 @@ blogContents.appendChild(div);
     }
     
  }
+ 
+
+ 
+
  
 
  

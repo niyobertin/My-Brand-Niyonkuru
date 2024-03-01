@@ -7,14 +7,14 @@ const content = document.querySelector('contents');
 const blogImages = document.getElementById('blogImage');
 let blogTitles = document.getElementById("blogTitle");
 const blogContent = document.getElementById("blogContent")
-const blogs =[];
+let imageUrl;
+const blogs = JSON.parse(localStorage.getItem('blogs'));
 
 image.addEventListener('change',() =>{
    const file = image.files[0];
  const fr = new FileReader();
  fr.addEventListener("load",() =>{
    imageUrl = fr.result;
-   console.log(imageUrl);
  })
  fr.readAsDataURL(file);
  })
@@ -79,7 +79,7 @@ for(let i = 0;i < dataFromLocalStorage.length;i++){
    blogDiv.appendChild(like_coment)
    blogList.appendChild(blogDiv);
 }
-
+//single pafe view.
 const more = document.querySelectorAll(".more");
 const blogimage = document.getElementById("blog-image");
 const blogHeading = document.getElementById("blogHeading")
@@ -113,6 +113,7 @@ if(single.style.display = "block" &&(all.style.display = "none")){
    all.style.display = "none" 
 }
 }
+
 const contollerDiv = document.createElement('div');
 contollerDiv.classList.add("controllers")
 const image1 = document.createElement("img");
@@ -135,6 +136,7 @@ contollerDiv.appendChild(image2);
 contollerDiv.appendChild(nocomment);
 // single.appendChild(contollerDiv);
 
+ 
 
 
 

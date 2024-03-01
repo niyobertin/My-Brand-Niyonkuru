@@ -110,22 +110,27 @@ justify-content: space-between;
 .sidenav{
     position: fixed;
     background-color:#1e1e1e;
+    box-shadow: 1px 1px 10px 0.01px rgb(92, 92, 38);
     width: fit-content;
     font-size: 100%;
     display: block;
     width: 15%;
     height: 100%;
     left: 0;
-    top: 15%;
+    padding: 0;
+    top: 0;
 }
 .sidenav a{
     font-size: 100%;
     display: block;
     margin-left: 20%;
-    padding-top: 15%;
-    padding-bottom: 15%;
+    margin: 15%;
     text-decoration: none;
     color: white;
+}
+#adminControll{
+    margin-top: 50%;
+    padding-top: 5%;
 }
 /* admin panel */
 
@@ -306,8 +311,8 @@ img{
             width: 100%;
             text-align: center;
             margin-top:2% ;
-            margin-left: 5%;
-            font-size: small;
+            margin-left: 2%;
+            font-size: smaller;
             padding: 0;
         }
         .sidenav {
@@ -324,7 +329,7 @@ img{
         }
         .sidenav a{
             margin-left: 3%;
-            font-size: 100%;
+            font-size: 90%;
         }
         img{
             width: 20%;
