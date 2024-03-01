@@ -29,7 +29,7 @@ const textModification = (command,defaultValue,value) =>{
 //that do not need a value paramenter
 optionButton.forEach((button) => {
     button.addEventListener('click',(event) =>{
-        // event.preventDefault()
+        event.preventDefault()
         textModification(button.id,false,null);
     });
 });
@@ -37,7 +37,7 @@ optionButton.forEach((button) => {
 //Ones that requre paramenter value like colors or font 
 advancedOptionButton.forEach((button) => {
     button.addEventListener("change",(event) =>{
-        // event.preventDefault();
+        event.preventDefault();
         textModification(button.id,false,button.value);
     });
 })

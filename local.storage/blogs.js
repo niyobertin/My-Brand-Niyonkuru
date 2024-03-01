@@ -78,7 +78,7 @@ for(let i = 0;i < dataFromLocalStorage.length;i++){
    blogDiv.appendChild(like_coment)
    blogList.appendChild(blogDiv);
 }
-//single pafe view.
+//single blog view.
 const more = document.querySelectorAll(".more");
 const blogimage = document.getElementById("blog-image");
 const blogHeading = document.getElementById("blogHeading")
@@ -135,13 +135,13 @@ contollerDiv.appendChild(image2);
 contollerDiv.appendChild(nocomment);
 // single.appendChild(contollerDiv);
 
-// const comment 
+// post coment  
 
 const userName = document.getElementById("usename");
 const userComment = document.getElementById("comment");
 const sendCommentButton = document.getElementById("send-comment");
 const form1 = document.querySelector('form')
-let comment_from_users =JSON.parse(localStorage.getItem('comments'));
+let comment_from_users =[];
 if(comment_from_users.length === 0){
    comment_from_users = [];
 }else{
