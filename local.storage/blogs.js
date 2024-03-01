@@ -8,8 +8,8 @@ const blogImages = document.getElementById('blogImage');
 let blogTitles = document.getElementById("blogTitle");
 const blogContent = document.getElementById("blogContent")
 let imageUrl;
-// const blogs = JSON.parse(localStorage.getItem('blogs'));
-const blogs = [];
+const blogs = JSON.parse(localStorage.getItem('blogs'));
+// const blogs = [];
 
 image.addEventListener('change',() =>{
    const file = image.files[0];
@@ -141,7 +141,7 @@ const userName = document.getElementById("usename");
 const userComment = document.getElementById("comment");
 const sendCommentButton = document.getElementById("send-comment");
 const form1 = document.querySelector('form')
-let comment_from_users =[];
+let comment_from_users =JSON.parse(localStorage.getItem('comments'));
 if(comment_from_users.length === 0){
    comment_from_users = [];
 }else{
