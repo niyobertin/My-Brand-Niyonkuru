@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add blogs</title>
+    <link rel="stylesheet" href="../css/add.blogs.css">
+    <link rel="stylesheet" href="../css/admin.css">
+    <!-- font awesome icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap">
+</head>
+<body onkeydown="hideError ()">
+    <header id="head">
+        <h1 class="logo">Niyonkuru<span id="bullet">.</span></h1>
+        <ul id="link">
+            <h2>Add blogs</h2>
+            <img src="../images/Bertin.PNG" alt="profile image">
+        </ul>
+         <span style="font-size:30px;cursor:pointer" onclick="openNav()" id="menuIcon">&#9776;
+    </header>
+    <div class="addBlogs">
+        <div class="add-blogs">
+            <div id="form1">
+             <form id="myForm">
+                <div class="conteiner">
+                    <div class="title">
+                    <span id="blogTitle-label">Blog Title</span><br/>
+                        <input type="text" id="blogTitle">
+                    </div> 
+                    <div class="file">
+                        <span id="aplodImage-label">Upload an image</span><br/>
+                        <input type="file" id="aplodImage">
+                    </div> <br/><br/>
+                    <p id="desc">Description</p>
+                    <div class="options">
+                        <!-- text format -->
+                        <button id="bold" class="option-button format">
+                            <i class="fa-solid fa-bold"></i>
+                        </button>
+                        <button id="italic" class="option-button format">
+                            <i class="fa-solid fa-italic"></i>
+                        </button>
+                        <button id="superscript" class="option-button script">
+                            <i class="fa-solid fa-superscript"></i>
+                        </button>
+                        <button id="subscript" class="option-button script">
+                            <i class="fa-solid fa-subscript"></i>
+                        </button>
+            
+                        <!-- List -->
+                        <button id="insertOrderedList" class="option-button">
+                            <i class="fa-solid fa-list-ol"></i>
+                        </button>
+                        <button id="insertUnorderedList" class="option-button">
+                            <i class="fa-solid fa-list"></i>
+                        </button>
+            
+                        <!-- undo/Redo -->
+            
+                        <button id="undo" class="option-button">
+                            <i class="fa-solid fa-rotate-left"></i>
+                        </button>
+                        <button id="redo" class="option-button">
+                            <i class="fa-solid fa-rotate-right"></i>
+                        </button>
+            
+                        <!-- Link -->
+            
+                        <button id="creatLink" class="option-button">
+                            <i class="fa-solid fa-link"></i>
+                        </button>
+                        <button id="unlink" class="option-button">
+                            <i class="fa-solid fa-link-slash"></i> 
+                        </button>
+            
+                        <!-- Alignment -->
+                        <button id="justifyLeft" class="option-button align">
+                            <i class="fa-solid fa-align-left"></i>
+                        </button>
+                        <button id="justifyCenter" class="option-button align">
+                            <i class="fa-solid fa-align-center"></i>
+                        </button>
+                        <button id="justifyRight" class="option-button align">
+                            <i class="fa-solid fa-align-right"></i>
+                        </button>
+                        <button id="justifyFull" class="option-button align">
+                            <i class="fa-solid fa-align-justify"></i>
+                        </button>
+                        <button id="indent" class="option-button spacing">
+                            <i class="fa-solid fa-indent"></i>
+                        </button>
+                        <button id="outdent" class="option-button spacing">
+                            <i class="fa-solid fa-outdent"></i>
+                        </button>
+                        <!--Color-->
+                        <div class="input-wrapper">
+                            <input type="color"  id="foreColor" class="adv-option-button">
+                            <label for="foreColor" id="textColor">Font Color</label>
+                        </div>
+                    </div>
+                    <div id="text-input" contenteditable="true"></div>
+                    <button id="login-botton" type="button" style="cursor: pointer;" onclick="addBlogs()">Add</button>
+                </div>    
+            </div>
+         </form>
+        </div>
+        <div id="sidenav" class="sidenavigation">
+            <a href="admin.html">Dashboard</a>
+            <a href="add.blogs.html">Add Article</a>
+            <a href="artical.html">View Articles</a>
+            <a href="querries.html">View Querries</a>
+            <a href="profile.html">Profile</a>
+            <a href="login.html">Log Out</a>
+        </div>
+    </div>
+    <script src="../javaScript/add.blogs.js"></script>
+    <script src="../javaScript/formValidation.js"></script>
+    <script src="../local.storage/blogs.js"></script>
+</body>
+</html>

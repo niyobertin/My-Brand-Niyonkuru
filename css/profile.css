@@ -1,0 +1,76 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+body{
+    color: aliceblue;
+    background-color: rgb(6, 6, 4);
+}
+.header{
+    color: aliceblue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 4%;
+    margin-top: 2%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+a{
+    color: aliceblue;
+    text-decoration: none;
+}
+a:hover{
+    color: yellow;
+}
+#dot{
+    font-size: xx-large;
+    color: yellow;
+}
+.profile{
+    background-color: #1e1e1e;
+    border: 1px solid rgb(72, 72, 15);
+    width: 30%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin-left:30%;
+    margin-top: 2%;
+    padding: 2%;
+    border-radius: 20px;
+}
+.profilepic{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 50%;
+    width: 100%;
+    height: 90%;
+    padding: 1%;
+}
+.profilepic img{
+    width: 50%;
+    height: 70%;
+    border-radius:50%;
+}
+.identifications{
+    display: block;
+    font-size: 100%;
+}
+.identifications p{
+    padding: 2%;
+    font-size: 100%;
+}
+button{
+    padding: 2%;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    background-color: rgb(68, 68, 5);
+    font-size: 100%;
+    cursor: pointer;
+}
+button:hover{
+    background-color: #504c41;
+}

@@ -1,0 +1,12 @@
+
+.newest-query h2{
+    padding: 2%;
+    color: rgb(230, 230, 16);
+}
+.contr{
+    margin-top: 60%;
+    padding-top: 20%;
+}
+a:hover{
+    color: yellow;
+}
