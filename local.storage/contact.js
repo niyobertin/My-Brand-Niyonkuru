@@ -1,10 +1,14 @@
 const name = document.getElementById('name');
 const email = document.getElementById('email');
 const message  = document.getElementById('message');
-const querries = [];
 const send_button = document.getElementById('send-message');
 const form = document.querySelector('.input-area');
-
+let  querries = JSON.parse(localStorage.getItem('querries'));
+if(querries.length < 1){
+    querries = [];
+}else{
+    querries = JSON.parse(localStorage.getItem('querries'))
+}
 send_button.addEventListener('click',(event) => {
     // local storage
     event.preventDefault();

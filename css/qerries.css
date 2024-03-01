@@ -1,4 +1,7 @@
-
+.contents{
+    margin-top: 0;
+    padding: 0;
+}
 .newest-query h2{
     padding: 2%;
     color: rgb(230, 230, 16);

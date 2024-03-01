@@ -92,7 +92,7 @@ console.log(deletes);
  }
 
 
-//clasing window function
+//closing window function
 const close_button = document.getElementById('close');
     close_button.addEventListener("click",() => {
         if((conteiner.style.display = "block") && (blogContents.style.display = 'none')){
