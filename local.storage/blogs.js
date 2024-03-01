@@ -8,7 +8,8 @@ const blogImages = document.getElementById('blogImage');
 let blogTitles = document.getElementById("blogTitle");
 const blogContent = document.getElementById("blogContent")
 let imageUrl;
-const blogs = JSON.parse(localStorage.getItem('blogs'));
+// const blogs = JSON.parse(localStorage.getItem('blogs'));
+const blogs = [];
 
 image.addEventListener('change',() =>{
    const file = image.files[0];

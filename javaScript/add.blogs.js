@@ -28,14 +28,16 @@ const textModification = (command,defaultValue,value) =>{
 //adding event listeners on buttons of basic operations
 //that do not need a value paramenter
 optionButton.forEach((button) => {
-    button.addEventListener('click',() =>{
+    button.addEventListener('click',(event) =>{
+        // event.preventDefault()
         textModification(button.id,false,null);
     });
 });
 
 //Ones that requre paramenter value like colors or font 
 advancedOptionButton.forEach((button) => {
-    button.addEventListener("change",() =>{
+    button.addEventListener("change",(event) =>{
+        // event.preventDefault();
         textModification(button.id,false,button.value);
     });
 })
