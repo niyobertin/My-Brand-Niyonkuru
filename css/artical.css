@@ -166,6 +166,10 @@ select{
    display: flex;
    flex-wrap: wrap;
  }
+ .ctro{
+   margin-top: 60%;
+   padding-top: 20%;
+ }
  
  @media screen and (max-width: 800px){
    .add-blogs{

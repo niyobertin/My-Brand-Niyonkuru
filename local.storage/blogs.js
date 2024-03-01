@@ -35,8 +35,6 @@ button.addEventListener('click',(event) => {
 
 const blogList = document.getElementById('blog-list');
  const dataFromLocalStorage = JSON.parse(window.localStorage.getItem("blogs"));
- 
-console.log(dataFromLocalStorage);
 
 for(let i = 0;i < dataFromLocalStorage.length;i++){
    const blogDiv = document.createElement("div");
@@ -135,6 +133,35 @@ contollerDiv.appendChild(nolike);
 contollerDiv.appendChild(image2);
 contollerDiv.appendChild(nocomment);
 // single.appendChild(contollerDiv);
+
+// const comment 
+
+const userName = document.getElementById("usename");
+const userComment = document.getElementById("comment");
+const sendCommentButton = document.getElementById("send-comment");
+const form1 = document.querySelector('form')
+let comment_from_users =JSON.parse(localStorage.getItem('comments'));
+if(comment_from_users.length === 0){
+   comment_from_users = [];
+}else{
+   comment_from_users =JSON.parse(localStorage.getItem('comments'));
+}
+
+sendCommentButton.addEventListener('click',(event) =>{
+   event.preventDefault();
+   let comment = {
+      user_name: userName.value,
+      userComment:userComment.value
+   }
+comment_from_users.push(comment);
+localStorage.setItem("comments",JSON.stringify(comment_from_users));
+form1.reset();
+})
+//Retrieving coment from local storage
+const usersComment = JSON.parse(localStorage.getItem('comments'));
+console.log(userComment) 
+
+
 
  
 

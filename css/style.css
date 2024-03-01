@@ -471,8 +471,8 @@ header h1{
     display: none;
 }
 .single img{
-float: left;
-width: 40%;
+float:initial;
+width: 20%;
 margin: 2%;
 }
 .single p{
@@ -509,7 +509,11 @@ margin: 2%;
 }
 
 .comment-area{
-    padding: 3%;
+    border-top: 1px solid rgb(100, 100, 60);
+    display: grid;
+    /* margin-top: 8%; */
+    padding: 1%;
+    bottom: 0;
 }
 .comment-area input{
     background-color: #1e1e1e;
@@ -538,6 +542,9 @@ margin: 2%;
     font-size: large;
     font-weight: bold;
     color: aliceblue;
+}
+#name-label{
+    text-align: start;
 }
 /* Resposnive ness */
 

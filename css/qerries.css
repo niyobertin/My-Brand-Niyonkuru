@@ -3,6 +3,10 @@
     padding: 2%;
     color: rgb(230, 230, 16);
 }
-#contr{
-    background-color: aqua;
+.contr{
+    margin-top: 60%;
+    padding-top: 20%;
+}
+a:hover{
+    color: yellow;
 }

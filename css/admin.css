@@ -142,7 +142,7 @@ justify-content: space-between;
    flex: 1;
    padding: 2%;
    width: 100%;
-   margin-top: 7%;
+   margin-top: 8%;
 }
 .cards{
     display: flex;
@@ -177,9 +177,18 @@ img{
     letter-spacing: 2%;
     padding: 1%;
     border-radius: 10px;
-    margin-top: 3%;
+    margin-top: 6%;
     margin-left: 1%;
     font-size: 90%;
+}
+#userName{
+    color: yellow;
+    margin: 2%;
+    font-size: 100%;
+}
+#pragraph{
+    font-size: 100%;
+    margin: 2%;
 }
 #replay{
     background-color: black;
