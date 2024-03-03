@@ -3,7 +3,7 @@ const email = document.getElementById('email');
 const message  = document.getElementById('message');
 const send_button = document.getElementById('send-message');
 const form = document.querySelector('.input-area');
-let  querries = JSON.parse(localStorage.getItem('querries'));
+let  querries = [];
 if(querries.length < 1){
     querries = [];
 }else{

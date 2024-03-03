@@ -62,6 +62,8 @@ blogContents.appendChild(div);
       fr.readAsDataURL(file);
       })
 console.log(deletes);
+
+//editing a blog
  for(let i = 0;i < edit.length;i++){
     for(let j = 0; j < dataFromLocalStorage.length;j++){
         edit[i].addEventListener('click',() => {
