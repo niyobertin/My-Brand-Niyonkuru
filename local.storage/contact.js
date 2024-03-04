@@ -3,11 +3,9 @@ const email = document.getElementById('email');
 const message  = document.getElementById('message');
 const send_button = document.getElementById('send-message');
 const form = document.querySelector('.input-area');
-let  querries = [];
-if(querries.length < 1){
+let   querries = JSON.parse(localStorage.getItem('querries'))
+if(querries === null){
     querries = [];
-}else{
-    querries = JSON.parse(localStorage.getItem('querries'))
 }
 send_button.addEventListener('click',(event) => {
     // local storage
@@ -18,7 +16,6 @@ send_button.addEventListener('click',(event) => {
         message:message.value
      }
     querries.push(query);
-    console.log(querries)
 localStorage.setItem('querries',JSON.stringify(querries));
 form.reset();
 });

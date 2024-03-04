@@ -8,8 +8,7 @@ const blogImages = document.getElementById('blogImage');
 let blogTitles = document.getElementById("blogTitle");
 const blogContent = document.getElementById("blogContent")
 let imageUrl;
-const blogs = [];
-// const blogs = [];
+let blogs = (JSON.parse(localStorage.getItem('blogs')));
 
 image.addEventListener('change',() =>{
    const file = image.files[0];
@@ -20,6 +19,9 @@ image.addEventListener('change',() =>{
  fr.readAsDataURL(file);
  })
 
+ if(blogs === null){
+   blogs = [];
+}
 button.addEventListener('click',(event) => {
        // local storage
        event.preventDefault();
@@ -34,9 +36,12 @@ button.addEventListener('click',(event) => {
       
 });
 
-const blogList = document.getElementById('blog-list');
- const dataFromLocalStorage = JSON.parse(window.localStorage.getItem("blogs"));
 
+const blogList = document.getElementById('blog-list');
+let dataFromLocalStorage = JSON.parse(window.localStorage.getItem("blogs"));
+if(dataFromLocalStorage === null){
+   dataFromLocalStorage = [];
+}
 for(let i = 0;i < dataFromLocalStorage.length;i++){
    const blogDiv = document.createElement("div");
    blogDiv.classList.add("blog1");
@@ -100,7 +105,6 @@ for(let i = 0;i<more.length;i++){
        })
    } 
 }
-console.log(single)
 
 const closing = () =>{
 if(single.style.display = "block" &&(all.style.display = "none")){
@@ -133,19 +137,15 @@ contollerDiv.appendChild(image1);
 contollerDiv.appendChild(nolike);
 contollerDiv.appendChild(image2);
 contollerDiv.appendChild(nocomment);
-// single.appendChild(contollerDiv);
-
 // post coment  
 
 const userName = document.getElementById("usename");
 const userComment = document.getElementById("comment");
 const sendCommentButton = document.getElementById("send-comment");
 const form1 = document.querySelector('form')
-let comment_from_users =[];
-if(comment_from_users.length === 0){
+let comment_from_users =JSON.parse(localStorage.getItem('comments'));
+if(comment_from_users === null){
    comment_from_users = [];
-}else{
-   comment_from_users =JSON.parse(localStorage.getItem('comments'));
 }
 
 sendCommentButton.addEventListener('click',(event) =>{
@@ -158,9 +158,8 @@ comment_from_users.push(comment);
 localStorage.setItem("comments",JSON.stringify(comment_from_users));
 form1.reset();
 })
-//Retrieving coment from local storage
-const usersComment = JSON.parse(localStorage.getItem('comments'));
-console.log(userComment) 
+
+
 
 
 

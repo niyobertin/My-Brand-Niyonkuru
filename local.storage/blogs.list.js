@@ -116,10 +116,10 @@ const close_button = document.getElementById('close');
         if(i === j){
             const index = dataFromLocalStorage.indexOf(dataFromLocalStorage[i]);
             if(index > -1){
-                prompt('Are you sure do delet this blog ?')
                 dataFromLocalStorage.splice(index,1);
                let  newData = JSON.stringify(dataFromLocalStorage);
                 localStorage.setItem('blogs',newData);
+                window.location.reload();
             }
         }
         })
