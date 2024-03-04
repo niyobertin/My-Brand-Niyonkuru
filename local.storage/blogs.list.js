@@ -20,7 +20,7 @@ for(let i = 0;i < dataFromLocalStorage.length;i++){
  const blogImages = document.createElement('img');
  blogImages.src = dataFromLocalStorage[i].image;
 image3.src = "../images/Delete.jpg";        
-// contollerDiv.appendChild(image1);
+
 contollerDiv.appendChild(image2);
 contollerDiv.appendChild(image3);
 view = document.querySelectorAll('.view');
@@ -61,7 +61,7 @@ blogContents.appendChild(div);
       })
       fr.readAsDataURL(file);
       })
-console.log(deletes);
+
 
 //editing a blog
  for(let i = 0;i < edit.length;i++){
