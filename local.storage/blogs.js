@@ -8,7 +8,7 @@ const blogImages = document.getElementById('blogImage');
 let blogTitles = document.getElementById("blogTitle");
 const blogContent = document.getElementById("blogContent")
 let imageUrl;
-const blogs = JSON.parse(localStorage.getItem('blogs'));
+let blogs = (JSON.parse(localStorage.getItem('blogs')));
 
 image.addEventListener('change',() =>{
    const file = image.files[0];
@@ -19,13 +19,16 @@ image.addEventListener('change',() =>{
  fr.readAsDataURL(file);
  })
 
+ if(blogs === null){
+   blogs = [];
+}
 button.addEventListener('click',(event) => {
        // local storage
        event.preventDefault();
           const artical = {
               title:title.value,
               image:imageUrl,
-              descriptionb:desc.innerText
+              descriptionb:desc.innerHTML
            }
           blogs.push(artical);
       localStorage.setItem('blogs',JSON.stringify(blogs));
@@ -33,9 +36,12 @@ button.addEventListener('click',(event) => {
       
 });
 
-const blogList = document.getElementById('blog-list');
- const dataFromLocalStorage = JSON.parse(window.localStorage.getItem("blogs"));
 
+const blogList = document.getElementById('blog-list');
+let dataFromLocalStorage = JSON.parse(window.localStorage.getItem("blogs"));
+if(dataFromLocalStorage === null){
+   dataFromLocalStorage = [];
+}
 for(let i = 0;i < dataFromLocalStorage.length;i++){
    const blogDiv = document.createElement("div");
    blogDiv.classList.add("blog1");
@@ -63,7 +69,7 @@ for(let i = 0;i < dataFromLocalStorage.length;i++){
 
    const summary = document.createElement('p');
    let  sumaryNote = document.createTextNode(dataFromLocalStorage[i].descriptionb);
-   const summary_content = document.createTextNode(sumaryNote.textContent.slice(0,60) +"...");
+   const summary_content = document.createTextNode(sumaryNote.textContent.replace(/<[^>]*>?/gm, '').slice(0,60) +"...");
    const readMore = document.createTextNode("Read More");
    des.classList.add("more");
    const pcontent = document.createTextNode(dataFromLocalStorage[i].title);
@@ -77,7 +83,7 @@ for(let i = 0;i < dataFromLocalStorage.length;i++){
    blogDiv.appendChild(like_coment)
    blogList.appendChild(blogDiv);
 }
-//single pafe view.
+//single blog view.
 const more = document.querySelectorAll(".more");
 const blogimage = document.getElementById("blog-image");
 const blogHeading = document.getElementById("blogHeading")
@@ -99,7 +105,6 @@ for(let i = 0;i<more.length;i++){
        })
    } 
 }
-console.log(single)
 
 const closing = () =>{
 if(single.style.display = "block" &&(all.style.display = "none")){
@@ -124,27 +129,23 @@ let nolike = document.createElement('span');
 let nocomment = document.createElement('span')
 nocomment.id = 'nocomment';
 nolike.id = 'nolike';
-nolike.innerHTML = 23;
-nocomment.innerHTML = 2;
+nolike.innerHTML = 0;
+nocomment.innerHTML = 0;
 
        
 contollerDiv.appendChild(image1);
 contollerDiv.appendChild(nolike);
 contollerDiv.appendChild(image2);
 contollerDiv.appendChild(nocomment);
-// single.appendChild(contollerDiv);
-
-// const comment 
+// post coment  
 
 const userName = document.getElementById("usename");
 const userComment = document.getElementById("comment");
 const sendCommentButton = document.getElementById("send-comment");
 const form1 = document.querySelector('form')
 let comment_from_users =JSON.parse(localStorage.getItem('comments'));
-if(comment_from_users.length === 0){
+if(comment_from_users === null){
    comment_from_users = [];
-}else{
-   comment_from_users =JSON.parse(localStorage.getItem('comments'));
 }
 
 sendCommentButton.addEventListener('click',(event) =>{
@@ -157,9 +158,8 @@ comment_from_users.push(comment);
 localStorage.setItem("comments",JSON.stringify(comment_from_users));
 form1.reset();
 })
-//Retrieving coment from local storage
-const usersComment = JSON.parse(localStorage.getItem('comments'));
-console.log(userComment) 
+
+
 
 
 

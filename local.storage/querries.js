@@ -1,6 +1,5 @@
 
 const querriesFromLocalStorage = JSON.parse(window.localStorage.getItem("querries"));
-console.log(querriesFromLocalStorage);
 const querryDiv = document.querySelector('.contents');
 
 for(let i = 0;i < querriesFromLocalStorage.length;i++){
@@ -36,10 +35,10 @@ for(let i = 0;i<deletequerry.length;i++){
             if(i === j){
                 const querryIndex = querriesFromLocalStorage.indexOf(querriesFromLocalStorage[i]);
             if(querryIndex > -1){
-                prompt('Are you sure do delet this querry ?')
                 querriesFromLocalStorage.splice(querryIndex,1);
                let  newData = JSON.stringify(querriesFromLocalStorage);
                 localStorage.setItem('querries',newData);
+                window.location.reload();
             }
             }
         })

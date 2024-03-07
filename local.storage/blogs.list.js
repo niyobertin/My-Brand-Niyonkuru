@@ -20,7 +20,7 @@ for(let i = 0;i < dataFromLocalStorage.length;i++){
  const blogImages = document.createElement('img');
  blogImages.src = dataFromLocalStorage[i].image;
 image3.src = "../images/Delete.jpg";        
-// contollerDiv.appendChild(image1);
+
 contollerDiv.appendChild(image2);
 contollerDiv.appendChild(image3);
 view = document.querySelectorAll('.view');
@@ -32,7 +32,7 @@ deletes = document.querySelectorAll('.delete');
 const head = document.createElement("h2");
 const content = document.createElement("p");
 const headings =  document.createTextNode(dataFromLocalStorage[i].title);
-const textContent = document.createTextNode(dataFromLocalStorage[i].descriptionb);
+const textContent = document.createTextNode((dataFromLocalStorage[i].descriptionb).replace(/<[^>]*>?/gm, ''));
 div.appendChild(blogImages);
 head.appendChild(headings)
 div.appendChild(head);
@@ -61,7 +61,9 @@ blogContents.appendChild(div);
       })
       fr.readAsDataURL(file);
       })
-console.log(deletes);
+
+
+//editing a blog
  for(let i = 0;i < edit.length;i++){
     for(let j = 0; j < dataFromLocalStorage.length;j++){
         edit[i].addEventListener('click',() => {
@@ -72,12 +74,12 @@ console.log(deletes);
                 if(dataFromLocalStorage[i]){
                    title.value = dataFromLocalStorage[i].title;
                    imageUrl = dataFromLocalStorage[i].image;
-                   desc.innerText = dataFromLocalStorage[i].descriptionb; 
+                   desc.innerHTML = dataFromLocalStorage[i].descriptionb; 
                    button.addEventListener("click",(event) => {
                     event.preventDefault();
                     newData[i].title = title.value;
                     newData[i].image = imageUrl || newData[i].dataFromLocalStorage[i].image;
-                    newData[i].descriptionb=desc.innerText;
+                    newData[i].descriptionb=desc.innerHTML;
                 
                     localStorage.setItem('blogs',JSON.stringify(newData));
                      form.reset();
@@ -92,9 +94,10 @@ console.log(deletes);
  }
 
 
-//clasing window function
+//closing window function
 const close_button = document.getElementById('close');
-    close_button.addEventListener("click",() => {
+    close_button.addEventListener("click",(event) => {
+        event.preventDefault();
         if((conteiner.style.display = "block") && (blogContents.style.display = 'none')){
             conteiner.style.display = "none";
             blogContents.style.display = 'block'
@@ -114,10 +117,10 @@ const close_button = document.getElementById('close');
         if(i === j){
             const index = dataFromLocalStorage.indexOf(dataFromLocalStorage[i]);
             if(index > -1){
-                prompt('Are you sure do delet this blog ?')
                 dataFromLocalStorage.splice(index,1);
                let  newData = JSON.stringify(dataFromLocalStorage);
                 localStorage.setItem('blogs',newData);
+                window.location.reload();
             }
         }
         })
