@@ -28,7 +28,7 @@ button.addEventListener('click',(event) => {
           const artical = {
               title:title.value,
               image:imageUrl,
-              descriptionb:desc.innerText
+              descriptionb:desc.innerHTML
            }
           blogs.push(artical);
       localStorage.setItem('blogs',JSON.stringify(blogs));
@@ -69,7 +69,7 @@ for(let i = 0;i < dataFromLocalStorage.length;i++){
 
    const summary = document.createElement('p');
    let  sumaryNote = document.createTextNode(dataFromLocalStorage[i].descriptionb);
-   const summary_content = document.createTextNode(sumaryNote.textContent.slice(0,60) +"...");
+   const summary_content = document.createTextNode(sumaryNote.textContent.replace(/<[^>]*>?/gm, '').slice(0,60) +"...");
    const readMore = document.createTextNode("Read More");
    des.classList.add("more");
    const pcontent = document.createTextNode(dataFromLocalStorage[i].title);
@@ -129,8 +129,8 @@ let nolike = document.createElement('span');
 let nocomment = document.createElement('span')
 nocomment.id = 'nocomment';
 nolike.id = 'nolike';
-nolike.innerHTML = 23;
-nocomment.innerHTML = 2;
+nolike.innerHTML = 0;
+nocomment.innerHTML = 0;
 
        
 contollerDiv.appendChild(image1);

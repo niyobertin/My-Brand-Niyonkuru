@@ -32,7 +32,7 @@ deletes = document.querySelectorAll('.delete');
 const head = document.createElement("h2");
 const content = document.createElement("p");
 const headings =  document.createTextNode(dataFromLocalStorage[i].title);
-const textContent = document.createTextNode(dataFromLocalStorage[i].descriptionb);
+const textContent = document.createTextNode((dataFromLocalStorage[i].descriptionb).replace(/<[^>]*>?/gm, ''));
 div.appendChild(blogImages);
 head.appendChild(headings)
 div.appendChild(head);
@@ -74,12 +74,12 @@ blogContents.appendChild(div);
                 if(dataFromLocalStorage[i]){
                    title.value = dataFromLocalStorage[i].title;
                    imageUrl = dataFromLocalStorage[i].image;
-                   desc.innerText = dataFromLocalStorage[i].descriptionb; 
+                   desc.innerHTML = dataFromLocalStorage[i].descriptionb; 
                    button.addEventListener("click",(event) => {
                     event.preventDefault();
                     newData[i].title = title.value;
                     newData[i].image = imageUrl || newData[i].dataFromLocalStorage[i].image;
-                    newData[i].descriptionb=desc.innerText;
+                    newData[i].descriptionb=desc.innerHTML;
                 
                     localStorage.setItem('blogs',JSON.stringify(newData));
                      form.reset();
@@ -96,7 +96,8 @@ blogContents.appendChild(div);
 
 //closing window function
 const close_button = document.getElementById('close');
-    close_button.addEventListener("click",() => {
+    close_button.addEventListener("click",(event) => {
+        event.preventDefault();
         if((conteiner.style.display = "block") && (blogContents.style.display = 'none')){
             conteiner.style.display = "none";
             blogContents.style.display = 'block'
