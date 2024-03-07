@@ -406,12 +406,10 @@ header h1{
     #next-slide{
         margin-top: 17%;
         left: 0.4%;
-        display: none;
     }
     #prev-slide{
         margin-top: 17%;
         right: 0.4%;
-        display: none;
     }
     .next a,.previous a{
         color: black;
