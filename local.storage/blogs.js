@@ -58,8 +58,8 @@ for(let i = 0;i < dataFromLocalStorage.length;i++){
    comment.src = "../images/comment.JPG";
    const likeNumber = document.createElement('p');
    const commentNumber = document.createElement('p');
-   let likeNo = document.createTextNode('12');
-   let comentNo = document.createTextNode('20');
+   let likeNo = document.createTextNode(0);
+   let comentNo = document.createTextNode(0);
    like_coment.appendChild(likeNumber);
    like_coment.appendChild(like);
    likeNumber.appendChild(likeNo);

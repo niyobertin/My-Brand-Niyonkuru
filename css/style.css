@@ -465,18 +465,22 @@ header h1{
     height: fit-content;
     top: 20%;
     padding: 0;
+    left: 0;
     width: 100%;
     display: none;
 }
 .single img{
 float:initial;
-width: 20%;
+width: 30%;
 margin: 2%;
+margin-left: 10%;
 }
 .single p{
-    padding: 2%;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 .single h3{
+    margin-left: 20%;
     color: yellow;
 }
 .single header{
@@ -761,9 +765,29 @@ margin: 2%;
         position:absolute;
         background-color: #1e1e1e;
         height: fit-content;
-        top: 0;
+        top: 2;
         padding: 0;
         width: 100%;
         display: none;
+    }
+    .single img{
+        float: none;
+        width: 100%;
+        margin: 0;
+    }
+    .comment-area button{
+        width: 50%;
+        margin-left: 20%;
+        font-size: medium;
+    }
+    .comment-area input{
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    .comment-area textarea{
+        width: 100%;
+        margin: 0;
+        padding: 0;
     }
 } 
