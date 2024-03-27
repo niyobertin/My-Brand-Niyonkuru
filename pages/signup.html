@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <title>sign up</title>
+</head>
+<body onkeydown="signUpFunc()">
+    <header style="background-color: black;">
+        <ul>
+            <li><a href="home.html">Home</a></li>
+           
+        </ul>
+    </header>
+    <main>
+        <div class="login-contact">
+            <h2>Sign up</h2>
+            <div id="login-form1">
+                <form action="" class="input-area">
+                    <div class="username">
+                        <label for="username" id="username-label">Username</label><br/>
+                        <input type="text" id="username">
+                    </div>
+                    <div class="email">
+                        <label for="email" id="emailLabel">Email</label><br/>
+                        <input type="email" id="signupEmail">
+                    </div>  
+                     <div class="Password">
+                        <label for="Password" id="password-config1">Password</label><br/>
+                        <input type="Password" id="sign-up-password1">
+                    </div>
+                    <div class="Password">
+                        <label for="Password" id="password-config2">Comfirm password</label><br/>
+                        <input type="Password" id="sign-up-password2">
+                    </div> <br/>
+                    <button id="login-botton" class="signUp" type="button" style="cursor: pointer;" onclick="signUpValidate()">Sign Up</button> or
+                    <a href="login.html" id="signUp" style="color: yellow;">Log in</a>
+                 </form>  
+             </div>
+        </div>
+    </main>
+    <footer></footer>
+    <script src="../javaScript/formValidation.js"></script>
+</body>
+</html>
