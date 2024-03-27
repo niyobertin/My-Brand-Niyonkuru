@@ -50,14 +50,6 @@ const initSlider = () =>{
           blogList.scrollBy({left:scrollAmount,behavior:"smooth"});
         });
       });
-      const controllSlideButtons = () => {
-        sliderButtons[0].style.display = blogList.scrollLeft <= 0 ? "none" : "block";
-        sliderButtons[1].style.display = blogList.scrollLeft >= maxLeftScroll ? "none" : "block";
-
-      }
-      blogList.addEventListener("scroll",() => {
-        controllSlideButtons();
-      });
 };
 //Function for calling func inside html
 const buttonClick = (button,func) => {

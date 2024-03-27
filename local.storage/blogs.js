@@ -1,3 +1,4 @@
+
 const title = document.getElementById('blogTitle');
 const image = document.getElementById('aplodImage');
 const desc = document.getElementById('text-input');
@@ -9,7 +10,6 @@ let blogTitles = document.getElementById("blogTitle");
 const blogContent = document.getElementById("blogContent")
 let imageUrl;
 let blogs = (JSON.parse(localStorage.getItem('blogs')));
-
 image.addEventListener('change',() =>{
    const file = image.files[0];
  const fr = new FileReader();
@@ -35,56 +35,70 @@ button.addEventListener('click',(event) => {
       form.reset();
       
 });
-
-
-const blogList = document.getElementById('blog-list');
-let dataFromLocalStorage = JSON.parse(window.localStorage.getItem("blogs"));
-if(dataFromLocalStorage === null){
-   dataFromLocalStorage = [];
+const loader = document.querySelector("#loading");
+const displayLoading = () =>{
+   loader.classList.add("display");
+   setTimeout(() =>{
+      loader.classList.remove("display")
+   },1000 * 60 * 60);
 }
-for(let i = 0;i < dataFromLocalStorage.length;i++){
-   const blogDiv = document.createElement("div");
-   blogDiv.classList.add("blog1");
-   const images = document.createElement('img');
-   images.src = dataFromLocalStorage[i].image;
-   const des = document.createElement('p');
-   const h3 = document.createElement('h3');
-
-   const like_coment = document.createElement("div");
-   like_coment.classList.add('linke-coment');
-   const like = document.createElement('img');
-   like.src = "../images/like.JPG";
-   const comment = document.createElement('img');
-   comment.src = "../images/comment.JPG";
-   const likeNumber = document.createElement('p');
-   const commentNumber = document.createElement('p');
-   let likeNo = document.createTextNode(0);
-   let comentNo = document.createTextNode(0);
-   like_coment.appendChild(likeNumber);
-   like_coment.appendChild(like);
-   likeNumber.appendChild(likeNo);
-   like_coment.appendChild(comment);
-   commentNumber.appendChild(comentNo);
-   like_coment.appendChild(commentNumber);
-
-   const summary = document.createElement('p');
-   let  sumaryNote = document.createTextNode(dataFromLocalStorage[i].descriptionb);
-   const summary_content = document.createTextNode(sumaryNote.textContent.replace(/<[^>]*>?/gm, '').slice(0,60) +"...");
-   const readMore = document.createTextNode("Read More");
-   des.classList.add("more");
-   const pcontent = document.createTextNode(dataFromLocalStorage[i].title);
-   blogDiv.appendChild(images);
-   h3.appendChild(pcontent);
-   blogDiv.appendChild(h3);
-   summary.appendChild( summary_content);
-   blogDiv.appendChild(summary)
-   des.appendChild(readMore);
-   blogDiv.appendChild(des);
-   blogDiv.appendChild(like_coment)
-   blogList.appendChild(blogDiv);
+const hideLoading = () =>{
+   loader.classList.remove("display")
 }
-//single blog view.
-const more = document.querySelectorAll(".more");
+
+const fetchBlogs = async() =>{
+            const url = 'https://mybrand-be-nkyz.onrender.com/api/v1/blogs';
+            displayLoading()
+            try{
+               let response = (await fetch(url)).json()
+               hideLoading()
+         const blogList = document.getElementById('blog-list');
+         let BlgsFromDb = await response;
+         let blogsList = BlgsFromDb.blogs
+         for(let i = 0;i < blogsList.length;i++){
+            const blogDiv = document.createElement("div");
+            blogDiv.classList.add("blog1");
+            const images = document.createElement('img');
+            images.src = blogsList[i].image;
+            const des = document.createElement('p');
+            const h3 = document.createElement('h3');
+
+            const like_coment = document.createElement("div");
+            like_coment.classList.add('linke-coment');
+            const like = document.createElement('img');
+            like.src = "../images/like.JPG";
+            const comment = document.createElement('img');
+            comment.src = "../images/comment.JPG";
+            const likeNumber = document.createElement('p');
+            const commentNumber = document.createElement('p');
+            let likeNo = document.createTextNode(0);
+            let comentNo = document.createTextNode(0);
+            like_coment.appendChild(likeNumber);
+            like_coment.appendChild(like);
+            likeNumber.appendChild(likeNo);
+            like_coment.appendChild(comment);
+            commentNumber.appendChild(comentNo);
+            like_coment.appendChild(commentNumber);
+
+            const summary = document.createElement('p');
+            let  sumaryNote = document.createTextNode(blogsList[i].content);
+            const summary_content = document.createTextNode(sumaryNote.textContent.replace(/<[^>]*>?/gm, '').slice(0,60) +"...");
+            const readMore = document.createTextNode("Read More");
+            des.classList.add("more");
+            const pcontent = document.createTextNode(blogsList[i].title);
+            blogDiv.appendChild(images);
+            h3.appendChild(pcontent);
+            blogDiv.appendChild(h3);
+            summary.appendChild( summary_content);
+            blogDiv.appendChild(summary)
+            des.appendChild(readMore);
+            blogDiv.appendChild(des);
+            blogDiv.appendChild(like_coment)
+            blogList.appendChild(blogDiv);
+         }
+  
+   const more = document.querySelectorAll(".more");
+   //single blog view.
 const blogimage = document.getElementById("blog-image");
 const blogHeading = document.getElementById("blogHeading")
 const mainpage = document.getElementById("blogDesc");
@@ -92,31 +106,32 @@ const single = document.querySelector(".single");
 const all = document.querySelector('.all');
 
 for(let i = 0;i<more.length;i++){
-   for(let j = 0;j < dataFromLocalStorage.length;j++){
+   
+   for(let j = i;j < blogsList.length;j++){
        more[i].addEventListener("click",() =>{
        if(i === j){
-         blogimage.src= dataFromLocalStorage[i].image;
-         blogHeading.innerHTML = dataFromLocalStorage[i].title;
-         mainpage.innerHTML = dataFromLocalStorage[i].descriptionb;
+         const singleBlogsView = async() =>{
+            const blogsId = blogsList[i]._id;
+            const single_blog_url = `https://mybrand-be-nkyz.onrender.com/api/v1/blogs/${blogsId}`
+            const singleBlog = (await fetch(single_blog_url)).json();
+            const blog = (await singleBlog).blogs;
+            blogimage.src= blog.image;
+             blogHeading.innerHTML = blog.title;
+             mainpage.innerHTML = blog.content;
+         }
+         singleBlogsView();
        }
        single.style.display = 'block';
        single.animate({transform:['scale(0)','scale(0)','scale(1)']},500);
        all.style.display = "none"
        })
    } 
+}   
+}catch(err){
+   throw new Error(err.message)
+   }
 }
-
-const closing = () =>{
-if(single.style.display = "block" &&(all.style.display = "none")){
-   single.style.display = "none"
-   all.style.display = "block"
-   all.animate({transform:['scale(0)','scale(0)','scale(1)']},500);
-}else{
-   single.style.display = "none"
-   all.style.display = "none" 
-}
-}
-
+fetchBlogs()
 const contollerDiv = document.createElement('div');
 contollerDiv.classList.add("controllers")
 const image1 = document.createElement("img");
