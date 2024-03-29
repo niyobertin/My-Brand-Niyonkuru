@@ -13,3 +13,42 @@
 a:hover{
     color: yellow;
 }
+#loading{
+    position:absolute;
+    margin-top: 30%;
+    margin-left: 30%;
+    width: 2rem;
+    height: 2rem;
+    border: 5px solid yellow;
+    border-top: 5px solid white;
+    border-radius: 50%;
+    visibility: hidden;
+    animation: spin 0.5s infinite linear;
+}
+#loading.display{
+    visibility: visible;
+}
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+  /* pop up message */
+  .pop-up{
+    background-color: rgb(12, 12, 12);
+    top: 1;
+    position: fixed;
+    padding: 2%;
+    width: fit-content;
+    margin-left: 25%;
+    margin-right: 25%;
+    text-align: center;
+    font-size: medium;
+    color: yellow;
+    font-weight: 100;
+    border-radius: 10px;
+    display: none;
+}

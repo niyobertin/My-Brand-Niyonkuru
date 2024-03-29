@@ -170,6 +170,43 @@ select{
    margin-top: 60%;
    padding-top: 20%;
  }
+ .pop-up-message{
+   background-color: rgb(44, 43, 41);
+   padding: 2%;
+   margin-top: 8%;
+   margin-left: 25%;
+   margin-right: 25%;
+   text-align: center;
+   font-size: medium;
+   color: yellow;
+   font-weight: 100;
+   border-radius: 10px;
+   display: none;
+}
+#loading{
+   width: 2rem;
+   height: 2rem;
+   border: 5px solid yellow;
+   border-top: 5px solid white;
+   border-radius: 50%;
+   margin: auto;
+   margin-top: 25%;
+   position: fixed;
+   margin-left: 45%;
+   visibility: hidden;
+   animation: spin 0.5s infinite linear;
+}
+#loading.display{
+   visibility: visible;
+}
+@keyframes spin {
+   from {
+       transform: rotate(0deg);
+   }
+   to {
+       transform: rotate(360deg);
+   }
+}
  
  @media screen and (max-width: 800px){
    .add-blogs{

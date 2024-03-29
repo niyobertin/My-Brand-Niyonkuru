@@ -17,7 +17,7 @@ header{
     margin-right: 20%;
 }
 .contact h2{
-    margin-top: 8%;
+    margin-top: 7%;
     text-align: center;
     color: yellow;
 }
@@ -48,6 +48,19 @@ input ,textarea{
     color: rgb(255, 255, 255);
     font-size: larger;
     font-weight: bolder;
+}
+.pop-up-message{
+    background-color: rgb(44, 43, 41);
+    padding: 1%;
+    margin-top: 8%;
+    margin-left: 25%;
+    margin-right: 25%;
+    text-align: center;
+    font-size: medium;
+    color: yellow;
+    font-weight: 100;
+    border-radius: 10px;
+    display: none;
 }
 @media screen and (max-width: 800px){
     header{

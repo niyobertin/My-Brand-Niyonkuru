@@ -478,8 +478,20 @@ header h1{
         BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 
         'Open Sans', 'Helvetica Neue', sans-serif;
     }
+    /* pop up message */
+    .pop-up{
+        background-color: rgb(44, 43, 41);
+        padding: 0.5%;
+        margin-left: 25%;
+        margin-right: 25%;
+        text-align: center;
+        font-size: medium;
+        color: yellow;
+        font-weight: 100;
+        border-radius: 10px;
+        display: none;
+    }
 /*SINGLE VIWE*/
-
 .single{
     position:absolute;
     background-color: #1e1e1e;

@@ -8,11 +8,9 @@ const generalInput  = (input) => {
     return (input.value === "" || input.value === null)
 }
 //Contact form Validation
-const name = document.getElementById('name');
-const email = document.getElementById('email');
+const visitor = document.getElementById('name');
 const message = document.getElementById('message');
 const nameLabel = document.getElementById("name-label");
-const emailLabel = document.getElementById("email-label");
 const messageLabel = document.getElementById("message-label");
 //General input validation
 const Validation = (variable,labelValue,content) => {
@@ -32,8 +30,7 @@ const emailVal = (variable,labelValue,content) =>{
 }
 //contact
 const form_validation = () =>{
-    Validation(name,nameLabel,'Please fill in your name');
-    emailVal(email,emailLabel,'Provide a correct email');
+    Validation(visitor,nameLabel,'Please fill in your name');
     Validation(message,messageLabel,' Message can have at least  10 chracters!'); 
 }
 //Login
@@ -55,24 +52,64 @@ const form_validation = () =>{
                 labelValue.innerHTML = content;
             }
         }
-
-        const loginValidation = () => {
-            const user = {
-                usernames:"Niynkuru Bertin",
-                emails:'niyonkurubbertin@gmail.com',
-                passworda:'Bertin12',
-                passwordb:"Bertin12"
-            }
-        
-            if(loginEmail.value === user.emails && password.value === user.passworda){
-                window.location ='../pages/admin.html';  
-              
+        const userRole =  (role) => {
+            if(role === "admin"){
+                location.href = "../pages/admin.html";
             }else{
-                emailVal(loginEmail,login_email,'Provide a correct email');
-                passwordVal(password,password_label,"Your Password must be atleast 6-8 Chracters including numbers");
+                location.href = "../pages/home.html";
+                
             }
         }
-        
+
+    const loader = document.querySelector("#loading");
+    const displayLoading = () =>{
+    loader.classList.add("display");
+    setTimeout(() =>{
+        loader.classList.remove("display")
+    },1000 * 60 * 60);
+    }
+    const hideLoading = () =>{
+    loader.classList.remove("display")
+    }
+
+        const popMessage = document.querySelector(".pop-up");
+        const loginUser = async(email,password) =>{
+            const loginUrl = "https://mybrand-be-nkyz.onrender.com/api/v1/users/login";
+            displayLoading()
+            fetch(loginUrl,{
+                method:'POST',
+                headers:{
+                    'Content-Type': 'application/json'
+                },
+                body:JSON.stringify({email,password})
+            })
+            .then(res => res.json())
+            .then((data) => {
+                hideLoading();
+                if(data.status == 404 || data.status == 400){
+                emailVal(loginEmail,login_email,data.message);
+                passwordVal(password,password_label,"Your Password must be atleast 6-8 Chracters including numbers");
+                }else{
+                popMessage.innerHTML = data.message;
+                popMessage.style.display = "block";
+                const token = data.token;
+                localStorage.setItem('token',token);
+                setTimeout(() => {
+                    popMessage.style.display = "none";
+                    userRole(data.role);
+                  }, 2000);
+                  return token;
+            }
+            })
+            .catch(error => console.log(error.message));
+        }
+        const loginValidation= () => {
+            if(loginUser(loginEmail.value,password.value)){
+                return true;
+            }else{
+              return false;  
+            }
+        }
         // Sign up page
         const username = document.getElementById('username');
         const signUpEmail = document.getElementById('signupEmail');
@@ -82,7 +119,6 @@ const form_validation = () =>{
         const emaillabel = document.getElementById('emailLabel');
         const passwordConfig1 = document.getElementById('password-config1');
         const passwordConfig2 = document.getElementById('password-config2');
-
         //sign up validator function
         const signUpValidate = () =>{
             Validation(username,username_label,"Provide a user name");
@@ -118,10 +154,7 @@ const form_validation = () =>{
     }
     //contact  key press func
     const loardKeyPressFunc = () => {
-        if(emailValidation(email.value)){
-            keyPress(emailLabel,"Email");  
-        }
-        if(!generalInput(name)){
+        if(!generalInput(visitor)){
             keyPress(nameLabel,"Name");
         }
         if(!generalInput(message)){
