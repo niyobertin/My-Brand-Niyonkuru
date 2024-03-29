@@ -114,22 +114,14 @@ const form_validation = () =>{
         const username = document.getElementById('username');
         const signUpEmail = document.getElementById('signupEmail');
         const signupPassword = document.getElementById('sign-up-password1');
-        const confirmPas = document.getElementById('sign-up-password2');
         const username_label = document.getElementById('username-label');
         const emaillabel = document.getElementById('emailLabel');
         const passwordConfig1 = document.getElementById('password-config1');
-        const passwordConfig2 = document.getElementById('password-config2');
         //sign up validator function
         const signUpValidate = () =>{
             Validation(username,username_label,"Provide a user name");
             emailVal(signUpEmail,emaillabel,"Provide a correct email");
             passwordVal(signupPassword,passwordConfig1,"Your Password must be atleast 6-8 Chracters including numbers");
-            passwordVal(confirmPas,passwordConfig2,"Your Password must be the same");
-            if(confirmPas.value !== signupPassword.value){
-                passwordConfig2.style.color = 'red';
-               passwordConfig2.style.fontSize = 'small';
-               passwordConfig2.innerHTML = 'Password must be the same';
-             }
         }
         //Adding blogs Variables
         const blogTitle = document.getElementById('blogTitle');

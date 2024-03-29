@@ -54,17 +54,32 @@ try{
             div.appendChild(textContent)
             div.appendChild(contollerDiv);
             blogContents.appendChild(div);
+            const blogId = blogsList[i]._id;
+            image3.addEventListener('click', () =>{
+               deletBlogs(blogId)
+            });
+            image2.addEventListener('click', () =>{
+                localStorage.setItem("blogsId",blogId);
+                containShow();
+             });
         }
+        
     }catch(err){
 
     }  
 } 
 fetchBlogs()
-
-const deletBlogd = (id) => {
+const popMessage = document.querySelector(".alet");
+const token = localStorage.getItem('token');
+const deletBlogs = (id) => {
     const url = `https://mybrand-be-nkyz.onrender.com/api/v1/blogs/${id}`;
+    console.log(displayLoading())
     fetch(url, {
-        method: 'DELETE'
+        method: 'DELETE',
+        headers:{
+        'Authorization': `Bearer ${token}`,
+        'Content-Type': 'application/json'
+        }
     })
     .then(response => {
         if (!response.ok) {
@@ -76,8 +91,8 @@ const deletBlogd = (id) => {
         }
         return response.json();
     })
-    .then(() => {
-        popMessage.innerHTML = "Blog deleted Successful!";
+    .then((data) => {
+        popMessage.innerHTML = data.message;
         popMessage.style.display = "block";
         setTimeout(() => {
             popMessage.style.display = "none";
@@ -89,75 +104,88 @@ const deletBlogd = (id) => {
     });
     
 }
- // updating blogs
-//     const title = document.getElementById('blogTitle');
-//     const image = document.getElementById('aplodImage');
-//     const desc = document.getElementById('text-input');
-//     const button = document.getElementById('login-botton');
-//     const conteiner = document.querySelector('.conteiner');
-//     const form = document.querySelector('form');
-//     let imageUrl;// hold the Image url from fileReader
-//     const newData = JSON.parse(localStorage.getItem('blogs'));
-//     //FileReader
-//     image.addEventListener('change',() =>{
-//         const file = image.files[0];
-//       const fr = new FileReader();
-//       fr.addEventListener("load",() =>{
-//         imageUrl = fr.result;
-//         // console.log(imageUrl);
-//       })
-//       fr.readAsDataURL(file);
-//       })
+//  updating blogs
+    const title = document.getElementById('blogTitle');
+    const images = document.getElementById('aplodImage');
+    const desc = document.getElementById('text-input');
+    const button = document.getElementById('login-botton');
+    const conteiner = document.querySelector('.conteiner');
+    const form = document.querySelector('form');
+    const UpdateBlogs = (data) => {
+        const blogId = localStorage.getItem('blogsId');
+        console.log(blogId)
+        const url = `https://mybrand-be-nkyz.onrender.com/api/v1/blogs/${blogId}`;
+        displayLoading();
+        const formData = new FormData();
+        formData.append('title', data.title);
+        formData.append('image', data.images);
+        formData.append('content', data.content);
+    
+        fetch(url, {
+            method: 'PATCH',
+            headers: {
+                'Authorization': `Bearer ${token}`
+            },
+            body: formData
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            hideLoading();
+            popUpMessage.innerHTML = data.message;
+            popUpMessage.style.display = "block";
+            desc.innerHTML = '';
+            localStorage.removeItem('blogId');
+            setTimeout(() => {
+                popUpMessage.style.display = "none";
+                form.reset();
+            }, 2000);
+        })
+        .catch(error => {
+            hideLoading();
+            if(error){
+                console.log(error.message)
+            };
+        });
+    }
 
-
-// //editing a blog
-//  for(let i = 0;i < edit.length;i++){
-//     for(let j = 0; j < dataFromLocalStorage.length;j++){
-//         edit[i].addEventListener('click',() => {
-//             if(i === j){
-//                 conteiner.style.display = 'block';
-//                  blogContents.style.display = 'none';
-//                  conteiner.animate({transform:['scale(0)','scale(0)','scale(1)']},500);
-//                 if(dataFromLocalStorage[i]){
-//                    title.value = dataFromLocalStorage[i].title;
-//                    imageUrl = dataFromLocalStorage[i].image;
-//                    desc.innerHTML = dataFromLocalStorage[i].descriptionb; 
-//                    button.addEventListener("click",(event) => {
-//                     event.preventDefault();
-//                     newData[i].title = title.value;
-//                     newData[i].image = imageUrl || newData[i].dataFromLocalStorage[i].image;
-//                     newData[i].descriptionb=desc.innerHTML;
-                
-//                     localStorage.setItem('blogs',JSON.stringify(newData));
-//                      form.reset();
-//                     alert('Blogs updated successfully!');
-//                 })
-//                 }else{
-//                     alert("the local storage is empty")
-//                 } 
-//             }  
-//         })
-//     }
-//  }
-
-
-// //closing window function
-// const close_button = document.getElementById('close');
-//     close_button.addEventListener("click",(event) => {
-//         event.preventDefault();
-//         if((conteiner.style.display = "block") && (blogContents.style.display = 'none')){
-//             conteiner.style.display = "none";
-//             blogContents.style.display = 'block'
-//             blogContents.animate({transform:['scale(0)','scale(0)','scale(1)']},500);
-//             }else{
-//             conteiner.style.display = "block" 
-//             conteiner.animate({transform:['scale(1)','scale(0)','scale(0)']},500);
-//             blogContents.style.display = 'none';
-//             }
-//     })
-  
-
- //deleting blog
+    button.addEventListener('click',(event) => {
+        event.preventDefault();
+        const artical = {
+           title:title.value,
+           image:images.files[0],
+           content:desc.innerHTML
+        }
+        UpdateBlogs(artical);
+     form.reset();
+     
+});
+    
+    
+    const blog_container = document.querySelector(".conteiner");
+    const blogContents = document.querySelector(".contents");
+    const containShow = () => {
+        blog_container.style.display = 'block';
+        blogContents.style.display = 'none';
+       blog_container.animate({transform:['scale(0)','scale(0)','scale(1)']},500);
+    }
+const close_button = document.getElementById('close');
+    close_button.addEventListener("click",(event) => {
+        event.preventDefault();
+        if((blog_container.style.display = "block") && (blogContents.style.display = 'none')){
+            blog_container.style.display = "none";
+            blogContents.style.display = 'block'
+            blogContents.animate({transform:['scale(0)','scale(0)','scale(1)']},500);
+            }else{
+            blog_container.style.display = "block" 
+            blog_container.animate({transform:['scale(1)','scale(0)','scale(0)']},500);
+            blogContents.style.display = 'none';
+            }
+    })
  
  
 

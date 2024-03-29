@@ -1,0 +1,349 @@
+body{
+    background-color: black;
+    color: white;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 
+    'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+header{
+    top: 0;
+    margin: 0px;
+    overflow: hidden;
+    background-color: #1e1e1e;
+    color:white;
+    transition: 1s;
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 9999;
+}
+header ul{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 40%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-right: 10%;
+    transition: 1s;
+}
+
+header ul li{
+    position: relative;
+    list-style: none;
+    transition: 1s;
+}
+header ul li a{
+    display: flex;
+    position: relative;
+    text-decoration: none;
+    color: white;
+    transition: 1s;
+}
+a:hover{
+    color: yellow;
+}
+
+header h1{
+    position: relative;
+    margin-left: 10%;
+    transition: 1s;
+    color: white;
+}
+#bullet{
+    color: yellow;
+    font-size: xx-large;
+}
+/* This the css for the head section */
+.sticky + .landing {
+    padding-top: 2%;
+  }
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  #menuIcon{
+    width: 20%;
+    display: none;
+}
+/*SINGLE VIWE*/
+.single{
+    position:absolute;
+    background-color: #1e1e1e;
+    height: fit-content;
+    top: 20%;
+    padding: 0;
+    left: 0;
+    width: 100%;
+    
+}
+
+.singleView{
+ display: none; 
+}
+.single img{
+float:initial;
+width: 30%;
+height: 40vh;
+margin: 2%;
+margin-left: 10%;
+}
+.single p{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.single h3{
+    margin-left: 20%;
+    color: yellow;
+}
+.single header{
+    position: fixed;
+}
+#loading{
+    position: fixed;
+    width: 2rem;
+    height: 2rem;
+    border: 5px solid yellow;
+    border-top: 5px solid #1e1e1e;;
+    border-radius: 50%;
+    margin-top: 15%;
+    margin-left: 50%;
+    visibility: hidden;
+    animation: spin 0.5s infinite linear;
+}
+#close{
+    text-align: end;
+    font-size: large;
+     font-weight: 900;
+   margin-left: 98%;
+   margin-right: 1%;
+   cursor: pointer;
+   background-color: #1e1e1e;
+   color: aliceblue;
+   width: 5%;
+   text-align: center;
+   border: none;
+}
+#close:hover{
+    color: yellow;
+}
+.controllers{
+    display: flex;
+    align-items: center;
+}
+.controllers img{
+    width: 6%;
+}
+
+.comment-area{
+    border-top: 1px solid rgb(100, 100, 60);
+    display: grid;
+    padding: 1%;
+    bottom: 0;
+}
+.comment-area input{
+    margin-left: 10%;
+    background-color: #1e1e1e;
+    width: 50%;
+    padding: 0.6%;
+    border: 0.5px solid yellow;
+    border-radius: 7px;
+    color: aliceblue;
+    font-size: large;
+}
+.comment-area textarea{
+    margin-left: 10%;
+    background-color: #1e1e1e;
+    width: 50%;
+    padding: 0.6%;
+    border: 0.5px solid yellow;
+    border-radius: 7px;
+    color: aliceblue;
+    font-size: large;
+}
+
+.comment-area button{
+    background-color: rgb(93, 93, 13);
+    width: 10%;
+    margin-left: 51%;
+    padding: 0.6%;
+    border: none;
+    border-radius: 7px; 
+    font-size: large;
+    font-weight: bold;
+    color: aliceblue;
+}
+.usercomment{
+   width: 98%;
+   margin-left: 10%;
+   padding: 0;
+}
+#userName{
+    margin-left: 10;
+    color: rgb(229, 229, 8);
+    margin: 0.4%;
+    font-size: 100%;
+}
+.newest-comment{
+    width: 100%;
+    margin-top: 1%;
+}
+#name-label,#comment-label{
+    margin-left: 10%;
+    text-align: start;
+}
+#pragraph{
+    width: 80%;
+    margin: 0;
+    padding: 0;
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+}
+#loading.display{
+    visibility: visible;
+}
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.pop-up{
+    background-color: rgb(44, 43, 41);
+    position: fixed;
+    margin-top: 0;
+    padding: 1%;
+    width: 40%;
+    margin-left: 25%;
+    margin-right: 25%;
+    text-align: center;
+    font-size: medium;
+    color: yellow;
+    font-weight: 100;
+    border-radius: 10px;
+    display: none;
+}
+
+.user-name{
+    color: rgb(243, 243, 14);
+    font-size: larger;
+    font-weight: 200;
+}
+.commentsDiv{
+    background-color: black;
+    width: 80%;
+    padding: 0;
+    border-radius: 10px;
+    padding-bottom: 0.2%;
+}
+.commentsDiv p{
+    margin-left:2%;
+    margin-right:2%;
+}
+#comments-title{
+    margin-left:10%;
+}
+
+@media screen and (max-width: 800px){
+    body{
+        margin: 0%;
+        padding: 0px;
+    }
+    header ul{
+        display: block;
+        padding: 3%; 
+    }
+    header ul li{
+        margin-top: 4%;
+    }
+    #menuIcon{
+        display: flex;
+        justify-content: end;
+        margin-right: 10%;
+        width: 7%;
+    }
+    .logos{
+        font-size: medium;
+        margin-left: 3% 
+    }
+    #link{
+        display: none;
+        margin-right: 0%;
+        transition: 1s;
+        width: 100%;
+        background-image: linear-gradient(to right, rgb(225, 137, 30) , rgb(206, 232, 39));
+    }
+    .nav{
+        margin-left: 0%;
+        margin-right: 0;
+    }
+    #link{
+        animation: fadeIn 6s;
+    }
+    @keyframes fadeIn{
+        0%{ opacity: 0;background-color: antiquewhite;}
+        100%{opacity: 1;}
+    }
+    #col{
+        display: none;
+    }
+    .link a{
+        height: fit-content;
+        margin: 4%;
+        display: block;
+        font-weight: bold;
+    } 
+    
+    .bacgraoundImage{
+        display: none;
+    }
+    .text{
+        display: none;
+    }
+    .landing{
+        display: block;
+        width: 100%;
+        text-align: center;
+        font-size: medium;
+    }
+    #profile{
+            display: none;
+    }
+    .single{
+        position:absolute;
+        background-color: #1e1e1e;
+        height: fit-content;
+        top: 2;
+        padding: 0;
+        width: 100%;
+    }
+    .single img{
+        float: none;
+        width: 100%;
+        margin: 0;
+    }
+    .comment-area button{
+        width: 50%;
+        margin-left: 20%;
+        font-size: medium;
+    }
+    .comment-area input{
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    .comment-area textarea{
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+}

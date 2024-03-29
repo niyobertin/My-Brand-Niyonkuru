@@ -1,6 +1,6 @@
 
 const title = document.getElementById('blogTitle');
-const image = document.getElementById('aplodImage');
+const images = document.getElementById('aplodImage');
 const desc = document.getElementById('text-input');
 const form = document.querySelector('form');
 const button = document.getElementById('login-botton');
@@ -9,46 +9,63 @@ const blogImages = document.getElementById('blogImage');
 let blogTitles = document.getElementById("blogTitle");
 const blogContent = document.getElementById("blogContent")
 let imageUrl;
-let blogs = (JSON.parse(localStorage.getItem('blogs')));
-image.addEventListener('change',() =>{
-   const file = image.files[0];
- const fr = new FileReader();
- fr.addEventListener("load",() =>{
-   imageUrl = fr.result;
- })
- fr.readAsDataURL(file);
- })
-
- if(blogs === null){
-   blogs = [];
+const popUpMessage = document.querySelector(".pop-up-message")
+const token = localStorage.getItem('token');
+const creatingBlogs = (data) =>{
+   let   url = "https://mybrand-be-nkyz.onrender.com/api/v1/blogs";
+   displayLoading();
+   const formData = new FormData();
+   formData.append('title', data.title);
+   formData.append('image', data.image);
+   formData.append('content', data.content);
+   fetch(url,{
+      method: 'POST',
+       headers: {
+           'Authorization': `Bearer ${token}`
+       },
+       body: formData
+   })
+   
+   .then((response) => response.json())
+   .then((data) =>{
+       hideLoading();
+       popUpMessage.innerHTML = data.message;
+       popUpMessage.style.display = "block";
+       desc.innerHTML = '';
+       setTimeout(() => {
+           popUpMessage.style.display = "none";
+           form.reset();
+         }, 2000);
+   })
+   .catch(err =>{
+       console.log(err.message)
+   })
 }
 button.addEventListener('click',(event) => {
-       // local storage
-       event.preventDefault();
-          const artical = {
-              title:title.value,
-              image:imageUrl,
-              descriptionb:desc.innerHTML
-           }
-          blogs.push(artical);
-      localStorage.setItem('blogs',JSON.stringify(blogs));
+         const artical = {
+            title:title.value,
+            image:images.files[0],
+            content:desc.innerHTML
+         }
+         creatingBlogs(artical);
       form.reset();
       
 });
-const loader = document.querySelector("#loading");
- const displayLoading = () =>{
-   loader.classList.add("display");
-   setTimeout(() =>{
-      loader.classList.remove("display")
-   },1000 * 60 * 60);
-}
-const hideLoading = () =>{
-   loader.classList.remove("display")
-}
+
 const blogimage = document.getElementById("blog-image");
 const blogHeading = document.getElementById("blogHeading")
 const mainpage = document.getElementById("blogDesc");
 const singleBlogsView = async(id) =>{
+   const loader = document.querySelector("#loading");
+   const displayLoading = () =>{
+   loader.classList.add("display");
+   setTimeout(() =>{
+       loader.classList.remove("display")
+   },1000 * 60 * 60);
+   }
+   const hideLoading = () =>{
+   loader.classList.remove("display")
+   }
    const single_blog_url = `https://mybrand-be-nkyz.onrender.com/api/v1/blogs/${id}`;
    displayLoading()
    try{
@@ -63,6 +80,16 @@ const singleBlogsView = async(id) =>{
 }
 
 const getlikes = async(id) => {
+   const loader = document.querySelector("#loading");
+   const displayLoading = () =>{
+   loader.classList.add("display");
+   setTimeout(() =>{
+       loader.classList.remove("display")
+   },1000 * 60 * 60);
+   }
+   const hideLoading = () =>{
+   loader.classList.remove("display")
+   }
    const likes_url = `https://mybrand-be-nkyz.onrender.com/api/v1/blogs/${id}/likes`;
    displayLoading();
    try {
@@ -93,6 +120,16 @@ contollerDiv.appendChild(nolike);
 contollerDiv.appendChild(image2);
 contollerDiv.appendChild(nocomment);
 const comments = async(id) =>{
+   const loader = document.querySelector("#loading");
+   const displayLoading = () =>{
+   loader.classList.add("display");
+   setTimeout(() =>{
+       loader.classList.remove("display")
+   },1000 * 60 * 60);
+   }
+   const hideLoading = () =>{
+   loader.classList.remove("display")
+   }
    const coment_url = `https://mybrand-be-nkyz.onrender.com/api/v1/blogs/${id}/comments`;
    displayLoading();
    try {
@@ -105,6 +142,16 @@ const comments = async(id) =>{
    }
 }
 const fetchBlogs = async() =>{
+      const loader = document.querySelector("#loading");
+      const displayLoading = () =>{
+      loader.classList.add("display");
+      setTimeout(() =>{
+         loader.classList.remove("display")
+      },1000 * 60 * 60);
+      }
+      const hideLoading = () =>{
+      loader.classList.remove("display")
+      }
             const url = 'https://mybrand-be-nkyz.onrender.com/api/v1/blogs';
             displayLoading();
       try{
@@ -156,30 +203,23 @@ const fetchBlogs = async() =>{
             blogList.appendChild(blogDiv);
          }
          const more = document.querySelectorAll(".more");
-         const single = document.querySelector(".single");
-         const all = document.querySelector('.all');
       for(let i = 0;i<more.length;i++){
          for(let j = i;j < blogsList.length;j++){
             more[i].addEventListener("click",() =>{
             if(i === j){
                const blogsId = blogsList[i]._id;
-               singleBlogsView(blogsId);
+               localStorage.setItem('singleBlogId',blogsId); 
+               location.href ="../pages/singleBlogs.html";
             }
-            single.style.display = 'block';
-            single.animate({transform:['scale(0)','scale(0)','scale(1)']},500);
-            all.style.display = "none"
             })
          } 
-      } 
-      const closing =  document.getElementById("close");
-      closing.addEventListener("click",()=>{
-         hideLoading();
-         single.style.display = 'none';
-         single.animate({transform:['scale(0)','scale(0)','scale(1)']},500);
-         all.style.display = "block"
-      })  
+      }   
    }catch(err){
-         throw new Error(err.message)
+         if(err){
+            console.log(err)
+         }else{
+            throw new Error(err.mesage)
+         }
     }
 }
 fetchBlogs();

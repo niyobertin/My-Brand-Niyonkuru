@@ -16,6 +16,8 @@
     </header>
     <main>
         <div class="login-contact">
+            <div class="pop-up-message"></div>
+            <div id="loading-div"></div>
             <h2>Sign up</h2>
             <div id="login-form1">
                 <form action="" class="input-area">
@@ -31,10 +33,6 @@
                         <label for="Password" id="password-config1">Password</label><br/>
                         <input type="Password" id="sign-up-password1">
                     </div>
-                    <div class="Password">
-                        <label for="Password" id="password-config2">Comfirm password</label><br/>
-                        <input type="Password" id="sign-up-password2">
-                    </div> <br/>
                     <button id="login-botton" class="signUp" type="button" style="cursor: pointer;" onclick="signUpValidate()">Sign Up</button> or
                     <a href="login.html" id="signUp" style="color: yellow;">Log in</a>
                  </form>  
@@ -42,6 +40,7 @@
         </div>
     </main>
     <footer></footer>
+    <script type="module" src="../local.storage/signup.js"></script>
     <script src="../javaScript/formValidation.js"></script>
 </body>
 </html>

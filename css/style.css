@@ -333,7 +333,7 @@ header h1{
         width: 2rem;
         height: 2rem;
         border: 5px solid yellow;
-        border-top: 5px solid white;
+        border-top: 5px solid #1e1e1e;
         border-radius: 50%;
         margin: auto;
         visibility: hidden;
@@ -491,34 +491,6 @@ header h1{
         border-radius: 10px;
         display: none;
     }
-/*SINGLE VIWE*/
-.single{
-    position:absolute;
-    background-color: #1e1e1e;
-    height: fit-content;
-    top: 20%;
-    padding: 0;
-    left: 0;
-    width: 100%;
-    display: none;
-}
-.single img{
-float:initial;
-width: 30%;
-margin: 2%;
-margin-left: 10%;
-}
-.single p{
-    margin-left: 10%;
-    margin-right: 10%;
-}
-.single h3{
-    margin-left: 20%;
-    color: yellow;
-}
-.single header{
-    position: fixed;
-}
 #close{
     text-align: end;
     font-size: large;
@@ -620,7 +592,6 @@ margin-left: 10%;
 #name-label{
     text-align: start;
 }
-/* Resposnive ness */
 
 @media screen and (max-width: 800px){
     body{
