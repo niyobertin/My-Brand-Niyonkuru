@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>niyonkuru-blog</title>
+    <link rel="stylesheet" href="../css/single.css">
+</head>
+<body>
+  <div class="single" id="single">
+        <header id="head" style="border-bottom: 1px yellow solid;">
+            <h1 class="logo">Niyonkuru<span id="bullet">.</span></h1>
+            <button type="button" id="menuIcon" onclick="closing()">×</button>
+            <ul id="link">
+                <li><a href="#service"></a></li>
+                <li><a href="#portfolio"></a></li>
+                <li><a href="#blogs"></a></li>
+                <li><a href="#skills"></a></li>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="contact.us.html">Contact us</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </header>
+        <div class="pop-up"></div>
+        <div id="loading"></div>
+        <div class="singleView">
+            <img src="" alt="" id="blog-image">
+            <h3 id="blogHeading"></h3>
+            <p id="blogDesc"></p>
+            <span id="aplodImage"></span>
+            <span id="login-botton"></span>
+            <h2 id="comments-title">Comments</h2>
+            <div class="usercomment"></div>
+
+            <form action="" class="comment-area">
+                <div class="name">
+                    <label for="name" id="name-label">Name</label><br/>
+                    <input type="text" id="usename">
+                </div>  
+                <div class="comment">
+                    <label for="comment" id="comment-label">Comment</label><br/>
+                        <textarea name="comment" id="comment" cols="50" rows="5"></textarea></br>
+                        </br>
+                </div>
+                    <button type="button" id="send-comment" style="cursor: pointer;">Send</button>
+                </div>
+            </form>
+         </div>
+  </div>
+    <script src="../local.storage/singleBlogs.js" type="module"></script>
+</body>
+</html>

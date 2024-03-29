@@ -281,6 +281,44 @@ img{
     #quote{
         color: yellow;
     }
+
+    #loading{
+        width: 2rem;
+        height: 2rem;
+        border: 5px solid yellow;
+        border-top: 5px solid white;
+        border-radius: 50%;
+        margin: auto;
+        visibility: hidden;
+        animation: spin 0.5s infinite linear;
+     }
+     #loading.display{
+        visibility: visible;
+     }
+     @keyframes spin {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+     }
+
+     .pop-up-message{
+        background-color: rgb(44, 43, 41);
+        padding: 1%;
+        position: fixed;
+        margin-top: 8%;
+        margin-left: 10%;
+        margin-right: 10%;
+        width: 40%;
+        text-align: center;
+        font-size: medium;
+        color: yellow;
+        font-weight: 100;
+        border-radius: 10px;
+        display: none;
+     }
   @media screen and (max-width: 800px){
         #link{
             margin: 0;

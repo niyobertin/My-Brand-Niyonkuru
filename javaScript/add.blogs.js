@@ -11,9 +11,6 @@ let scriptButton = document.querySelectorAll(".script");
 //Intial settings
 
 const intializer = () => {
-    //function call for highlighting buttons
-    //No highlits for link, unlink,list, undo,redo
-    //since they are one time operation
     highlighter(alignButtons,true);
     highlighter(spacingButton,true);
     highlighter(formatButton,false);
