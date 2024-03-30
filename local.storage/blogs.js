@@ -172,10 +172,11 @@ const fetchBlogs = async() =>{
             const h3 = document.createElement('h3');
             const like_coment = document.createElement("div");
             like_coment.classList.add('linke-coment');
-            const like = document.createElement('img');
-            like.src = "../images/like.JPG";
-            const comment = document.createElement('img');
-            comment.src = "../images/comment.JPG";
+            const like = document.createElement('p');
+            like.classList.add("likebacgraound");
+            like.innerHTML = '👍'
+            const comment = document.createElement('p');
+            comment.innerHTML = '💬';
             const likeNumber = document.createElement('p');
             const commentNumber = document.createElement('p');
             let likeNo = document.createTextNode(likes);
