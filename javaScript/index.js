@@ -37,7 +37,24 @@ function openNav() {
   }
 }
 
-// Sliders
+const userProfile = document.getElementById("login-profile");
+const loggedIn = localStorage.getItem('token');
+if(loggedIn){
+  userProfile.innerHTML = '🙎‍♂️'
+  userProfile.style.border = "yellow 1px solid";
+  userProfile.style.borderRadius = "50%" 
+}
+const logoutMenu = document.querySelector('.dropdown');
+userProfile.addEventListener('click',()=>{
+if(logoutMenu.style.display === 'none'){
+  logoutMenu.style.display = 'block';
+  logoutMenu.animate({transform:['scale(0)','scale(0)','scale(1)']},500);
+}else{
+  logoutMenu.animate({transform:['scale(1)','scale(1)','scale(0)']},1000);
+  logoutMenu.style.display = 'none';
+}
+})
+
 
 const initSlider = () =>{
         const blogList = document.querySelector(".blogs-list")

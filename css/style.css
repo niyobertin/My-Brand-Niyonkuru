@@ -129,9 +129,42 @@ header h1{
         color: white;
         text-decoration: none;
     }
-    
+    .dropdown{
+        position: fixed;
+        top: 0;
+        margin-top: 6%;
+        margin-right: 2%;
+        background: #1e1e1e;
+        align-items: center;
+        text-align: center;
+        width: 20%;
+        margin-left: 79%;
+        display: flex;
+        flex-wrap: wrap;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        display: none;
+    }
+    .dropdown-content{
+      color: white;  
+      width: 100%;
+      padding: 1%;
+    }
+    .dropdown-content img{
+        width: 30%;
+        border-radius: 50%;
+    }
+    .dropdown-content li{
+        list-style-type: none;
+        padding: 5%;
+        font-size: 100%;
+    }
+
     #bacgraoundImage{
         position: relative;
+    }
+    #login-profile{
+        cursor: pointer;
     }
     #profile{
         position: absolute;
@@ -375,7 +408,7 @@ header h1{
    
     .blog1 img{
         width: 100%;
-        height: 50%;
+        height: 20vh;
         border-top-left-radius:5px;
         border-top-right-radius: 5px;
     }
@@ -391,9 +424,12 @@ header h1{
         align-items: center;
         border-top: 0.1px solid yellow;
     }
-    .linke-coment img{
-        width: 8%;
-        margin-inline: 5%;  
+    .likebacgraound{
+        /* border: 1px solid yellow;
+        width: 10%;
+        border-radius: 30px;
+        text-align: center;
+        background-color: rgb(6, 112, 242); */
     }
     .more{
         border-radius: 10px;

@@ -71,7 +71,7 @@ const form_validation = () =>{
     const hideLoading = () =>{
     loader.classList.remove("display")
     }
-
+        const form = document.querySelector(".input-area");
         const popMessage = document.querySelector(".pop-up");
         const loginUser = async(email,password) =>{
             const loginUrl = "https://mybrand-be-nkyz.onrender.com/api/v1/users/login";
@@ -87,8 +87,13 @@ const form_validation = () =>{
             .then((data) => {
                 hideLoading();
                 if(data.status == 404 || data.status == 400){
-                emailVal(loginEmail,login_email,data.message);
-                passwordVal(password,password_label,"Your Password must be atleast 6-8 Chracters including numbers");
+                    popMessage.innerHTML = data.message;
+                    popMessage.style.display = "block";
+                    setTimeout(() => {
+                        popMessage.style.display = "none";
+                        window.location.reload()
+                        form.reset();
+                      }, 2000);
                 }else{
                 popMessage.innerHTML = data.message;
                 popMessage.style.display = "block";
@@ -104,11 +109,17 @@ const form_validation = () =>{
             .catch(error => console.log(error.message));
         }
         const loginValidation= () => {
-            if(loginUser(loginEmail.value,password.value)){
-                return true;
+            if(loginEmail.value =='' || !(emailValidation(loginEmail.value))){
+                emailVal(loginEmail,login_email,"Please provide your correct email");
+            }else if(password.value =='' || !(passwordValidation(password.value))){
+                passwordVal(password,password_label,"Your Password must be atleast 6-8 Chracters including numbers");
             }else{
-              return false;  
-            }
+                if(loginUser(loginEmail.value,password.value)){
+                    return true;
+                }else{
+                  return false;  
+                }
+            }   
         }
         // Sign up page
         const username = document.getElementById('username');

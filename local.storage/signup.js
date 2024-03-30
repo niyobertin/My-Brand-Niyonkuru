@@ -2,6 +2,7 @@ const form = document.querySelector(".input-area");
 const loader = document.querySelector("#loading-div");
 const displayLoading = () =>{
 loader.classList.add("display");
+
 setTimeout(() =>{
     loader.classList.remove("display")
 },1000 * 60 * 60);
