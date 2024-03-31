@@ -200,11 +200,27 @@ select{
    border-radius: 10px;
    display: none; 
 }
+.alet-message{
+   background-color: rgb(44, 43, 41);
+   padding: 2%;
+   top: 0;
+   margin-top: 8%;
+   position: fixed;
+   margin-left: 0;
+   width: 50%;
+   margin-right: 0%;
+   text-align: center;
+   font-size: medium;
+   color: yellow;
+   font-weight: 100;
+   border-radius: 10px;
+   display: none; 
+}
 #loading{
    width: 2rem;
    height: 2rem;
    border: 5px solid yellow;
-   border-top: 5px solid white;
+   border-top: 5px solid black;
    border-radius: 50%;
    margin: auto;
    margin-top: 25%;
@@ -224,7 +240,22 @@ select{
        transform: rotate(360deg);
    }
 }
- 
+#loading-loder{
+   width: 2rem;
+   height: 2rem;
+   border: 5px solid yellow;
+   border-top: 5px solid #1e1e1e;
+   border-radius: 50%;
+   margin: auto;
+   margin-top: 0;
+   position: fixed;
+   margin-left: 30%;
+   visibility: hidden;
+   animation: spin 0.5s infinite linear;
+}
+#loading-loder.display{
+   visibility: visible;
+}
  @media screen and (max-width: 800px){
    .add-blogs{
       display: flex;

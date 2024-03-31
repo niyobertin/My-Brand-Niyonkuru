@@ -1,17 +1,58 @@
 
 const loader = document.querySelector("#loading");
+const loggedInUser = localStorage.getItem('logedInUser');
+const userData = JSON.parse(loggedInUser);
+const blogToAddLikesOn = localStorage.getItem('singleBlogId');
+let  token;
+let usersId
+const initialiser = (data) =>{
+    if(data === null){
+        return;
+    }else{
+        token = data.token;
+        usersId = data.userId;
+    }
+}
+initialiser(userData)
 const displayLoading = () =>{
 loader.classList.add("display");
 setTimeout(() =>{
     loader.classList.remove("display")
 },1000 * 60 * 60);
 }
+const getLikes = () =>{
+    if(!id){
+        return "this is not allowed";
+    }else{
+        const url = `https://mybrand-be-nkyz.onrender.com/api/v1/blogs/${blogToAddLikesOn}/likes`;
+        displayLoading();
+        try {
+            fetch(url, {
+                method: 'GET',
+                'Content-Type': 'application/json'
+            })
+            .then(response => {
+                if (!response.ok) {
+                    hideLoading()
+                    throw new Error('Failed to Like');
+                }
+                response.json()
+                .then((data)=>{
+                    checkLikedStatus(blogToAddLikesOn,usersId,token);
+                    likes_no.innerHTML = data.likes;
+                })
+            })
+           
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    }
+}
 const hideLoading = () =>{
-    displayData();
-    displayComments()
+    displayComments();
+    getLikes();
 loader.classList.remove("display")
 }
-
 const id = localStorage.getItem('singleBlogId');
 const blogimage = document.getElementById("blog-image");
 const blogHeading = document.getElementById("blogHeading")
@@ -121,20 +162,11 @@ sendCommentButton.addEventListener('click',(event) =>{
             } 
         });
     })
-    .catch(err => console.log(err.popMessage))
+    .catch(err => console.log(err.popMessage));
  }
 
-
- const userProfile = document.getElementById("login-profile");
-const loggedIn = localStorage.getItem('token');
-if(loggedIn){
-  userProfile.innerHTML = '🙎‍♂️'
-  userProfile.style.border = "yellow 1px solid";
-  userProfile.style.borderRadius = "50%" 
-}
-const blogToAddLikesOn = localStorage.getItem('singleBlogId');
-const token = localStorage.getItem('token');
 const addLikes = () =>{
+    const token = userData.token;
     if(!id){
         return;
     }else{
@@ -152,56 +184,100 @@ const addLikes = () =>{
                     hideLoading()
                     throw new Error('Failed to Like');
                 }
-                 popMessage.innerHTML = "Liked!";
-                 popMessage.style.display = "block";
-                 hideLoading()
-                 setTimeout(() => {
-                 popMessage.style.display = "none";
-                }, 2000);
-            })
-        } catch (error) {
-            console.error('Error:', error);
-        }
-    }
-}
-
-
-const getLikes = () =>{
-    if(!id){
-        return;
-    }else{
-        const url = `https://mybrand-be-nkyz.onrender.com/api/v1/blogs/${blogToAddLikesOn}/likes`;
-        displayLoading();
-        try {
-            fetch(url, {
-                method: 'GET',
-                'Content-Type': 'application/json'
-            })
-            .then(response => {
-                if (!response.ok) {
-                    hideLoading()
-                    throw new Error('Failed to Like');
-                }
                 response.json()
-                .then((data)=>{
-                    likes_no.innerHTML = data.likes;
+                .then(data =>{
+                    popMessage.innerHTML = data.message;
+                    popMessage.style.display = "block";
+                    hideLoading()
+                    setTimeout(() => {
+                    popMessage.style.display = "none";
+                   }, 2000);
                 })
             })
-           
         } catch (error) {
             console.error('Error:', error);
         }
     }
-}
-const displayData = () => {
-    getLikes();
 }
 
 const like = document.querySelector('.likesno-img');
+const likeThumb = document.querySelector("#comments-image");
 like.addEventListener("click",()=>{
-    like.style.backgroundColor = '#060c54';
-    addLikes();
+    if(!loggedInUser){
+        popMessage.innerHTML = 'login first';
+        popMessage.style.display = "block";
+        setTimeout(() => {
+            location.href ='../pages/login.html'
+           }, 2000);
+    }else{
+        likeThumb.style.opacity = "1";
+        addLikes();
+    }
 })
+
+const userProfile = document.getElementById("login-profile");
+const logoutp = document.querySelector("#logout");
+const userNameInfo = document.querySelector("#user-name");
+const userEmail = document.querySelector("#user-email");
+if(loggedInUser){
+  userNameInfo.innerHTML = userData.usersName;
+    userEmail.innerHTML = userData.email;
+  userProfile.innerHTML = '🙎‍♂️'
+  userProfile.style.border = "yellow 1px solid";
+  userProfile.style.borderRadius = "50%" 
+}
+logoutp.addEventListener('click',() =>{
+  localStorage.removeItem("logedInUser");
+  location.href ="../pages/home.html";
+})
+const logoutMenu = document.querySelector('.dropdown');
+userProfile.addEventListener('click',()=>{
+if(loggedInUser){
+  if(logoutMenu.style.display == 'none'){
+    logoutMenu.style.display = 'block';
+    logoutMenu.animate({transform:['scale(0)','scale(0)','scale(1)']},500);
+  }else{
+    logoutMenu.style.display = 'none';
+  }
+}else{
+  location.href = "../pages/login.html";
+}
+});
+
+function checkLikedStatus(blogId, userId, token) {
+    if (!blogId || !userId || !token) {
+        console.error('Blog ID, user ID, or token is missing.');
+        return;
+    }
+    const url = `https://mybrand-be-nkyz.onrender.com/api/v1/blogs/${blogId}/likes`;
+    fetch(url, {
+        method: 'GET',
+        headers: {
+            'Authorization': `Bearer ${token}`
+        }
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Failed to check liked status');
+        }
+        return response.json();
+    })
+    .then(data => {
+        const likedUser = data.data;
+        likedUser.forEach(ele => {
+        if (ele.user === usersId) {
+            likeThumb.style.opacity = "1";
+        }else{
+            likeThumb.style.opacity = "0.2";
+        }
+    });
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+}
+
+ 
 
 
 

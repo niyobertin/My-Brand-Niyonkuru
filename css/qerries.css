@@ -20,7 +20,7 @@ a:hover{
     width: 2rem;
     height: 2rem;
     border: 5px solid yellow;
-    border-top: 5px solid white;
+    border-top: 5px solid black;
     border-radius: 50%;
     visibility: hidden;
     animation: spin 0.5s infinite linear;
