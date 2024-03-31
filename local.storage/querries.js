@@ -11,7 +11,8 @@ const hideLoading = () =>{
 }
 
 const querryDiv = document.querySelector('.contents');
-const token = localStorage.getItem('token');
+const loggedIn = JSON.parse(localStorage.getItem('logedInUser'))
+const token = loggedIn.token;
 if(!token){
     console.log("LOGIN");
 }else{

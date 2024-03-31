@@ -38,22 +38,42 @@ function openNav() {
 }
 
 const userProfile = document.getElementById("login-profile");
-const loggedIn = localStorage.getItem('token');
-if(loggedIn){
+const loggedInUser = localStorage.getItem('logedInUser');
+const logoutp = document.querySelector("#logout");
+const userNameInfo = document.querySelector("#user-name");
+const userEmail = document.querySelector("#user-email");
+const dashboard = document.querySelector("#dashboard")
+const userData = JSON.parse(loggedInUser);
+if(loggedInUser){
+  userNameInfo.innerHTML = userData.usersName;
+    userEmail.innerHTML = userData.email;
   userProfile.innerHTML = '🙎‍♂️'
   userProfile.style.border = "yellow 1px solid";
   userProfile.style.borderRadius = "50%" 
 }
+logoutp.addEventListener('click',() =>{
+  localStorage.removeItem("logedInUser");
+  location.href ="../pages/home.html";
+})
 const logoutMenu = document.querySelector('.dropdown');
+const userJsonData = JSON.parse(loggedInUser);
+if(userJsonData.role){
+    dashboard.style.display ='block';
+}
 userProfile.addEventListener('click',()=>{
-if(logoutMenu.style.display === 'none'){
-  logoutMenu.style.display = 'block';
-  logoutMenu.animate({transform:['scale(0)','scale(0)','scale(1)']},500);
+if(loggedInUser){
+  if(logoutMenu.style.display === 'none'){
+    logoutMenu.style.display = 'block';
+    logoutMenu.animate({transform:['scale(0)','scale(0)','scale(1)']},500);
+  }else{
+    logoutMenu.animate({transform:['scale(1)','scale(1)','scale(0)']},1000);
+    logoutMenu.style.display = 'none';
+  }
 }else{
-  logoutMenu.animate({transform:['scale(1)','scale(1)','scale(0)']},1000);
-  logoutMenu.style.display = 'none';
+  location.href = "../pages/login.html";
 }
 })
+
 
 
 const initSlider = () =>{

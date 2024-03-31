@@ -2,7 +2,7 @@
 const title = document.getElementById('blogTitle');
 const images = document.getElementById('aplodImage');
 const desc = document.getElementById('text-input');
-const form = document.querySelector('form');
+const forms = document.querySelector('form');
 const button = document.getElementById('login-botton');
 const content = document.querySelector('contents');
 const blogImages = document.getElementById('blogImage');
@@ -10,7 +10,8 @@ let blogTitles = document.getElementById("blogTitle");
 const blogContent = document.getElementById("blogContent")
 let imageUrl;
 const popUpMessage = document.querySelector(".pop-up-message")
-const token = localStorage.getItem('token');
+const log = JSON.parse(localStorage.getItem('logedInUser'))
+const token = log.token;
 const creatingBlogs = (data) =>{
    let   url = "https://mybrand-be-nkyz.onrender.com/api/v1/blogs";
    displayLoading();
@@ -34,7 +35,7 @@ const creatingBlogs = (data) =>{
        desc.innerHTML = '';
        setTimeout(() => {
            popUpMessage.style.display = "none";
-           form.reset();
+           forms.reset();
          }, 2000);
    })
    .catch(err =>{

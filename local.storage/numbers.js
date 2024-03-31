@@ -1,13 +1,5 @@
-
-let querriesFromLocalStorage = JSON.parse(window.localStorage.getItem("querries"));
-if(querriesFromLocalStorage === null){
-    querriesFromLocalStorage = []; 
-}
-let dataFromLocalStorage = JSON.parse(window.localStorage.getItem("blogs"));
-if(dataFromLocalStorage === null){
-    dataFromLocalStorage = [];
-}
-const token = localStorage.getItem('token');
+const loggedIn = JSON.parse(localStorage.getItem('logedInUser'))
+const token = loggedIn.token;
 if(!token){
     console.log("LOGIN");
 }else{
@@ -28,13 +20,21 @@ if(!token){
         console.log(err.message)
     })
 }
-
-let articals = document.getElementById('total-artical');
-articals.innerHTML = dataFromLocalStorage.length + ' ';
-
- let usersComment = JSON.parse(localStorage.getItem('comments'));
-if(usersComment === null){
-    usersComment = [];
+if(!token){
+    console.log("LOGIN");
+}else{
+        const querriesUl = "https://mybrand-be-nkyz.onrender.com/api/v1/blogs"
+        fetch(querriesUl,{
+            method:'GET'
+        })
+        .then((res) => res.json())
+        .then(data =>{
+            const articals = data.blogs;
+            let articalsNo = document.getElementById('total-artical');
+            articalsNo.innerHTML = articals.length + ' ';
+    })
+    .catch(err =>{
+        console.log(err.message)
+    })
 }
- let messages = document.getElementById("total-comments");
- messages.innerHTML = usersComment.length + " ";
+

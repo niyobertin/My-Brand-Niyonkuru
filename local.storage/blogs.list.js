@@ -70,7 +70,8 @@ try{
 } 
 fetchBlogs()
 const popMessage = document.querySelector(".alet");
-const token = localStorage.getItem('token');
+const loggedIn = JSON.parse(localStorage.getItem('logedInUser'))
+const token = loggedIn.token;
 const deletBlogs = (id) => {
     const url = `https://mybrand-be-nkyz.onrender.com/api/v1/blogs/${id}`;
     console.log(displayLoading())
@@ -83,6 +84,7 @@ const deletBlogs = (id) => {
     })
     .then(response => {
         if (!response.ok) {
+            hideLoading();
             popMessage.innerHTML = 'Network response was not ok';
             popMessage.style.display = "block";
             setTimeout(() => {
@@ -111,10 +113,35 @@ const deletBlogs = (id) => {
     const button = document.getElementById('login-botton');
     const conteiner = document.querySelector('.conteiner');
     const form = document.querySelector('form');
-    const UpdateBlogs = (data) => {
+
+    const fetchBlogData = async() => {
         const blogId = localStorage.getItem('blogsId');
-        console.log(blogId)
         const url = `https://mybrand-be-nkyz.onrender.com/api/v1/blogs/${blogId}`;
+        const response = await fetch(url, {
+            method: 'GET'
+        })
+        if (!response.ok) {
+            throw new Error('Failed to fetch blog data');
+        }
+        const data = await response.json();
+            title.value = data.blogs.title;
+            desc.innerHTML = data.blogs.content;
+    };
+    fetchBlogData();
+    const UpdateBlogs = (data,token) => {
+        const loader = document.querySelector("#loading-loder");
+        const displayLoading = () =>{
+          loader.classList.add("display");
+          setTimeout(() =>{
+             loader.classList.remove("display")
+          },1000 * 60 * 60);
+       }
+       const hideLoading = () =>{
+          loader.classList.remove("display")
+       }
+        const popUpMessage = document.querySelector(".alet-message");
+        const blogId = localStorage.getItem('blogsId');
+        const url = `https://mybrand-be-p2fh.onrender.com/api/v1/blogs/${blogId}`;
         displayLoading();
         const formData = new FormData();
         formData.append('title', data.title);
@@ -153,19 +180,17 @@ const deletBlogs = (id) => {
         });
     }
 
-    button.addEventListener('click',(event) => {
+    button.addEventListener('click',async(event) => {
         event.preventDefault();
         const artical = {
            title:title.value,
            image:images.files[0],
            content:desc.innerHTML
         }
-        UpdateBlogs(artical);
+        UpdateBlogs(artical,token);
      form.reset();
      
 });
-    
-    
     const blog_container = document.querySelector(".conteiner");
     const blogContents = document.querySelector(".contents");
     const containShow = () => {

@@ -1,3 +1,4 @@
+
 //Email validation function
 const emailValidation = (emailAdress) => {
     const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
@@ -96,14 +97,12 @@ const form_validation = () =>{
                       }, 2000);
                 }else{
                 popMessage.innerHTML = data.message;
-                popMessage.style.display = "block";
-                const token = data.token;
-                localStorage.setItem('token',token);
+                popMessage.style.display = "block";                
+                localStorage.setItem('logedInUser',JSON.stringify(data));
                 setTimeout(() => {
                     popMessage.style.display = "none";
                     userRole(data.role);
                   }, 2000);
-                  return token;
             }
             })
             .catch(error => console.log(error.message));
