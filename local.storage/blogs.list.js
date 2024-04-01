@@ -16,8 +16,7 @@ try{
        let response = (await fetch(url)).json();
        hideLoading();
        let BlgsFromDb = await response;
-       let blogsList = BlgsFromDb.blogs
-        
+       let blogsList = BlgsFromDb.blogs;
         let view,edit,deletes;
         const blogContents = document.querySelector(".contents");
         for(let i = 0;i <= blogsList.length;i++){
@@ -74,7 +73,7 @@ const loggedIn = JSON.parse(localStorage.getItem('logedInUser'))
 const token = loggedIn.token;
 const deletBlogs = (id) => {
     const url = `https://mybrand-be-5zbq.onrender.com/api/v1/blogs/${id}`;
-    console.log(displayLoading())
+    displayLoading();
     fetch(url, {
         method: 'DELETE',
         headers:{
@@ -127,42 +126,43 @@ const deletBlogs = (id) => {
             title.value = data.blogs.title;
             desc.innerHTML = data.blogs.content;
     };
-    const UpdateBlogs = (data,token) => {
+    const UpdateBlogs = async (data, token) => {
         const loader = document.querySelector("#loading-loder");
-        const displayLoading = () =>{
-          loader.classList.add("display");
-          setTimeout(() =>{
-             loader.classList.remove("display")
-          },1000 * 60 * 60);
-       }
-       const hideLoading = () =>{
-          loader.classList.remove("display")
-       }
+        const displayLoading = () => {
+            loader.classList.add("display");
+            setTimeout(() => {
+                loader.classList.remove("display")
+            }, 1000 * 60 * 60);
+        }
+        const hideLoading = () => {
+            loader.classList.remove("display")
+        }
         const popUpMessage = document.querySelector(".alet-message");
         const blogId = localStorage.getItem('blogsId');
         const url = `https://mybrand-be-p2fh.onrender.com/api/v1/blogs/${blogId}`;
         displayLoading();
         const formData = new FormData();
         formData.append('title', data.title);
-        formData.append('image', data.images);
         formData.append('content', data.content);
+        formData.append('image', data.image); 
     
-        fetch(url, {
-            method: 'PATCH',
-            headers: {
-                'Authorization': `Bearer ${token}`
-            },
-            body: formData
-        })
-        .then(response => {
+        try {
+            const response = await fetch(url, {
+                method: 'PATCH',
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                    'Content-Type': 'application/json'
+                },
+                body: formData
+            });
+    
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
-            return response.json();
-        })
-        .then(data => {
+    
+            const responseData = await response.json();
             hideLoading();
-            popUpMessage.innerHTML = data.message;
+            popUpMessage.innerHTML = responseData.message;
             popUpMessage.style.display = "block";
             desc.innerHTML = '';
             localStorage.removeItem('blogId');
@@ -170,14 +170,12 @@ const deletBlogs = (id) => {
                 popUpMessage.style.display = "none";
                 form.reset();
             }, 2000);
-        })
-        .catch(error => {
+        } catch (error) {
             hideLoading();
-            if(error){
-                console.log(error.message)
-            };
-        });
+            console.error(error.message);
+        }
     }
+    
 
     button.addEventListener('click',async(event) => {
         event.preventDefault();

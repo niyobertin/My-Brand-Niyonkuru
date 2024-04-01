@@ -10,9 +10,9 @@ let blogTitles = document.getElementById("blogTitle");
 const blogContent = document.getElementById("blogContent")
 let imageUrl;
 const popUpMessage = document.querySelector(".pop-up-message")
-const log = JSON.parse(localStorage.getItem('logedInUser'))
-const token = log.token;
 const creatingBlogs = (data) =>{
+   const log = JSON.parse(localStorage.getItem('logedInUser'))
+   const token = log.token;
    let   url = "https://mybrand-be-5zbq.onrender.com/api/v1/blogs";
    displayLoading();
    const formData = new FormData();
@@ -225,26 +225,6 @@ const fetchBlogs = async() =>{
     }
 }
 fetchBlogs();
-// post coment  
-const userName = document.getElementById("usename");
-const userComment = document.getElementById("comment");
-const sendCommentButton = document.getElementById("send-comment");
-const form1 = document.querySelector('form')
-let comment_from_users =JSON.parse(localStorage.getItem('comments'));
-if(comment_from_users === null){
-   comment_from_users = [];
-}
-
-sendCommentButton.addEventListener('click',(event) =>{
-   event.preventDefault();
-   let comment = {
-      user_name: userName.value,
-      userComment:userComment.value
-   }
-comment_from_users.push(comment);
-localStorage.setItem("comments",JSON.stringify(comment_from_users));
-form1.reset();
-})
 
 
 

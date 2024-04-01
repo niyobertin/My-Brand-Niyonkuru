@@ -182,9 +182,6 @@ const form_validation = () =>{
         if(passwordValidation(signupPassword.value)){
         keyPress(passwordConfig1,'Password');
         }
-        if(passwordValidation(confirmPas.value)){
-        keyPress(passwordConfig2,'Confirm password');
-        }
     }
     //Key press on adding blogs func
     const hideError = () =>{
