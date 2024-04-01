@@ -42,14 +42,18 @@ const loggedInUser = localStorage.getItem('logedInUser');
 const logoutp = document.querySelector("#logout");
 const userNameInfo = document.querySelector("#user-name");
 const userEmail = document.querySelector("#user-email");
-const dashboard = document.querySelector("#dashboard")
+const dashboard = document.querySelector("#dashboard");
+const login = document.querySelector("#login");
 const userData = JSON.parse(loggedInUser);
 if(loggedInUser){
+  login.style.display = "none";
   userNameInfo.innerHTML = userData.usersName;
     userEmail.innerHTML = userData.email;
   userProfile.innerHTML = '🙎‍♂️'
   userProfile.style.border = "yellow 1px solid";
   userProfile.style.borderRadius = "50%" 
+}else{
+  login.style.display = "block";
 }
 logoutp.addEventListener('click',() =>{
   localStorage.removeItem("logedInUser");
@@ -57,8 +61,10 @@ logoutp.addEventListener('click',() =>{
 })
 const logoutMenu = document.querySelector('.dropdown');
 const userJsonData = JSON.parse(loggedInUser);
-if(userJsonData.role){
+if(userJsonData.role ==="admin"){
     dashboard.style.display ='block';
+}else{
+  dashboard.style.display ='none'; 
 }
 userProfile.addEventListener('click',()=>{
 if(loggedInUser){
@@ -80,7 +86,7 @@ const initSlider = () =>{
         const blogList = document.querySelector(".blogs-list")
         const sliderButtons = document.querySelectorAll(".slide-buton");
         const maxLeftScroll = blogList.scrollWidth - blogList.clientWidth;
-      sliderButtons.forEach((button) => {
+        sliderButtons.forEach((button) => {
         button.addEventListener('click',() => {
           const direction = button.id ==="next-slide" ? -1 : 1;//ternary operations
           const scrollAmount = blogList.clientWidth * direction;
@@ -97,5 +103,3 @@ const buttonClick = (button,func) => {
 const menu_button = document.getElementById('menuIcon');
 buttonClick(menu_button,showhide)
 window.addEventListener('load',initSlider);
-
-
