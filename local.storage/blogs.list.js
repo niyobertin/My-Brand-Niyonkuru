@@ -148,7 +148,7 @@ const deletBlogs = (id) => {
         formData.append('content', data.content);
     
         fetch(url, {
-            method: 'PATCH',
+            method: 'PUT',
             headers: {
                 'Authorization': `Bearer ${token}`
             },
