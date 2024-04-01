@@ -13,7 +13,7 @@ const popUpMessage = document.querySelector(".pop-up-message")
 const log = JSON.parse(localStorage.getItem('logedInUser'))
 const token = log.token;
 const creatingBlogs = (data) =>{
-   let   url = "https://mybrand-be-nkyz.onrender.com/api/v1/blogs";
+   let   url = "https://mybrand-be-5zbq.onrender.com/api/v1/blogs";
    displayLoading();
    const formData = new FormData();
    formData.append('title', data.title);
@@ -67,7 +67,7 @@ const singleBlogsView = async(id) =>{
    const hideLoading = () =>{
    loader.classList.remove("display")
    }
-   const single_blog_url = `https://mybrand-be-nkyz.onrender.com/api/v1/blogs/${id}`;
+   const single_blog_url = `https://mybrand-be-5zbq.onrender.com/api/v1/blogs/${id}`;
    displayLoading()
    try{
       const singleBlog = (await fetch(single_blog_url)).json();
@@ -91,7 +91,7 @@ const getlikes = async(id) => {
    const hideLoading = () =>{
    loader.classList.remove("display")
    }
-   const likes_url = `https://mybrand-be-nkyz.onrender.com/api/v1/blogs/${id}/likes`;
+   const likes_url = `https://mybrand-be-5zbq.onrender.com/api/v1/blogs/${id}/likes`;
    displayLoading();
    try {
       const likeNo = (await fetch(likes_url)).json();
@@ -131,7 +131,7 @@ const comments = async(id) =>{
    const hideLoading = () =>{
    loader.classList.remove("display")
    }
-   const coment_url = `https://mybrand-be-nkyz.onrender.com/api/v1/blogs/${id}/comments`;
+   const coment_url = `https://mybrand-be-5zbq.onrender.com/api/v1/blogs/${id}/comments`;
    displayLoading();
    try {
       const AllComments = ((await fetch(coment_url)).json());
@@ -153,7 +153,7 @@ const fetchBlogs = async() =>{
       const hideLoading = () =>{
       loader.classList.remove("display")
       }
-            const url = 'https://mybrand-be-nkyz.onrender.com/api/v1/blogs';
+            const url = 'https://mybrand-be-5zbq.onrender.com/api/v1/blogs';
             displayLoading();
       try{
                let response = (await fetch(url)).json();

@@ -10,7 +10,7 @@ const hideLoading = () =>{
 }
 const blogList = document.getElementById('blog-list');
 const fetchBlogs = async() =>{
-    const url = 'https://mybrand-be-nkyz.onrender.com/api/v1/blogs';
+    const url = 'https://mybrand-be-5zbq.onrender.com/api/v1/blogs';
     displayLoading();
 try{
        let response = (await fetch(url)).json();
@@ -73,7 +73,7 @@ const popMessage = document.querySelector(".alet");
 const loggedIn = JSON.parse(localStorage.getItem('logedInUser'))
 const token = loggedIn.token;
 const deletBlogs = (id) => {
-    const url = `https://mybrand-be-nkyz.onrender.com/api/v1/blogs/${id}`;
+    const url = `https://mybrand-be-5zbq.onrender.com/api/v1/blogs/${id}`;
     console.log(displayLoading())
     fetch(url, {
         method: 'DELETE',
@@ -116,7 +116,7 @@ const deletBlogs = (id) => {
 
     const fetchBlogData = async() => {
         const blogId = localStorage.getItem('blogsId');
-        const url = `https://mybrand-be-nkyz.onrender.com/api/v1/blogs/${blogId}`;
+        const url = `https://mybrand-be-5zbq.onrender.com/api/v1/blogs/${blogId}`;
         const response = await fetch(url, {
             method: 'GET'
         })

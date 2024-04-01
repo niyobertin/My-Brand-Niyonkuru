@@ -12,7 +12,7 @@ loader.classList.remove("display")
 }
 const popMessage = document.querySelector(".pop-up-message");
 const siginUp = (data) =>{
-    const url = `https://mybrand-be-nkyz.onrender.com/api/v1/users`;
+    const url = `https://mybrand-be-5zbq.onrender.com/api/v1/users`;
     displayLoading();
         fetch(url,{
             method:'POST',
