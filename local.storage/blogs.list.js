@@ -127,7 +127,6 @@ const deletBlogs = (id) => {
             title.value = data.blogs.title;
             desc.innerHTML = data.blogs.content;
     };
-    fetchBlogData();
     const UpdateBlogs = (data,token) => {
         const loader = document.querySelector("#loading-loder");
         const displayLoading = () =>{
@@ -194,6 +193,7 @@ const deletBlogs = (id) => {
     const blog_container = document.querySelector(".conteiner");
     const blogContents = document.querySelector(".contents");
     const containShow = () => {
+        fetchBlogData();
         blog_container.style.display = 'block';
         blogContents.style.display = 'none';
        blog_container.animate({transform:['scale(0)','scale(0)','scale(1)']},500);
