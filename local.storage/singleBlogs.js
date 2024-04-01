@@ -112,7 +112,8 @@ const sendComment = (data) => {
                  hideLoading()
                  setTimeout(() => {
                  popMessage.style.display = "none";
-          }, 2000);
+                 location.reload()
+             }, 2000);
                 form1.reset(); 
             })
         } catch (error) {
@@ -120,6 +121,9 @@ const sendComment = (data) => {
         }
     }
 }
+
+const userJsonData = JSON.parse(loggedInUser);
+userName.value = userJsonData.usersName
 sendCommentButton.addEventListener('click',(event) =>{
     event.preventDefault();
     const commentData = {
