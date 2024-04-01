@@ -3,7 +3,7 @@ const token = loggedIn.token;
 if(!token){
     console.log("LOGIN");
 }else{
-        const querriesUl = "https://mybrand-be-nkyz.onrender.com/api/v1/querries"
+        const querriesUl = "https://mybrand-be-5zbq.onrender.com/api/v1/querries"
         fetch(querriesUl,{
             method:'GET',
             headers:{
@@ -23,7 +23,7 @@ if(!token){
 if(!token){
     console.log("LOGIN");
 }else{
-        const querriesUl = "https://mybrand-be-nkyz.onrender.com/api/v1/blogs"
+        const querriesUl = "https://mybrand-be-5zbq.onrender.com/api/v1/blogs"
         fetch(querriesUl,{
             method:'GET'
         })

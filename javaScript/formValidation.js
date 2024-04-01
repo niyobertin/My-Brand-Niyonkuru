@@ -75,7 +75,7 @@ const form_validation = () =>{
         const form = document.querySelector(".input-area");
         const popMessage = document.querySelector(".pop-up");
         const loginUser = async(email,password) =>{
-            const loginUrl = "https://mybrand-be-nkyz.onrender.com/api/v1/users/login";
+            const loginUrl = "https://mybrand-be-5zbq.onrender.com/api/v1/users/login";
             displayLoading()
             fetch(loginUrl,{
                 method:'POST',

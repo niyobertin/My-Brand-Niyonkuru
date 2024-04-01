@@ -14,7 +14,7 @@ const popMessage = document.querySelector(".pop-up-message");
 const send_button = document.getElementById('send-message');
 const form = document.querySelector('.input-area');
  const sendQuerries = (data) =>{
-    let   url = "https://mybrand-be-nkyz.onrender.com/api/v1/querries";
+    let   url = "https://mybrand-be-5zbq.onrender.com/api/v1/querries";
     displayLoading();
     fetch(url,{
         method:'POST',

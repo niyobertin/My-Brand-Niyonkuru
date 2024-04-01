@@ -24,7 +24,7 @@ const getLikes = () =>{
     if(!id){
         return "this is not allowed";
     }else{
-        const url = `https://mybrand-be-nkyz.onrender.com/api/v1/blogs/${blogToAddLikesOn}/likes`;
+        const url = `https://mybrand-be-5zbq.onrender.com/api/v1/blogs/${blogToAddLikesOn}/likes`;
         displayLoading();
         try {
             fetch(url, {
@@ -61,7 +61,7 @@ const singleView = document.querySelector(".singleView");
 if(!id){
     console.log('blog Not found')
 }else{
-    const url = `https://mybrand-be-nkyz.onrender.com/api/v1/blogs/${id}`;
+    const url = `https://mybrand-be-5zbq.onrender.com/api/v1/blogs/${id}`;
     displayLoading();
     try{
         fetch(url,{
@@ -92,7 +92,7 @@ const sendComment = (data) => {
     if(!id){
         return;
     }else{
-        const url = `https://mybrand-be-nkyz.onrender.com/api/v1/blogs/${id}/comments`;
+        const url = `https://mybrand-be-5zbq.onrender.com/api/v1/blogs/${id}/comments`;
         displayLoading();
         try {
             fetch(url, {
@@ -134,7 +134,7 @@ sendCommentButton.addEventListener('click',(event) =>{
  })
 
  const displayComments = () => {
-    const url = `https://mybrand-be-nkyz.onrender.com/api/v1/blogs/${id}/comments`;
+    const url = `https://mybrand-be-5zbq.onrender.com/api/v1/blogs/${id}/comments`;
     displayLoading();
     fetch(url,{
         method:"GET",
@@ -174,7 +174,7 @@ const addLikes = () =>{
     if(!id){
         return;
     }else{
-        const url = `https://mybrand-be-nkyz.onrender.com/api/v1/blogs/${blogToAddLikesOn}/likes`;
+        const url = `https://mybrand-be-5zbq.onrender.com/api/v1/blogs/${blogToAddLikesOn}/likes`;
         displayLoading();
         try {
             fetch(url, {
@@ -253,7 +253,7 @@ function checkLikedStatus(blogId, userId, token) {
         console.error('Blog ID, user ID, or token is missing.');
         return;
     }
-    const url = `https://mybrand-be-nkyz.onrender.com/api/v1/blogs/${blogId}/likes`;
+    const url = `https://mybrand-be-5zbq.onrender.com/api/v1/blogs/${blogId}/likes`;
     fetch(url, {
         method: 'GET',
         headers: {

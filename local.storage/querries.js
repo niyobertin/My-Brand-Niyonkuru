@@ -16,7 +16,7 @@ const token = loggedIn.token;
 if(!token){
     console.log("LOGIN");
 }else{
-        const querriesUl = "https://mybrand-be-nkyz.onrender.com/api/v1/querries"
+        const querriesUl = "https://mybrand-be-5zbq.onrender.com/api/v1/querries"
         displayLoading()
         fetch(querriesUl,{
             method:'GET',
@@ -59,7 +59,7 @@ if(!token){
 }
 const popMessage = document.querySelector(".pop-up");
 const deletequerry = (id,token) =>{
-    const url = `https://mybrand-be-nkyz.onrender.com/api/v1/querries/${id}`;
+    const url = `https://mybrand-be-5zbq.onrender.com/api/v1/querries/${id}`;
     fetch(url, {
         method: 'DELETE',
         headers: {
