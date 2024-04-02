@@ -17,7 +17,7 @@ let menuList = document.getElementById("link");
         menuList.style.display = "none";
     }
 }
-window.onscroll =() => stickyNav();//excute the stickyNav on scroll
+window.onscroll =() => stickyNav();
 const navbar = document.getElementById("head");
 const sticky = navbar.offsetTop;
 const  stickyNav =()=> {

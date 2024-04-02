@@ -10,9 +10,9 @@ let blogTitles = document.getElementById("blogTitle");
 const blogContent = document.getElementById("blogContent")
 let imageUrl;
 const popUpMessage = document.querySelector(".pop-up-message")
-const log = JSON.parse(localStorage.getItem('logedInUser'))
-const token = log.token;
 const creatingBlogs = (data) =>{
+   const log = JSON.parse(localStorage.getItem('logedInUser'))
+   const token = log.token;
    let   url = "https://mybrand-be-5zbq.onrender.com/api/v1/blogs";
    displayLoading();
    const formData = new FormData();
@@ -160,7 +160,7 @@ const fetchBlogs = async() =>{
                hideLoading();
                const blogList = document.getElementById('blog-list');
                let BlgsFromDb = await response;
-               let blogsList = BlgsFromDb.blogs
+               let blogsList = BlgsFromDb.blogs;
          for(let i = 0;i < blogsList.length;i++){
             const ids =  blogsList[i]._id;
             const likes = await getlikes(ids);
