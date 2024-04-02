@@ -225,7 +225,7 @@ img{
         display: block;
     }
     .blog2{
-        display: grid;
+        display: flex;
         justify-content: space-between;
         background-color: #1e1e1e;
         width: 70%;
