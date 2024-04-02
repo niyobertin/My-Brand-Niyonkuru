@@ -46,7 +46,7 @@ try{
             const head = document.createElement("h2");
             const content = document.createElement("p");
             const headings =  document.createTextNode(blogsList[i].title);
-            const textContent = document.createTextNode((blogsList[i].content).replace(/<[^>]*>?/gm, '').slice(0,100) +"...");
+            const textContent = document.createTextNode((blogsList[i].content).replace(/<[^>]*>?/gm, '').slice(0,200) +"...");
             div.appendChild(blogImages);
             head.appendChild(headings)
             div.appendChild(head);
