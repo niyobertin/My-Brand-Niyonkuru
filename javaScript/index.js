@@ -86,6 +86,7 @@ const initSlider = () =>{
         const blogList = document.querySelector(".blogs-list")
         const sliderButtons = document.querySelectorAll(".slide-buton");
         const maxLeftScroll = blogList.scrollWidth - blogList.clientWidth;
+        console.log(maxLeftScroll);
         sliderButtons.forEach((button) => {
         button.addEventListener('click',() => {
           const direction = button.id ==="next-slide" ? -1 : 1;//ternary operations

@@ -327,54 +327,21 @@ cursor: pointer;
 }
 @media screen and (max-width: 800px){
     body{
-        margin: 0%;
-        padding: 0px;
+        margin: 0;
+        padding: 0;
     }
-    header ul{
-        display: block;
-        padding: 3%; 
-    }
-    header ul li{
-        margin-top: 4%;
-    }
-    #menuIcon{
-        display: flex;
-        justify-content: end;
-        margin-right: 10%;
-        width: 7%;
-    }
-    .logos{
-        font-size: medium;
-        margin-left: 3% 
-    }
-    #link{
-        display: none;
-        margin-right: 0%;
-        transition: 1s;
+    header{
         width: 100%;
-        background-image: linear-gradient(to right, rgb(225, 137, 30) , rgb(206, 232, 39));
-    }
-    .nav{
-        margin-left: 0%;
+        margin-left: 0;
         margin-right: 0;
     }
     #link{
-        animation: fadeIn 6s;
+        display: none;
     }
     @keyframes fadeIn{
         0%{ opacity: 0;background-color: antiquewhite;}
         100%{opacity: 1;}
     }
-    #col{
-        display: none;
-    }
-    .link a{
-        height: fit-content;
-        margin: 4%;
-        display: block;
-        font-weight: bold;
-    } 
-    
     .bacgraoundImage{
         display: none;
     }
@@ -387,15 +354,13 @@ cursor: pointer;
         text-align: center;
         font-size: medium;
     }
-    #profile{
-            display: none;
-    }
     .single{
         position:absolute;
         background-color: #1e1e1e;
         height: fit-content;
         top: 2;
         padding: 0;
+        margin: 0;
         width: 100%;
     }
     .single img{
@@ -417,5 +382,16 @@ cursor: pointer;
         width: 100%;
         margin: 0;
         padding: 0;
+    }
+    .commenting-liking{
+        display: flex;
+        gap: 40%;
+    }
+    .likesno-img, .commentsno-img{
+        width: 20%;
+        height: 4vh;
+    }
+    .login-profile{
+        display: none;
     }
 }

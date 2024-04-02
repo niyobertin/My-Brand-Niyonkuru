@@ -38,7 +38,6 @@ const getLikes = () =>{
                 }
                 response.json()
                 .then((data)=>{
-                    checkLikedStatus(blogToAddLikesOn,usersId,token);
                     likes_no.innerHTML = data.likes;
                 })
             })
@@ -52,6 +51,7 @@ const hideLoading = () =>{
     getLikes();
 loader.classList.remove("display")
 }
+
 const id = localStorage.getItem('singleBlogId');
 const blogimage = document.getElementById("blog-image");
 const blogHeading = document.getElementById("blogHeading")
@@ -136,8 +136,11 @@ const sendComment = (data) => {
 }
 
 const userJsonData = JSON.parse(loggedInUser);
-userName.value = userJsonData.usersName
-sendCommentButton.addEventListener('click',(event) =>{
+if(!userJsonData){
+    console.log("no register user");
+}else{
+    userName.value = userJsonData.usersName
+    sendCommentButton.addEventListener('click',(event) =>{
     event.preventDefault();
     const commentData = {
         visitor: userName.value,
@@ -145,6 +148,7 @@ sendCommentButton.addEventListener('click',(event) =>{
     };
     sendComment(commentData);
  })
+}
 
  const displayComments = () => {
     const url = `https://mybrand-be-5zbq.onrender.com/api/v1/blogs/${id}/comments`;
@@ -237,6 +241,7 @@ const userProfile = document.getElementById("login-profile");
 const logoutp = document.querySelector("#logout");
 const userNameInfo = document.querySelector("#user-name");
 const userEmail = document.querySelector("#user-email");
+const dashboard = document.querySelector("#dashboard");
 if(loggedInUser){
   userNameInfo.innerHTML = userData.usersName;
     userEmail.innerHTML = userData.email;
@@ -248,6 +253,11 @@ logoutp.addEventListener('click',() =>{
   localStorage.removeItem("logedInUser");
   location.href ="../pages/home.html";
 })
+if(userJsonData.role ==="admin"){
+    dashboard.style.display ='block';
+}else{
+  dashboard.style.display ='none'; 
+}
 const logoutMenu = document.querySelector('.dropdown');
 userProfile.addEventListener('click',()=>{
 if(loggedInUser){
@@ -266,6 +276,8 @@ function checkLikedStatus(blogId, userId, token) {
     if (!blogId || !userId || !token) {
         console.error('Blog ID, user ID, or token is missing.');
         return;
+    }else{
+        
     }
     const url = `https://mybrand-be-5zbq.onrender.com/api/v1/blogs/${blogId}/likes`;
     fetch(url, {
@@ -285,8 +297,17 @@ function checkLikedStatus(blogId, userId, token) {
         likedUser.forEach(ele => {
         if (ele.user === usersId) {
             likeThumb.style.opacity = "1";
+            likeThumb.addEventListener("mouseleave", function() {
+                this.style.opacity = "1"; 
+            });
         }else{
             likeThumb.style.opacity = "0.2";
+            likeThumb.addEventListener("mouseenter", function() {
+                this.style.opacity = "1"; 
+            });
+            likeThumb.addEventListener("mouseleave", function() {
+                this.style.opacity = "0.2"; 
+            });
         }
     });
     })
@@ -294,8 +315,4 @@ function checkLikedStatus(blogId, userId, token) {
         console.error('Error:', error);
     });
 }
-
- 
-
-
-
+checkLikedStatus(blogToAddLikesOn,usersId,token);
