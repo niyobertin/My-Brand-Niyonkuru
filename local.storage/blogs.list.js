@@ -128,19 +128,26 @@ const deletBlogs = (id) => {
             desc.innerHTML = data.blogs.content;
     };
     const UpdateBlogs = (data,token) => {
-        const loader = document.querySelector("#loading-loder");
-        const displayLoading = () =>{
-          loader.classList.add("display");
-          setTimeout(() =>{
-             loader.classList.remove("display")
-          },1000 * 60 * 60);
-       }
-       const hideLoading = () =>{
-          loader.classList.remove("display")
-       }
+        const displayLoading = () => {
+            const loader = document.querySelector("#loading-loder");
+            if (loader) {
+                loader.classList.add("display");
+                setTimeout(() => {
+                    loader.classList.remove("display");
+                }, 1000 * 60 * 60);
+            }
+        };
+        
+        const hideLoading = () => {
+            const loader = document.querySelector("#loading-loder");
+            if (loader) {
+                loader.classList.remove("display");
+            }
+        };
+        
         const popUpMessage = document.querySelector(".alet-message");
         const blogId = localStorage.getItem('blogsId');
-        const url = `https://mybrand-be-p2fh.onrender.com/api/v1/blogs/${blogId}`;
+        const url = `https://mybrand-be-5zbq.onrender.com/api/v1/blogs/${blogId}`;
         displayLoading();
         const formData = new FormData();
         formData.append('title', data.title);
@@ -148,7 +155,7 @@ const deletBlogs = (id) => {
         formData.append('content', data.content);
     
         fetch(url, {
-            method: 'PUT',
+            method: 'PATCH',
             headers: {
                 'Authorization': `Bearer ${token}`
             },
@@ -173,9 +180,13 @@ const deletBlogs = (id) => {
         })
         .catch(error => {
             hideLoading();
-            if(error){
-                console.log(error.message)
-            };
+            console.error('An error occurred:', error);
+            popUpMessage.innerHTML = 'An error occurred while updating the blog post. Please try again later.';
+            popUpMessage.style.display = "block";
+            setTimeout(() => {
+                popUpMessage.style.display = "none";
+                form.reset();
+            }, 2000);
         });
     }
 
