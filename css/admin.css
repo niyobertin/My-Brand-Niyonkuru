@@ -228,9 +228,9 @@ img{
         display: flex;
         justify-content: space-between;
         background-color: #1e1e1e;
-        width: 70%;
+        width: 80%;
         margin-top: 2%;
-        margin-left: 20%;
+        margin-left: 10%;
         margin-right: 10%;
         padding: 1%;
         border-radius: 5px;
@@ -260,7 +260,7 @@ img{
         border-left: 1px solid yellow;
     }
     .controllers img{
-        width:50%;
+        width:100%;
         padding-inline: 1%;
         cursor: pointer;
     }
