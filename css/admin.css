@@ -226,12 +226,13 @@ img{
     }
     .blog2{
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
         background-color: #1e1e1e;
         width: 80%;
         margin-top: 2%;
         margin-left: 10%;
-        margin-right: 10%;
+        margin-right: 5%;
         padding: 1%;
         border-radius: 5px;
     }  
