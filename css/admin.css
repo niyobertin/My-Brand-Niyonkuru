@@ -225,7 +225,7 @@ img{
         display: block;
     }
     .blog2{
-        display: block;
+        display: flex;
         justify-content: space-between;
         background-color: #1e1e1e;
         width: 70%;
@@ -252,14 +252,15 @@ img{
     }
     .blog2 img{
         width: 10%;
+        margin-inline:8%; 
     }
     .controllers{
         padding-top: 1%;
         display: flex;
-        border-top: 1px solid yellow;
+        border-left: 1px solid yellow;
     }
     .controllers img{
-        width:3%;
+        width:100%;
         padding-inline: 1%;
         cursor: pointer;
     }
