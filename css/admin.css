@@ -251,15 +251,16 @@ img{
         width: 20%;
     }
     .blog2 img{
-        width: 30%;
+        width: 20%;
+        margin-inline:2%;
     }
     .controllers{
         padding-top: 1%;
         display: block;
-        border-reft: 1px solid yellow;
+        border-left: 1px solid yellow;
     }
     .controllers img{
-        width:10%;
+        width:50%;
         padding-inline: 1%;
         cursor: pointer;
     }
