@@ -49,7 +49,6 @@ const getLikes = () =>{
     }
 }
 const hideLoading = () =>{
-    displayComments();
     getLikes();
 loader.classList.remove("display")
 }
@@ -107,12 +106,26 @@ const sendComment = (data) => {
                     hideLoading()
                     throw new Error('Failed to send comment');
                 }
+                return response.json();
+            }).then(() =>{
+                 const commentsDiv = document.createElement("div");
+                 commentsDiv.classList.add("commentsDiv");
+                 const usercomment = document.querySelector(".usercomment");
+                 const user_name = document.createElement("p");
+                 user_name.classList.add("user-name");
+                 const users_comments = document.createElement("p");
+                 users_comments.classList.add("user-comments");
+                 user_name.innerHTML = data.visitor;
+                 users_comments.innerHTML = data.comments;
+                 commentsDiv.appendChild(user_name);
+                 commentsDiv.appendChild(users_comments);
+                 usercomment.appendChild(commentsDiv);
+                comments_no.innerHTML = parseInt(comments_no.innerHTML) + 1;
                  popMessage.innerHTML = "Comment sent!";
                  popMessage.style.display = "block";
                  hideLoading()
                  setTimeout(() => {
                  popMessage.style.display = "none";
-                 location.reload()
              }, 2000);
                 form1.reset(); 
             })
@@ -168,6 +181,7 @@ sendCommentButton.addEventListener('click',(event) =>{
     })
     .catch(err => console.log(err.popMessage));
  }
+ displayComments();
 
 const addLikes = () =>{
     const token = userData.token;
