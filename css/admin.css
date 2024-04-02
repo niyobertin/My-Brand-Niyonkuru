@@ -252,15 +252,14 @@ img{
     }
     .blog2 img{
         width: 10%;
-        margin-inline:8%; 
     }
     .controllers{
         padding-top: 1%;
         display: block;
-        border-left: 1px solid yellow;
+        border-top: 1px solid yellow;
     }
     .controllers img{
-        width:100%;
+        width:10%;
         padding-inline: 1%;
         cursor: pointer;
     }
