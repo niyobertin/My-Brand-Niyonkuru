@@ -15,6 +15,14 @@ const intializer = () => {
     highlighter(spacingButton,true);
     highlighter(formatButton,false);
     highlighter(scriptButton,true);
+
+     for(let i = 1;i <= 18;i++){
+       let option = document.createElement("option");
+        option.value = i;
+        option.innerHTML = i;
+        fontSizeRef.appendChild(option);
+    }
+    fontSizeRef.value = 3;
 }
 //Main logic
 const textModification = (command,defaultValue,value) =>{
