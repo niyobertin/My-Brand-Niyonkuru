@@ -124,8 +124,9 @@ select{
     font-family: sans-serif;
 }
  .input-wrapper{
-    display: flex;
+   display: block;
     align-items: center;
+    text-align: center;
     gap: 2%;
     font-size: 100%;
  }
@@ -134,7 +135,7 @@ select{
     -moz-appearance: none;
     appearance: none;
     background-color: transparent;
-    width: 50%;
+    width: 100%;
     height: 17px;
     border: none;
     cursor: pointer;
@@ -144,12 +145,10 @@ select{
    width: 100%;
  }
  input[type="color"]::-webkit-color-swatch{
-    border-radius: 3px;
-    box-shadow: 0 0 0 3px black, 0 0 0 3px white;
+    border-radius: 0;
  }
  input[type="color"]::-moz-color-swatch{
-    border-radius: 15px;
-    box-shadow: 0 0 0 2px black, 0 0 0 3px white;
+    border-radius: 0;
  }
  #text-input{
     margin-top: 3%;
