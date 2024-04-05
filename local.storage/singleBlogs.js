@@ -71,8 +71,8 @@ if(!id){
         const obatainedBlog = data.blogs;
         hideLoading();
         singleView.style.display = "block";
-        blogimage.src= obatainedBlog .image;
         blogHeading.innerHTML = obatainedBlog .title;
+        blogimage.src= obatainedBlog .image;
         mainpage.innerHTML = obatainedBlog .content;
         })
     }catch(err){
