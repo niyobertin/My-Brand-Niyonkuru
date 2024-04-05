@@ -226,7 +226,7 @@ select{
    margin-top: 25%;
    position: fixed;
    margin-left: 45%;
-   visibility: hidden;
+   /* visibility: hidden; */
    animation: spin 0.5s infinite linear;
 }
 #loading.display{
@@ -239,6 +239,19 @@ select{
    to {
        transform: rotate(360deg);
    }
+}
+.loading-react{
+   width: 2rem;
+   height: 2rem;
+   border: 5px solid yellow;
+   border-top: 5px solid black;
+   border-radius: 50%;
+   margin: auto;
+   margin-top: 2%;
+   position: fixed;
+   margin-left: 45%;
+   /* visibility: hidden; */
+   animation: spin 0.5s infinite linear;
 }
 #loading-loder{
    width: 2rem;

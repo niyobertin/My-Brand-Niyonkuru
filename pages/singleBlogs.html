@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>niyonkuru-blog</title>
     <link rel="stylesheet" href="../css/single.css">
@@ -18,53 +21,12 @@
                 <li><a href="#skills"></a></li>
                 <li><a href="home.html">Home</a></li>
                 <li><a href="contact.us.html">Contact us</a></li>
-                <li id="login-profile">Login</li>
             </ul>
         </header>
-        <div class="dropdown">
-            <div class="dropdown-content">
-              <li id="user-icon"><img src="../images/128-1280406_view-user-icon-png-user-circle-icon-png.png" alt="" srcset=""></li>
-              <li id="user-name"></li>
-              <li id="user-email"></li>
-              <li id="logout">🔓Logout</li>
-            </div>
-        </div>
         <div class="pop-up"></div>
-        <div id="loading"></div>
-        <div class="singleView">
-            <img src="" alt="" id="blog-image">
-            <h3 id="blogHeading"></h3>
-            <p id="blogDesc"></p>
-            <span id="aplodImage"></span>
-            <span id="login-botton"></span>
-            <div class="commenting-liking">
-                <div class="commentsno-img">
-                    <p id="likes-no">0</p>
-                    <p id="likes-image">💬</p>
-                </div>
-                <div class="likesno-img">
-                    <p id="comments-no">0</p>
-                    <p id="comments-image">👍</p>
-                </div>
-            </div>
-            <h2 id="comments-title">Comments</h2>
-            <div class="usercomment"></div>
-
-            <form action="" class="comment-area">
-                <div class="name">
-                    <label for="name" id="name-label">Name</label><br/>
-                    <input type="text" id="usename">
-                </div>  
-                <div class="comment">
-                    <label for="comment" id="comment-label">Comment</label><br/>
-                        <textarea name="comment" id="comment" cols="50" rows="5"></textarea></br>
-                        </br>
-                </div>
-                    <button type="button" id="send-comment" style="cursor: pointer;">Send</button>
-                </div>
-            </form>
-         </div>
+        <div id="loading"></div>  
+        <div id="root"></div>
   </div>
-    <script src="../local.storage/singleBlogs.js" type="module"></script>
+    <script src="../React-verson/singeleView.js" type="text/babel"></script>
 </body>
 </html>

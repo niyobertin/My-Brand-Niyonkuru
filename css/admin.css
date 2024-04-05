@@ -224,18 +224,18 @@ img{
     ul img{
         display: block;
     }
-    .blog2{
-        display: block;
+    .blog{
+        margin: 0;
+        display: flex;
         justify-content: space-between;
         background-color: #1e1e1e;
         width: 70%;
         margin-top: 2%;
-        margin-left: 20%;
-        margin-right: 10%;
         padding: 1%;
         border-radius: 5px;
     }  
     #conts-blog{
+        margin: 0;
         display: flex;
         margin-left: 5%;
        align-items: center;
@@ -250,16 +250,18 @@ img{
     #blogsImage{
         width: 20%;
     }
-    .blog2 img{
+    .blog img{
         width: 10%;
+        border-radius: 10px;
+        margin-right: 2%;
     }
     .controllers{
         padding-top: 1%;
-        display: flex;
-        border-top: 1px solid yellow;
+        display: block;
+        border-left: 1px solid yellow;
     }
     .controllers img{
-        width:3%;
+        width:100%;
         padding-inline: 1%;
         cursor: pointer;
     }

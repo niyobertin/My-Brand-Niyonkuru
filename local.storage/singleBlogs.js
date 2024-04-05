@@ -120,7 +120,7 @@ const sendComment = (data) => {
                  commentsDiv.appendChild(user_name);
                  commentsDiv.appendChild(users_comments);
                  usercomment.appendChild(commentsDiv);
-                comments_no.innerHTML = parseInt(comments_no.innerHTML) + 1;
+                 comments_no.innerHTML = parseInt(comments_no.innerHTML) + 1;
                  popMessage.innerHTML = "Comment sent!";
                  popMessage.style.display = "block";
                  hideLoading()

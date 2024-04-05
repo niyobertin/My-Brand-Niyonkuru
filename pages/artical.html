@@ -3,6 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+      <!-- CDN for React and React-DOM-->
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+            
     <!-- <link rel="stylesheet" href="../css/add.blogs.css"> -->
     <link rel="stylesheet" href="../css/admin.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -30,7 +37,6 @@
             </div>
             <div class="contents" id="conts-blog">
                 <div id="loading"></div>  
-                <div class="alet"></div>
                 <div class="pop-up-message"></div>
             </div>
             <div id="form1">
@@ -126,5 +132,6 @@
     <script src="../javaScript/index.js"></script>
     <script type="module" src="../local.storage/blogs.list.js"></script>
     <script src="../javaScript/add.blogs.js"></script>
+    <script src="../React-verson//blogList.js" type="text/babel"></script>
 </body>
 </html>
