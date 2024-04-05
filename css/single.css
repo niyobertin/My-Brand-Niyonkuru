@@ -93,6 +93,7 @@ float:left;
 width: 30%;
 margin: 2%;
 margin-left: 10%;
+border-radius: 20Px;
 }
 .single p{
     margin-left: 10%;
@@ -100,6 +101,7 @@ margin-left: 10%;
 }
 .single h2{
     margin-left: 20%;
+    margin-top:2%;
     color: yellow;
 }
 .single header{
