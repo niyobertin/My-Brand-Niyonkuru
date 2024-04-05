@@ -89,9 +89,8 @@ header h1{
  display: none; 
 }
 .single img{
-float:initial;
+float:left;
 width: 30%;
-height: 40vh;
 margin: 2%;
 margin-left: 10%;
 }
